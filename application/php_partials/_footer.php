@@ -1,6 +1,6 @@
         <!-- Footer content -->
         <footer role="contentinfo" id="footer">
-            
+            <small>Copyright &copy; 2002&ndash;<?php echo date("Y") ?> Bruce Taylor</small>
         </footer>
         <!-- / Footer content -->
 
