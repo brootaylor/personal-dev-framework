@@ -32,6 +32,7 @@ module.exports = function (grunt) {
         sass: {
             styles: {
                 options: {
+                	//style: 'compact'
                     style: 'compressed'
                 },
                 files: {
@@ -40,6 +41,27 @@ module.exports = function (grunt) {
                 }
             }
         },
+
+        postcss: {
+			options: {
+				// map: false, // inline sourcemaps
+
+				// or
+				map: {
+					inline: false, // save all sourcemaps as separate files...
+					annotation: 'static/css/maps/' // ...to the specified directory
+				},
+
+				processors: [
+					//require('pixrem')(), // add fallbacks for rem units
+					require('autoprefixer')({browsers: 'last 10 versions'}), // add vendor prefixes
+					//require('cssnano')() // minify the result
+				]
+			},
+				dist: {
+					src: '<%= dirs.css %>/*.css'
+				}
+		},
 
         // JS Concatenation...
         // concat: {
@@ -151,6 +173,12 @@ module.exports = function (grunt) {
                     message: 'SASS compiled successfully', //required
                 }
             },
+            postcss: {
+                options: {
+                    title: 'PostCSS Task Complete',  // optional
+                    message: 'PostCSS completed successfully', //required
+                }
+            },
             jshint: {
                 options: {
                     title: 'JS Linting Task Complete',  // optional
@@ -168,18 +196,24 @@ module.exports = function (grunt) {
 				files: ['<%= dirs.scss %>/**/*.scss'],
 				tasks: ['sass:styles', 'notify:sass'],
 			},
+			// Add CSS vendor prefixes...
+			// cssPrefix: {
+			// 	files: ['<%= dirs.css %>/*.css'],
+			// 	tasks: ['postcss', 'notify:postcss'],
+			// },
 			// Checking JS on watch...
 			js: {
 				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
 				tasks: ['jshint:all', 'notify:jshint'],
 			}
-		}
+		},
+
 
     });
 
     // FULL BUILD TASK
     //
-    grunt.registerTask('default', ['sass', 'jshint', 'image', 'notify', 'uglify', 'copy', 'cachebreaker']);
+    grunt.registerTask('default', ['sass', 'postcss', 'jshint', 'uglify', 'image', 'notify', 'copy', 'cachebreaker']);
 };
 
 
