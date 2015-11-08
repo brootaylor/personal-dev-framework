@@ -12,8 +12,8 @@
 
     <head>
         <meta charset="utf-8">
-        <title><?php echo $meta_title; ?></title>
-        <meta name="description" content="<?php echo $meta_description; ?>">
+        <title><?php echo $page_title; ?> <?php echo $page_title_extra; ?></title>
+        <meta name="description" content="<?php echo $page_description; ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
         <!-- For Mobile Internet Explorer. Smoothes fonts for easy reading -->
@@ -23,7 +23,7 @@
         <meta name="copyright" content="Somebody">
 
         <link rel="author" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/humans.txt">
-        <link rel="canonical" href="http://<?php echo $_SERVER['SERVER_NAME']; ?><?php echo $meta_canonical; ?>">
+        <link rel="canonical" href="http://<?php echo $_SERVER['SERVER_NAME']; ?><?php echo $page_canonical; ?>">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
