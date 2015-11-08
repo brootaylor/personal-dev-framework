@@ -3,7 +3,7 @@
   "name": "Something",
   "version": "0.0.1",
   "description": "The project dependencies.",
-  "author": "Joe Blogs (http://joeblogs.com)",
+  "author": "Bruce Taylor (http://brootaylor.com)",
   "repository": {
     "type": "git",
     "url": "https://github.com/brootaylor/personal-dev-framework.git"
