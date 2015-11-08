@@ -119,7 +119,7 @@ module.exports = function (grunt) {
 		},
 
 		// 
-		// Append a 'cachebreaker' timestamp to 'scripts.js' & 'screen.css' which are both located in the 'build' directory...
+		// Append a 'cachebreaker' timestamp to 'plugins.js', 'main.js' & 'styles.css' which are all located in the 'build' directory...
 		//
 		cachebreaker: {
 		    dev: {
