@@ -1,0 +1,1 @@
+$(function(){var a=document.getElementById("menuButton");a.addEventListener("click",function(b){a.classList.toggle("is-active"),b.preventDefault()})});
