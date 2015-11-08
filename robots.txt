@@ -1,0 +1,11 @@
+# www.robotstxt.org/
+
+# Disallow crawling of all content
+# == Handy for during beta testing ==
+# User-agent: *
+# Disallow: /
+
+# Allow crawling of all content
+# == Open the doors in Production ==
+User-agent: *
+Disallow:

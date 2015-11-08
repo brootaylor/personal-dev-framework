@@ -1,0 +1,34 @@
+
+/* ==========================================================================
+   Various Functions (Global).
+   ========================================================================== */
+
+
+/*
+
+	Functions are used to perform calculations. A Sass function does not output any CSS. Instead, it returns a value that can be used in the CSS. This is useful for calculations that will be made throughout the site.
+
+	For example, functions are useful for calculating the percentage width of a given element:
+
+*/
+
+
+
+/////////////////
+// An example...
+/////////////////
+
+@function calculate-width ($col-span) {
+    @return 100% / $col-span
+}
+ 
+.span-two {
+    width: calculate-width(2); // spans 2 columns, width = 50%
+}
+ 
+.span-three {
+    width: calculate-width(3); // spans 3 columns, width = 33.3%
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////

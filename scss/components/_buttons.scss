@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Button styles (Global).
+   ========================================================================== */
+
+
+// Check these out for inspiration  ==>>  http://alexwolfe.github.io/Buttons/
+
+
+
+/* BUTTON PLACEHOLDER 
+============================================= */
+ 
+%btn {
+    cursor: pointer;
+    display: inline-block;
+	overflow: hidden;
+	width: auto;
+	padding: 1em;
+	@include fontSize($base-font-size);
+	text-align: center;
+	text-decoration: none;
+	zoom: 1\9;
+	overflow: visible\9;
+	color: $white;
+	font-weight: $fw-primary-normal;
+}
+ 
+/* BUTTON MIXIN 
+============================================= */
+ 
+@mixin btn-background($btn-background) {
+    @extend %btn;
+    background-color: $btn-background;
+
+    // Hover state
+    &:hover {
+        background-color: darken($btn-background, 5%);
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+ 
+/* BUTTONS
+============================================= */
+
+a,
+button,
+input {
+	// Primary button
+	&.button-primary {
+		@include btn-background($button-primary); 
+	}
+
+	// Secondary button
+	&.button-secondary {
+		@include btn-background($button-secondary); 
+	}
+
+	// Tertiary button
+	&.button-tertiary {
+		@include btn-background($button-tertiary); 
+	}
+}
+
+////////////////////////////////////////////////////////////

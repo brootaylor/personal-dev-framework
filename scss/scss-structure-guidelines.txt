@@ -1,0 +1,78 @@
+
+Inspiration for an SCSS structure...
+http://www.sitepoint.com/architecture-sass-project/
+
+=========================================================
+
+
+scss/ 
+| 
+|– base/ 
+|   |– _reset.scss       # Reset/normalize 
+|   |– _typography.scss  # Typography rules 
+|   ...                  # Etc… 
+| 
+|– components/ 
+|   |– _buttons.scss     # Buttons 
+|   |– _carousel.scss    # Carousel 
+|   |– _cover.scss       # Cover 
+|   |– _dropdown.scss    # Dropdown 
+|   |– _navigation.scss  # Navigation 
+|   ...                  # Etc… 
+| 
+|– helpers/ 
+|   |– _variables.scss   # Sass Variables 
+|   |– _functions.scss   # Sass Functions 
+|   |– _mixins.scss      # Sass Mixins 
+|   |– _helpers.scss     # Class & placeholders helpers 
+|   ...                  # Etc… 
+| 
+|– layout/ 
+|   |– _grid.scss        # Grid system 
+|   |– _header.scss      # Header 
+|   |– _footer.scss      # Footer 
+|   |– _sidebar.scss     # Sidebar 
+|   |– _forms.scss       # Forms 
+|   ...                  # Etc… 
+| 
+|– pages/ 
+|   |– _home.scss        # Home specific styles 
+|   |– _contact.scss     # Contact specific styles 
+|   ...                  # Etc… 
+| 
+|– themes/ 
+|   |– _theme.scss       # Default theme 
+|   |– _admin.scss       # Admin theme 
+|   ...                  # Etc… 
+| 
+|– vendors/ 
+|   |– _bootstrap.scss   # Bootstrap 
+|   |– _jquery-ui.scss   # jQuery UI 
+|   ...                  # Etc… 
+| 
+|
+|- _shame.scss			 # Quick fix file. Moves from here to appropriate structure when decided where it goes.
+| 
+`– main.scss             # primary Sass file (receives all partials)
+
+
+
+
+
+
+// === For the occasional IE hack, here's an example of what to do: ===
+ 
+// body {
+//      color: red; /* all browsers, of course */
+//      color: green\9; /* IE8 and below, append "\9" to the end of your style */
+//      *color: yellow; /* IE7 and below, use the * symbol */
+//      _color: orange; /* IE6, use the underscore */
+//     }
+
+// CSS Syntax (reminder):
+// ----------------------
+
+//  Selector	   Declaration		   Declaration
+//	   h1	    {color:    blue;    font-size:    12px;}
+//				 Property  Value    Property      Value
+

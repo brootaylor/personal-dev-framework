@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Variables (Global).
+   ========================================================================== */
+
+
+/*
+
+	////////////////////////////////
+	These are global variables
+	////////////////////////////////
+
+	Note: ==>> Module-specific variables, mixins, functions and placeholders should be kept within the correct module’s partial file:
+
+*/
+
+
+////////////////////////////////////////////////////////////////////////
+// Reference  ==>>> http://www.sitepoint.com/8-tips-help-get-best-sass/
+////////////////////////////////////////////////////////////////////////
+
+
+
+// Colour palette
+// ==============
+
+$white: #fff;
+$black: #000;
+$grey: #ccc;
+$orange: #f26c4f;
+
+
+// Brand colours
+// ==============
+
+$color-primary: $orange;
+$color-secondary: $black;
+$color-tertiary: $grey;
+
+
+/////////////////////////////////////////////////////
+
+// Fonts
+// ==============
+
+// Base font size
+$base-font-size: 16px;
+
+// Font families
+$font-primary: 'Open Sans', sans-serif, Arial, "Helvetica Neue", Helvetica; 
+$font-secondary: "Times New Roman", Georgia, Serif;
+
+// Font weights (primary custom font)
+$fw-primary-light: 300; // Light
+$fw-primary-normal: 400; // Normal
+$fw-primary-semi-bold: 600; // Semi-bold
+$fw-primary-bold: 700; // Bold
+
+
+/////////////////////////////////////////////////////
+
+// Links
+// ==============
+$link-primary: $color-primary;
+$link-secondary: $color-secondary;
+$link-tertiary: $color-tertiary;
+
+
+/////////////////////////////////////////////////////
+
+// Buttons
+// ==============
+$button-primary: $color-primary;
+$button-secondary: $color-secondary;
+$button-tertiary: $color-tertiary;
+
+/////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////
+// Need to theme things?
+// =====================
+// Take variables a bit further with theming
+//////////////////////////////////////////////////////
+
+// >>> This is from an example found here http://lindsayjopson.com/theming-in-sass/ <<<
+
+
+// Create your base color variables...
+// $blue: #3479a5;
+// $blue--dark: #2a6184;
+// $green: #87ab4f;
+// $green--dark: #6c893f;
+
+// // Now create your ‘themes’ variable...
+// $section-themes: (
+//     'blue': (
+//         primary: $blue,
+//         secondary: $blue--dark
+//     ),
+//     'green': (
+//         primary: $green,
+//         secondary: $green--dark
+//     )
+// );
+
+// // Sass @each function loops through a varable and pulls the color variables assigned above...
+// @each $theme, $colors in $section-themes {
+ 
+//     .theme--#{$theme} {
+ 
+//         .theme--border {
+//             border-color: map-get($colors, primary);
+//         }
+ 
+//         .theme--bg,
+//         &.pod--themed {
+//             background-color: map-get($colors, primary);
+//         }
+ 
+//         .theme--color,
+//         .theme--link {
+//             color: map-get($colors, primary);
+//         }
+ 
+//         .theme--link:hover {
+//             color: map-get($colors, secondary);
+//         }
+//     }
+// }
+
+// // You can then ‘map-get’ the desired variable for your css module...
+// color: map-get($colors, secondary);
+
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+

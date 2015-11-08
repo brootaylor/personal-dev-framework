@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Base template styles.
+   ========================================================================== */
+
+/*
+ * Now when we set a width, that element stays that width, despite padding or borders being applied.
+ */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    //height: 0.063em;
+    height: pxToEm(1px, $base-font-size);
+    border: 0;
+    border-top: pxToEm(1px, $base-font-size) solid darken($white, 70%);
+    margin: pxToEm(1px 0, $base-font-size);
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+svg,
+video,
+picture {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Prompts for when JS isn't enabled or the browser is outdated
+   ========================================================================== */
+
+.tech-missing {
+    margin: pxToEm(3px 15px, $base-font-size);
+    padding: pxToEm(3px 8px, $base-font-size);
+    background: $grey;
+
+      h2, p {
+        color: $black;
+      }
+      h2 {
+        margin: pxToEm(10px 0, $base-font-size);
+        font-weight: $fw-primary-normal;
+      }
+}
+
+/* ==========================================================================
+   Base template (eg. overall website width)
+   ========================================================================== */
+
+body {
+    max-width: 80em; // The widest the site will stretch = 1280px (based on 16px base pixel side)
+    margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+#masthead, #main, #footer {
+    margin-left: pxToEm(15px, $base-font-size);
+    margin-right: pxToEm(15px, $base-font-size);
+}
+
+

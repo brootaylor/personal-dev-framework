@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Modules (Global).
+   * @desc  =  Base mod mixin for grouping content
+   ========================================================================== */
+
+
+.mod {
+  @include clearfix-me(micro);
+  position: relative;
+
+  .modHead,
+  .modFoot {
+    @include clearfix-me(micro);
+    padding: 0;
+  }
+
+  .modBody {
+    padding: 0;
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////

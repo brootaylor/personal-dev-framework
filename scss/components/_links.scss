@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Links (Global).
+   ========================================================================== */
+
+
+a {
+    text-decoration: none;
+    color: $link-primary;
+
+	// Hover state
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+        color: darken($link-primary, 15%);
+    }
+}
+
