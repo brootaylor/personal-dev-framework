@@ -6,7 +6,7 @@
   "author": "Joe Blogs (http://joeblogs.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/brootaylor/always-changin.git"
+    "url": "https://github.com/brootaylor/personal-dev-framework.git"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
