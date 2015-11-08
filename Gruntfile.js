@@ -17,8 +17,13 @@ module.exports = function (grunt) {
         // GLOBAL CONFIGURATION
         //
         dirs: {
-            styles: 'scss',
-            distStyles: 'static/css',
+            scss: 'scss',
+            css: 'static/css',
+            cssBuild: 'build/static/css',
+            js: 'static/js',
+            jsBuild: 'build/static/js',
+            app: 'application',
+            appBuild: 'build/application',
         },
 
         //
@@ -30,17 +35,11 @@ module.exports = function (grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    '<%= dirs.distStyles %>/styles.css': '<%= dirs.styles %>/styles.scss'
+                	// Compile SCSS ino CSS...
+                    '<%= dirs.css %>/styles.css': '<%= dirs.scss %>/styles.scss',
                 }
             }
         },
-
-        //
-        // Check JS code
-        //
-        jshint: {
-			all: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js']
-		},
 
         // JS Concatenation...
         // concat: {
@@ -55,43 +54,110 @@ module.exports = function (grunt) {
 		//     }
 		// },
 
+		//
 		// JS Minification...
+		//
 		uglify: {
 		    dist: {
 		    	// Specifying multiple dest/src pairs...
 		        files: {
-		            'build/static/js/plugins.js': 'static/js/plugins.js',
-		            'build/static/js/main.js': 'static/js/main.js'
+		            '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
+		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js'
 		        }
 		    }
 		},
 
-		// Image compression copying to 'build' directory...
-		imagemin: {
-		    dynamic: {
-		        files: [{
-		            expand: true,
-		            cwd: 'static/img/',
-		            src: ['**/*.{png,jpg,gif}'],
-		            dest: 'build/static/img/'
-		        }]
+		//
+		// Image compression...
+		//
+		image: {
+	      dynamic: {
+	      	options: {
+	          pngquant: true,
+	          optipng: false,
+	          zopflipng: true,
+	          advpng: true,
+	          jpegRecompress: false,
+	          jpegoptim: true,
+	          mozjpeg: true,
+	          gifsicle: true,
+	          svgo: true
+	        },
+	        files: [{
+	          expand: true,
+	          cwd: 'static/img/',
+	          src: ['**/*.{png,jpg,gif,svg}'],
+	          dest: 'build/static/img/'
+	        }]
+	      }
+	    },
+
+        //
+        // Copy various files to the 'build' directory...
+        //
+		copy: {
+		    dist: {
+		    	// Specifying multiple dest/src pairs...
+		        files: {
+		        	// CSS files...
+		        	'<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
+
+		        	// Javascript library files...
+		        	'<%= dirs.jsBuild %>/vendor/jquery-1.11.3.min.js': '<%= dirs.js %>/vendor/jquery-1.11.3.min.js',
+		        	'<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
+
+		        	// PHP partial files...
+		        	'<%= dirs.appBuild %>/php_partials/_variables.php': '<%= dirs.app %>/php_partials/_variables.php',
+		        	'<%= dirs.appBuild %>/php_partials/_config.php': '<%= dirs.app %>/php_partials/_config.php',
+		        	'<%= dirs.appBuild %>/php_partials/_head.php': '<%= dirs.app %>/php_partials/_head.php',
+		        	'<%= dirs.appBuild %>/php_partials/_footer.php': '<%= dirs.app %>/php_partials/_footer.php',
+
+		        	// PHP template files...
+		        	'<%= dirs.appBuild %>/php_templates/template.php': '<%= dirs.app %>/php_templates/template.php'
+		        }
 		    }
 		},
 
-		// A responsive image workflow for optimizing and resizing your images...
-		// ======================================================================
-		// Check this out for how to use effectively => https://www.npmjs.com/package/grunt-respimg?utm_source=Responsive+Design+Weekly
-		// ======================================================================
-		// respimg: {
-		// 	options: {
-		// 		// Task-specific options go here.
-		// 	},
-		// 	your_target: {
-		// 		// Target-specific file lists go here.
-		// 	},
-		// },
+		// 
+		// Append a 'cachebreaker' timestamp to 'scripts.js' & 'screen.css' which are both located in the 'build' directory...
+		//
+		cachebreaker: {
+		    dev: {
+		        options: {
+		            match: ['plugins.js', 'main.js', 'styles.css'],
+		            position: 'filename'
+		        },
+		        files: {
+		            src: ['<%= dirs.appBuild %>/php_partials/_head.php', '<%= dirs.appBuild %>/php_partials/_footer.php']
+		        }
 
+		    },
+		},
+
+		//
+        // WATCH
         //
+        watch: {
+        	// Compiling SCSS on watch...
+			sass: {
+				files: ['<%= dirs.scss %>/**/*.scss'],
+				tasks: ['sass:styles', 'notify:sass'],
+			},
+			// Checking JS on watch...
+			js: {
+				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
+				tasks: ['jshint:all'],
+			}
+		},
+
+		//
+        // Check JS code
+        //
+        jshint: {
+			all: ['Gruntfile.js', '<%= dirs.js %>/main.js', '<%= dirs.js %>/plugins.js']
+		},
+
+		//
         //  NOTIFICATIONS
         //
         notify: {
@@ -103,63 +169,11 @@ module.exports = function (grunt) {
             }
         },
 
-        // Copy various files to the 'build' directory...
-		copy: {
-		    dist: {
-		    	// Specifying multiple dest/src pairs...
-		        files: {
-		        	// CSS files...
-		        	'build/static/css/styles.css': 'static/css/styles.css',
-
-		        	// Javascript library files...
-		        	'build/static/js/vendor/jquery-1.11.3.min.js': 'static/js/vendor/jquery-1.11.3.min.js',
-		        	'build/static/js/vendor/modernizr.custom.72511.js': 'static/js/vendor/modernizr.custom.72511.js',
-
-		        	// PHP partial files...
-		        	'build/application/php_partials/_variables.php': 'application/php_partials/_variables.php',
-		        	'build/application/php_partials/_config.php': 'application/php_partials/_config.php',
-		        	'build/application/php_partials/_head.php': 'application/php_partials/_head.php',
-		        	'build/application/php_partials/_footer.php': 'application/php_partials/_footer.php',
-
-		        	// PHP template files...
-		        	'build/application/php_templates/template.php': 'application/php_templates/template.php'
-		        }
-		    }
-		},
-
-		// Append a 'cachebreaker' timestamp to 'scripts.js' & 'screen.css' which are both located in the 'build' directory...
-		cachebreaker: {
-		    dev: {
-		        options: {
-		            match: ['plugins.js', 'main.js', 'styles.css'],
-		            position: 'filename'
-		        },
-		        files: {
-		            src: ['build/application/php_partials/_head.php', 'build/application/php_partials/_footer.php']
-		        }
-
-		    },
-		},
-
-		//
-        // WATCH
-        //
-        watch: {
-			sass: {
-				files: ['<%= dirs.styles %>/**/*.scss'],
-				tasks: ['sass:styles', 'notify:sass'],
-			},
-			js: {
-				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
-				tasks: ['jshint:all'],
-			}
-		},
-
     });
 
     // FULL BUILD TASK
     //
-    grunt.registerTask('default', ['sass', 'jshint', 'notify', 'uglify', 'imagemin', 'copy', 'cachebreaker']);
+    grunt.registerTask('default', ['sass', 'jshint', 'image', 'notify', 'uglify', 'copy', 'cachebreaker']);
 };
 
 
