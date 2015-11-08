@@ -2,7 +2,9 @@
 
 This is my attempt at coming up with a reusable front-end template/framework for any future web projects I work on. Just a starting block really.
 
-This isn't meant to be massively original in terms of the technical resources & methods used here. A lot of the code here contains stuff I've carefully chosen (and sometimes modified) because of their benefit to my web development projects. However, I certainly won't take sole credit. Like most, my thinking has been hugely influenced by other superb developers over the years - for that I'm grateful. This is intended to be an ever changing template/framework of the elements I plan to use on an everyday basis.
+This isn't meant to be massively original in terms of the technical resources & methods used here. A lot of the code here contains stuff I've carefully chosen (and sometimes modified) because of their benefit to my web development projects. However, I certainly won't take sole credit for it. Like most, my thinking has been hugely influenced by other superb developers over the years - for that I'm grateful. This is intended to be an ever changing template/framework of the elements I plan to use on an everyday basis.
+
+You're welcome to use it.
 
 ## What's in it?
 
