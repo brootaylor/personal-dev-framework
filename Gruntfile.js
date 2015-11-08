@@ -135,22 +135,6 @@ module.exports = function (grunt) {
 		},
 
 		//
-        // WATCH
-        //
-        watch: {
-        	// Compiling SCSS on watch...
-			sass: {
-				files: ['<%= dirs.scss %>/**/*.scss'],
-				tasks: ['sass:styles', 'notify:sass'],
-			},
-			// Checking JS on watch...
-			js: {
-				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
-				tasks: ['jshint:all'],
-			}
-		},
-
-		//
         // Check JS code
         //
         jshint: {
@@ -168,6 +152,22 @@ module.exports = function (grunt) {
                 }
             }
         },
+
+        //
+        // WATCH
+        //
+        watch: {
+        	// Compiling SCSS on watch...
+			sass: {
+				files: ['<%= dirs.scss %>/**/*.scss'],
+				tasks: ['sass:styles', 'notify:sass'],
+			},
+			// Checking JS on watch...
+			js: {
+				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
+				tasks: ['jshint:all'],
+			}
+		}
 
     });
 
