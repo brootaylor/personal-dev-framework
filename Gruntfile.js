@@ -8,13 +8,13 @@ module.exports = function (grunt) {
     // NPM TASK LOADER
     require('load-grunt-tasks')(grunt);
 
-    // // TIME BARS
+    // TIME BARS
     require('time-grunt')(grunt);
 
     grunt.initConfig({
 
         //
-        // GLOBAL CONFIGURATION
+        // GLOBAL DIRECTORY CONFIGURATION
         //
         dirs: {
             scss: 'scss',
@@ -150,6 +150,12 @@ module.exports = function (grunt) {
                     title: 'SASS Task Complete',  // optional
                     message: 'SASS compiled successfully', //required
                 }
+            },
+            jshint: {
+                options: {
+                    title: 'JS Linting Task Complete',  // optional
+                    message: 'JS Linting completed successfully', //required
+                }
             }
         },
 
@@ -165,7 +171,7 @@ module.exports = function (grunt) {
 			// Checking JS on watch...
 			js: {
 				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
-				tasks: ['jshint:all'],
+				tasks: ['jshint:all', 'notify:jshint'],
 			}
 		}
 
