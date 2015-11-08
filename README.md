@@ -17,6 +17,7 @@ This isn't meant to be massively original in terms of the technical resources & 
 * Apache server caching, compression, and other configuration defaults for
   Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A simple PHP based application framework.
+* Build directory output example.
 
 ## Helpful resource links
 
