@@ -24,9 +24,9 @@
         <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="static/js/plugins.1446997013262.js"></script>
+        <script src="static/js/plugins.1446997901955.js"></script>
         <!-- Site-specific JS -->
-        <script src="static/js/main.1446997013262.js"></script>
+        <script src="static/js/main.1446997901955.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
