@@ -35,6 +35,13 @@ module.exports = function (grunt) {
             }
         },
 
+        //
+        // Check JS code
+        //
+        jshint: {
+			all: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js']
+		},
+
         // JS Concatenation...
         // concat: {
         //   	dist: {
@@ -138,17 +145,21 @@ module.exports = function (grunt) {
         // WATCH
         //
         watch: {
-		  sass: {
-		    files: ['<%= dirs.styles %>/**/*.scss'],
-		    tasks: ['sass:styles', 'notify:sass'],
-		  },
+			sass: {
+				files: ['<%= dirs.styles %>/**/*.scss'],
+				tasks: ['sass:styles', 'notify:sass'],
+			},
+			js: {
+				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
+				tasks: ['jshint:all'],
+			}
 		},
 
     });
 
     // FULL BUILD TASK
     //
-    grunt.registerTask('default', ['sass', 'notify', 'uglify', 'imagemin', 'copy', 'cachebreaker']);
+    grunt.registerTask('default', ['sass', 'jshint', 'notify', 'uglify', 'imagemin', 'copy', 'cachebreaker']);
 };
 
 
