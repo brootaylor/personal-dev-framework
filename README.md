@@ -23,6 +23,13 @@ You're welcome to use it.
 
 ## Helpful resource links
 
+### http-server
+
+[http-server](https://www.npmjs.com/package/http-server)is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
+
+* Install globally - "npm install http-server -g"
+* Command line to directory path and run - "http-server"
+
 ### Web performance
 
 * https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/
