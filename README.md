@@ -19,7 +19,7 @@ You're welcome to use it.
 * Apache server caching, compression, and other configuration defaults for
   Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A simple PHP based application framework.
-* Build directory output example.
+* A build directory output example.
 
 ## Helpful resource links
 
