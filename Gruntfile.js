@@ -215,13 +215,13 @@ module.exports = function (grunt) {
             dev: {
                 bsFiles: {
                     src : [
-                        'static/css/*.css',
-                        'app/*.php'
+                        '<%= dirs.css %>/*.css',
+                        '<%= dirs.app %>/*.php'
                     ]
                 },
                 options: {
                     watchTask: true,
-                    server: './app'
+                    server: 'localhost'
                 }
             }
         }
