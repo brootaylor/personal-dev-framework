@@ -196,11 +196,6 @@ module.exports = function (grunt) {
 				files: ['<%= dirs.scss %>/**/*.scss'],
 				tasks: ['sass:styles', 'notify:sass'],
 			},
-			// Add CSS vendor prefixes...
-			// cssPrefix: {
-			// 	files: ['<%= dirs.css %>/*.css'],
-			// 	tasks: ['postcss', 'notify:postcss'],
-			// },
 			// Checking JS on watch...
 			js: {
 				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
