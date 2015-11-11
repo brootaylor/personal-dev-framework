@@ -42,6 +42,9 @@ module.exports = function (grunt) {
             }
         },
 
+        //
+        // PostCSS
+        //
         postcss: {
 			options: {
 				// map: false, // inline sourcemaps
@@ -63,7 +66,9 @@ module.exports = function (grunt) {
 				}
 		},
 
+        //
         // JS Concatenation...
+        //
         // concat: {
         //   	dist: {
 		//         src: [
