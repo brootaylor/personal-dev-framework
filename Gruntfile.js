@@ -207,13 +207,31 @@ module.exports = function (grunt) {
 				tasks: ['jshint:all', 'notify:jshint'],
 			}
 		},
+		
+		//
+        // Browser syncing...
+        //
+		browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        'static/css/*.css',
+                        'app/*.php'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: './app'
+                }
+            }
+        }
 
 
     });
 
     // FULL BUILD TASK
     //
-    grunt.registerTask('default', ['sass', 'postcss', 'jshint', 'uglify', 'image', 'notify', 'copy', 'cachebreaker']);
+    grunt.registerTask('default', ['sass', 'browserSync', 'postcss', 'jshint', 'uglify', 'image', 'notify', 'copy', 'cachebreaker']);
 };
 
 
