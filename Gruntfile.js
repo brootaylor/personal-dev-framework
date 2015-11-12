@@ -32,7 +32,7 @@ module.exports = function (grunt) {
         sass: {
             styles: {
                 options: {
-                	lineNumbers: true, // Boolean. Change to false is required
+                	lineNumbers: true, // Boolean. Change to false if required
                     style: 'compact', // Use for development
                     //style: 'compressed', // Use for production ready
                 },
