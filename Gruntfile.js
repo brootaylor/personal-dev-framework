@@ -32,8 +32,9 @@ module.exports = function (grunt) {
         sass: {
             styles: {
                 options: {
-                	//style: 'compact'
-                    style: 'compressed'
+                	lineNumbers: true,
+                    style: 'compact'
+                    //style: 'compressed'
                 },
                 files: {
                 	// Compile SCSS ino CSS...
