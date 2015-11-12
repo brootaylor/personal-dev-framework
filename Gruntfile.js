@@ -173,7 +173,10 @@ module.exports = function (grunt) {
 		            position: 'filename'
 		        },
 		        files: {
-		            src: ['<%= dirs.appBuild %>/php_partials/_head.php', '<%= dirs.appBuild %>/php_partials/_footer.php']
+		            src: [
+		                '<%= dirs.appBuild %>/php_partials/_head.php',
+		                '<%= dirs.appBuild %>/php_partials/_footer.php'
+		            ]
 		        }
 
 		    },
@@ -183,7 +186,11 @@ module.exports = function (grunt) {
         // Check JS code
         //
         jshint: {
-			all: ['Gruntfile.js', '<%= dirs.js %>/main.js', '<%= dirs.js %>/plugins.js']
+			all: [
+			    'Gruntfile.js',
+			    '<%= dirs.js %>/main.js',
+			    '<%= dirs.js %>/plugins.js'
+			]
 		},
 
 		//
@@ -216,13 +223,25 @@ module.exports = function (grunt) {
         watch: {
         	// Compiling SCSS on watch...
 			sass: {
-				files: ['<%= dirs.scss %>/**/*.scss'],
-				tasks: ['sass:styles', 'notify:sass'],
+				files: [
+				    '<%= dirs.scss %>/**/*.scss'
+				],
+				tasks: [
+				    'sass:styles',
+				    'notify:sass'
+				],
 			},
 			// Checking JS on watch...
 			js: {
-				files: ['Gruntfile.js', 'static/**/main.js', 'static/**/plugins.js'],
-				tasks: ['jshint:all', 'notify:jshint'],
+				files: [
+				    'Gruntfile.js',
+				    'static/**/main.js',
+				    'static/**/plugins.js'
+				],
+				tasks: [
+				    'jshint:all',
+				    'notify:jshint'
+				],
 			}
 		},
 		
@@ -249,7 +268,17 @@ module.exports = function (grunt) {
 
     // FULL BUILD TASK
     //
-    grunt.registerTask('default', ['sass', 'browserSync', 'postcss', 'jshint', 'uglify', 'image', 'notify', 'copy', 'cachebreaker']);
+    grunt.registerTask('default', [
+        'sass',
+        'browserSync',
+        'postcss',
+        'jshint',
+        'uglify',
+        'image',
+        'notify',
+        'copy',
+        'cachebreaker'
+    ]);
 };
 
 
