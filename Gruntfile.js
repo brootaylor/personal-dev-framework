@@ -42,6 +42,23 @@ module.exports = function (grunt) {
                 }
             }
         },
+        
+        //
+        // SCSS LINT
+        //
+        scsslint: {
+            styles: [
+              '<%= dirs.scss %>/**/*.scss'
+            ],
+            options: {
+                colorizeOutput: true,
+                // Don't lint these SCSS files...
+                exclude: [
+                  '<%= dirs.scss %>/vendors/_normalize.scss',
+                  '<%= dirs.scss %>/vendors/_foo.scss'
+                ]
+            }
+        },
 
         //
         // PostCSS
