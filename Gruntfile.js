@@ -169,7 +169,11 @@ module.exports = function (grunt) {
 		cachebreaker: {
 		    dev: {
 		        options: {
-		            match: ['plugins.js', 'main.js', 'styles.css'],
+		            match: [
+		                'plugins.js',
+		                'main.js',
+		                'styles.css'
+		            ],
 		            position: 'filename'
 		        },
 		        files: {
