@@ -247,7 +247,7 @@ a {
 
 // Implementation Example:
 // =======================
-img {
+.img {
  width: 760px;
  height: 400px;
  @include background-image-retina(monkey, png, 760px, 400px);
