@@ -27,14 +27,42 @@ module.exports = function (grunt) {
         },
 
         //
+        // WATCH
+        //
+        watch: {
+        	// Compiling SCSS on watch...
+			sass: {
+				files: [
+				    '<%= dirs.scss %>/**/*.scss'
+				],
+				tasks: [
+				    'sass',
+				    'notify:sass'
+				],
+			},
+			// Checking JS on watch...
+			js: {
+				files: [
+				    'Gruntfile.js',
+				    'static/**/main.js',
+				    'static/**/plugins.js'
+				],
+				tasks: [
+				    'jshint',
+				    'notify:jshint'
+				],
+			}
+		},
+
+        //
         // SASS
         //
         sass: {
             styles: {
                 options: {
                 	lineNumbers: true, // Boolean. Change to false if required
-                    style: 'compact', // Use for development
-                    //style: 'compressed', // Use for production ready
+                    style: 'compact', // Use for development output
+                    //style: 'compressed', // Use for production ready output
                 },
                 files: {
                 	// Compile SCSS ino CSS...
@@ -220,34 +248,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
-        //
-        // WATCH
-        //
-        watch: {
-        	// Compiling SCSS on watch...
-			sass: {
-				files: [
-				    '<%= dirs.scss %>/**/*.scss'
-				],
-				tasks: [
-				    'sass:styles',
-				    'notify:sass'
-				],
-			},
-			// Checking JS on watch...
-			js: {
-				files: [
-				    'Gruntfile.js',
-				    'static/**/main.js',
-				    'static/**/plugins.js'
-				],
-				tasks: [
-				    'jshint:all',
-				    'notify:jshint'
-				],
-			}
-		},
 		
 		//
         // Browser syncing...
@@ -257,12 +257,14 @@ module.exports = function (grunt) {
                 bsFiles: {
                     src : [
                         '<%= dirs.css %>/*.css',
-                        '<%= dirs.app %>/*.php'
+                        '<%= dirs.js %>/**/*.js',
+                        '<%= dirs.app %>/**/*.php'
                     ]
                 },
                 options: {
                     watchTask: true,
-                    server: 'localhost'
+                    // server: 'localhost:80'
+                    proxy: "localhost"
                 }
             }
         }
@@ -274,14 +276,18 @@ module.exports = function (grunt) {
     //
     grunt.registerTask('default', [
         'sass',
-        'browserSync',
         'postcss',
         'jshint',
         'uglify',
         'image',
         'notify',
         'copy',
-        'cachebreaker'
+        'cachebreaker',
+        'browserSync',
+
+        // Remove 'watch' build task (below) if you don't want the "grunt" command to automatically start watch. Then use "grunt watch" to run the watch tasks specifically.
+        // It's needed here to run 'browserSync' on watch. Otherwise 'browserSync' will only run on a manual "grunt" command.
+        'watch'
     ]);
 };
 
