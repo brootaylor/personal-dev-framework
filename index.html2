@@ -66,6 +66,11 @@
 
         <!-- Masthead & Nav -->
         <header role="banner" id="masthead">
+
+            <!-- Logo -->
+            <a href=""class="logo">
+                <img src="static/img/common/logo.png" alt="Logo">
+            </a>
             
             <!-- 'Burger' icon for menu (navigation) -->
             <a href="#" class="menu-button" id="menuButton">
