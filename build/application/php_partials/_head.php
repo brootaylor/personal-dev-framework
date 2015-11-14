@@ -28,11 +28,12 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.1447521803838.css">
+        <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.1447522764912.css">
 
         <!-- Pick up the latest version or generate a custom Modernizr build -->
         <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/modernizr.custom.72511.js"></script>
 
+        <!-- Or use the html5shiv instead of modernizr -->
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script>window.html5 || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/html5shiv.js"><\/script>')</script>
