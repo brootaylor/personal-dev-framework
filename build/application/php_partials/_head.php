@@ -28,10 +28,10 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
-        <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.1447003100719.css">
+        <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.1447521803838.css">
 
         <!-- Pick up the latest version or generate a custom Modernizr build -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>static/js/vendor/modernizr.custom.72511.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/modernizr.custom.72511.js"></script>
 
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -59,11 +59,15 @@
         <!--
 
             Website content starts here...
-
         -->
 
         <!-- Masthead & Nav -->
         <header role="banner" id="masthead">
+
+            <!-- Logo -->
+            <a href=""class="logo">
+                <img src="static/img/common/logo.png" alt="Logo">
+            </a>
             
             <!-- 'Burger' icon for menu (navigation) -->
             <a href="#" class="menu-button" id="menuButton">
