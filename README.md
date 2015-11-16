@@ -108,7 +108,7 @@ jshint: {
 
 ### "uglify"
 
-Minifies the JavaScript and copies to build directory.
+Minifies the JavaScript and copies to the build directory.
 
 ```js
 uglify: {
