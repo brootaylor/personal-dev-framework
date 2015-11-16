@@ -23,7 +23,7 @@
         <meta name="copyright" content="Somebody">
 
         <link rel="author" href="humans.txt">
-        <link rel="canonical" href="http://joeblogs.com">
+        <link rel="canonical" href="http://brootaylor.com">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
@@ -56,7 +56,6 @@
                 <p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of joeblogs.com.</p>
             </div>
         <![endif]-->
-
 
         <!--
 
@@ -94,18 +93,10 @@
         </footer>
         <!-- / Footer content -->
 
-
         <!--
 
             ...and ends here
 
-        -->
-
-
-        <!-- 
-        
-            Check out this for using JS without jQuery
-            ==>> http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
         -->
 
         <!-- /// JavaScript \\\ -->
