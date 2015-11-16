@@ -21,6 +21,25 @@ You're welcome to use it.
 * A simple PHP based application framework.
 * A build directory output example.
 
+## Grunt config task breakdown
+
+### "sass"
+```js
+sass: {
+    styles: {
+        options: {
+        	lineNumbers: true, // Boolean. Change to false if required
+            style: 'compact', // Use for development output
+            //style: 'compressed', // Use for production ready output
+        },
+        files: {
+        	// Compile SCSS ino CSS...
+            '<%= dirs.css %>/styles.css': '<%= dirs.scss %>/styles.scss',
+        }
+    }
+},
+```
+
 ## Helpful resource links
 
 ### http-server
