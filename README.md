@@ -10,7 +10,7 @@ You're welcome to use it.
 
 * Top level HTML5 elements.
 * Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers and default print CSS - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
-* A [Gruntfile.js](http://gruntjs.com/) strawman for common tasks I use.
+* A [Grunt](https://github.com/brootaylor/personal-dev-framework/blob/master/README.md#grunt-config-task-breakdown) strawman for common build tasks I use.
 * The latest [jQuery](https://jquery.com/) via CDN, with a local fallback.
 * The latest [Modernizr](http://modernizr.com/) build for feature detection. Worth noting that it doesn't have every feature enabled though.
 * Protection against any stray `console` statements causing JavaScript errors
@@ -21,7 +21,7 @@ You're welcome to use it.
 * A simple PHP based application framework.
 * A build directory output example.
 
-## Grunt config task breakdown
+## Grunt config tasks
 
 ### "sass"
 ```js
