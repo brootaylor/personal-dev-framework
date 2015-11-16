@@ -4,17 +4,10 @@
         </footer>
         <!-- / Footer content -->
 
-
         <!--
 
             ...and ends here
 
-        -->
-
-        <!-- 
-        
-            Check out this for using JS without jQuery
-            ==>> http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
         -->
 
         <!-- /// JavaScript \\\ -->
