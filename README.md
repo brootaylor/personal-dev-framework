@@ -27,7 +27,10 @@ You're welcome to use it.
 
 [http-server](https://www.npmjs.com/package/http-server) is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
 
-* Install globally - ```shell npm install http-server -g ```
+* Install globally...
+```shell
+npm install http-server -g
+```
 * Command line to directory path and run - "http-server"
 
 ### Web performance
