@@ -1,7 +1,7 @@
 {
-  "name": "Something",
+  "name": "A Personal Web Dev Framework",
   "version": "0.0.1",
-  "description": "The project dependencies.",
+  "description": "The web dev framework dependencies.",
   "author": "Bruce Taylor (http://brootaylor.com)",
   "repository": {
     "type": "git",
