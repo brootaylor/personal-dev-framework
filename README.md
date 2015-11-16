@@ -24,6 +24,8 @@ You're welcome to use it.
 
 ## Grunt config tasks
 
+This is a breakdown of the Grunt tasks in the Grunt file.
+
 ### "sass"
 
 Compiles SASS or SCSS into CSS.
