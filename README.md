@@ -279,6 +279,8 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * A more robust MVC.
 * Accessibility considerations and examples.
 
+Suggestions welcome.
+
 ## Helpful resource links
 
 ### Web Performance & Testing
@@ -286,6 +288,7 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * http://www.webpagetest.org/
 * https://www.browserstack.com/
 * https://whatdoesmysitecost.com/
+* https://www.filamentgroup.com/lab/delivering-responsibly.html
 * https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/
 
 ### Compatability
