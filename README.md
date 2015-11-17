@@ -142,7 +142,7 @@ uglify: {
 
 ### "image"
 
-Compresses imagery copies to the `build` directory.
+Compresses imagery and copies to the `build` directory.
 
 ```js
 image: {
