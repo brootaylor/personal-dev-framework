@@ -273,7 +273,9 @@ http-server
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
-* Inlining critical CSS - Together with cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
+* Inlining critical CSS.
+* Loading CSS asynchronously with `<noscript>...</noscript>` fallback.
+* Cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
 * A more robust MVC.
 * Accessibility considerations and examples.
 
@@ -306,7 +308,11 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 ### SASS/SCSS/CSS
 
 * https://adactio.com/journal/8504
-* http://sassbreak.com/watch-your-sass/
+
+### JavaScript
+
+* http://jshint.com/
+* http://superherojs.com/
 
 ### Typography
 
