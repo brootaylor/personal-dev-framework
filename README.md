@@ -269,12 +269,27 @@ npm install http-server -g
 http-server
 ```
 
+### Future enhancements
+
+Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
+
+* Inlining critical CSS.
+* A more robust MVC.
+* Accessibility considerations and examples.
+
 ## Helpful resource links
 
-### Web performance
+### Web Performance & Testing
 
+* http://www.webpagetest.org/
+* https://www.browserstack.com/
 * https://whatdoesmysitecost.com/
 * https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/
+
+### Compatability
+
+* http://caniuse.com/
+* https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints
 
 ### Git
 
