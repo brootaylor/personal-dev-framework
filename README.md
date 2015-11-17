@@ -92,6 +92,24 @@ postcss: {
 },
 ```
 
+### "concat"
+
+JavaScript concatenation.
+
+```js
+concat: {
+    dist: {
+        src: [
+            '<%= dirs.js %>/vendor/*.js', // All JS in the vendor folder
+            '<%= dirs.js %>/plugins.js',  // This specific file
+            '<%= dirs.js %>/foo.js',  // This specific file
+            '<%= dirs.js %>/main.js',  // This specific file
+        ],
+        dest: '<%= dirs.jsBuild %>/scripts.js',
+    }
+},
+```
+
 ### "jshint"
 
 Checks JavaScript for any errors.
