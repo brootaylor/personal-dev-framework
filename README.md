@@ -275,7 +275,7 @@ browserSync: {
 
 ## http-server
 
-`[http-server](https://www.npmjs.com/package/http-server)` is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
+[`http-server`](https://www.npmjs.com/package/http-server) is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
 
 * Install `http-server` globally...
 ```shell
