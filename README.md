@@ -126,7 +126,7 @@ jshint: {
 
 ### "uglify"
 
-Minifies the JavaScript and copies to the build directory.
+Minifies the JavaScript and copies to the `build` directory.
 
 ```js
 uglify: {
@@ -142,7 +142,7 @@ uglify: {
 
 ### "image"
 
-Compresses imagery.
+Compresses imagery copies to the `build` directory.
 
 ```js
 image: {
@@ -170,7 +170,7 @@ image: {
 
 ### "copy"
 
-Copies specified files to the build directory.
+Copies specified files to the `build` directory.
 
 ```js
 copy: {
@@ -199,7 +199,7 @@ copy: {
 
 ### "cachebreaker"
 
-Appends a 'cachebreaker' timestamp to 'plugins.js', 'main.js' & 'styles.css' which are all located in the 'build' directory. Ensures the browser gets your latest CSS and JS.
+Appends a `cachebreaker` timestamp to `plugins.js`, `main.js` & `styles.css` which are all located in the `build` directory. Ensures the browser gets your latest CSS and JS.
 
 ```js
 cachebreaker: {
@@ -275,9 +275,9 @@ browserSync: {
 
 ## http-server
 
-[http-server](https://www.npmjs.com/package/http-server) is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
+`[http-server](https://www.npmjs.com/package/http-server)` is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
 
-* Install http-server globally...
+* Install `http-server` globally...
 ```shell
 npm install http-server -g
 ```
