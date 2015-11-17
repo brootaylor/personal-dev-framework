@@ -266,7 +266,6 @@ browserSync: {
         },
         options: {
             watchTask: true,
-            // server: 'localhost:80'
             proxy: "localhost"
         }
     }
