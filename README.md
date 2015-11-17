@@ -269,7 +269,7 @@ npm install http-server -g
 http-server
 ```
 
-### Future enhancements
+## Future enhancements
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
