@@ -115,17 +115,17 @@ module.exports = function (grunt) {
         //
         // JS Concatenation...
         //
-        // concat: {
-        //   	dist: {
-		//         src: [
-		//             'static/js/libs/*.js', // All JS in the libs folder
-		//             'static/js/plugins.js',  // This specific file
-		//             'static/js/foo.js',  // This specific file
-		//             'static/js/scripts.js',  // This specific file
-		//         ],
-		//         dest: 'build/js/scripts.js',
-		//     }
-		// },
+        concat: {
+          	dist: {
+                src: [
+                    '<%= dirs.js %>/vendor/*.js', // All JS in the vendor folder
+                    '<%= dirs.js %>/plugins.js',  // This specific file
+                    '<%= dirs.js %>/foo.js',  // This specific file
+                    '<%= dirs.js %>/main.js',  // This specific file
+                ],
+                dest: '<%= dirs.jsBuild %>/scripts.js',
+            }
+        },
 
 		//
 		// JS Minification...
