@@ -279,6 +279,9 @@ http-server
 ### Git
 
 * http://nvie.com/posts/a-successful-git-branching-model/
+* https://www.atlassian.com/git/tutorials/
+* http://rogerdudler.github.io/git-guide/
+* http://gitref.org/
 
 ### Grunt
 
