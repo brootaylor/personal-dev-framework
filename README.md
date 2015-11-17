@@ -181,7 +181,7 @@ copy: {
 
 ### "cachebreaker"
 
-Appends a 'cachebreaker' timestamp to 'plugins.js', 'main.js' & 'styles.css' which are all located in the 'build' directory.
+Appends a 'cachebreaker' timestamp to 'plugins.js', 'main.js' & 'styles.css' which are all located in the 'build' directory. Ensures the browser gets your latest CSS and JS.
 
 ```js
 cachebreaker: {
@@ -273,7 +273,7 @@ http-server
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
-* Inlining critical CSS.
+* Inlining critical CSS - Together with cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
 * A more robust MVC.
 * Accessibility considerations and examples.
 
