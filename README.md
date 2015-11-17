@@ -199,7 +199,7 @@ copy: {
 
 ### "cachebreaker"
 
-Appends a `cachebreaker` timestamp to `plugins.js`, `main.js` & `styles.css` which are all located in the `build` directory. Ensures the browser gets your latest CSS and JS.
+Appends a `cachebreaker` timestamp to `plugins.js`, `main.js` & `styles.css` which are all located in the `build` directory. Ensures the browser gets the latest CSS and JS.
 
 ```js
 cachebreaker: {
