@@ -276,6 +276,10 @@ http-server
 * https://whatdoesmysitecost.com/
 * https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/
 
+### Git
+
+* http://nvie.com/posts/a-successful-git-branching-model/
+
 ### Grunt
 
 * http://24ways.org/2013/grunt-is-not-weird-and-hard/
