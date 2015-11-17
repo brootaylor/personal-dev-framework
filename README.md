@@ -94,7 +94,7 @@ postcss: {
 
 ### "concat"
 
-JavaScript concatenation.
+Concatenation of files. In this instance it's just JavaScript.
 
 ```js
 concat: {
