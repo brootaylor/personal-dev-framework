@@ -8,7 +8,6 @@ You're welcome to use it.
 
 ## What's in it?
 
-* `dev` branch.
 * Top level HTML5 elements.
 * Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers and default print CSS - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A [Grunt strawman](#grunt-config-tasks) for common build tasks I use.
