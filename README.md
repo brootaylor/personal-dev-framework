@@ -68,7 +68,7 @@ npm install http-server -g
 http-server
 ```
 
-This launches a local server at localhost:8080 with **'browserSync'** for changes to .html and .php files or anything in the /application and /static directories. This runs using the default build and watches for any changes.
+This launches a local server at ```localhost:8080``` with **'browserSync'** for changes to ```.html``` and ```.php``` files or anything in the ```/application``` and ```/static``` directories. This runs using the default Grunt build and watches for any changes.
 
 ## Grunt config tasks
 
