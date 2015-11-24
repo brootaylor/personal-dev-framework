@@ -47,6 +47,19 @@ To produce a full build, run the following command which will output the CSS, JS
 grunt build
 ```
 
+## Need a simple local server?
+
+[http-server](https://www.npmjs.com/package/http-server) is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
+
+* Install `http-server` globally...
+```shell
+npm install http-server -g
+```
+* Command line to required directory path and run...
+```shell
+http-server
+```
+
 ## Grunt config tasks
 
 This is a breakdown of the Grunt tasks in the Grunt file.
@@ -295,20 +308,6 @@ browserSync: {
         }
     }
 },
-```
-
-
-## http-server
-
-[http-server](https://www.npmjs.com/package/http-server) is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
-
-* Install `http-server` globally...
-```shell
-npm install http-server -g
-```
-* Command line to required directory path and run...
-```shell
-http-server
 ```
 
 ## Future enhancements
