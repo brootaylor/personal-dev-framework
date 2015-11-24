@@ -24,10 +24,12 @@
  
 .span-two {
     width: calculate-width(2); // spans 2 columns, width = 50%
+    width: calc(100% / 2); // Future-proofing (Make into SASS function)
 }
  
 .span-three {
     width: calculate-width(3); // spans 3 columns, width = 33.3%
+    width: calc(100% / 3); // Future-proofing (Make into SASS function)
 }
 
 
