@@ -32,13 +32,16 @@ module.exports = function (grunt) {
         watch: {
         	// Compiling SCSS on watch...
 			sass: {
-				files: [
-				    '<%= dirs.scss %>/**/*.scss'
-				],
-				tasks: [
-				    'sass',
-				    'notify:sass'
-				],
+                // Development output...
+                dev: {
+    				files: [
+    				    '<%= dirs.scss %>/**/*.scss'
+    				],
+    				tasks: [
+    				    'sass',
+    				    'notify:sass'
+    				]
+                }
 			},
 			// Checking JS on watch...
 			js: {
@@ -50,7 +53,7 @@ module.exports = function (grunt) {
 				tasks: [
 				    'jshint',
 				    'notify:jshint'
-				],
+				]
 			}
 		},
 
@@ -284,6 +287,8 @@ module.exports = function (grunt) {
     });
 
     // DEFAULT 'WATCH' TASKS...
+    // =========================
+
     // Type 'grunt'
     grunt.registerTask('default', [
         'sass:dev',
@@ -297,7 +302,10 @@ module.exports = function (grunt) {
         'watch'
     ]);
 
-    // DEFAULT BUILD TASKS...
+
+    // FULL BUILD TASKS...
+    // =======================
+
     // Type 'grunt build'
     grunt.registerTask('build', [
         'sass:prod',
