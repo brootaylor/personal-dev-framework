@@ -32,13 +32,16 @@ module.exports = function (grunt) {
         watch: {
         	// Compiling SCSS on watch...
 			sass: {
-				files: [
-				    '<%= dirs.scss %>/**/*.scss'
-				],
-				tasks: [
-				    'sass',
-				    'notify:sass'
-				],
+                // Development output...
+                dev: {
+    				files: [
+    				    '<%= dirs.scss %>/**/*.scss'
+    				],
+    				tasks: [
+    				    'sass',
+    				    'notify:sass'
+    				]
+                }
 			},
 			// Checking JS on watch...
 			js: {
@@ -50,7 +53,7 @@ module.exports = function (grunt) {
 				tasks: [
 				    'jshint',
 				    'notify:jshint'
-				],
+				]
 			}
 		},
 
@@ -58,14 +61,25 @@ module.exports = function (grunt) {
         // SASS
         //
         sass: {
-            styles: {
+            // Development output...
+            dev: {
                 options: {
-                	lineNumbers: true, // Boolean. Change to false if required
+                	lineNumbers: true,
                     style: 'compact', // Use for development output
-                    //style: 'compressed', // Use for production ready output
                 },
                 files: {
                 	// Compile SCSS ino CSS...
+                    '<%= dirs.css %>/styles.css': '<%= dirs.scss %>/styles.scss',
+                }
+            },
+            // Production output...
+            prod: {
+                options: {
+                    lineNumbers: false,
+                    style: 'compressed', // Use for production ready output
+                },
+                files: {
+                    // Compile SCSS ino CSS...
                     '<%= dirs.css %>/styles.css': '<%= dirs.scss %>/styles.scss',
                 }
             }
@@ -272,22 +286,36 @@ module.exports = function (grunt) {
 
     });
 
-    // FULL BUILD TASK
-    //
+    // DEFAULT 'WATCH' TASKS...
+    // =========================
+
+    // Type 'grunt'
+    grunt.registerTask('watch', [
+        'sass:dev',
+        'postcss',
+        'jshint',
+        'notify',
+        'browserSync',
+
+        // Remove 'watch' build task (below) if you don't want the "grunt" command to automatically start watch. Then use "grunt watch" to run the watch tasks specifically.
+        // It's needed here to run 'browserSync' on watch. Otherwise 'browserSync' will only run on a manual "grunt" command.
+        'watch'
+    ]);
+
+
+    // FULL BUILD TASKS...
+    // =======================
+
+    // Type 'grunt build'
     grunt.registerTask('default', [
-        'sass',
+        'sass:prod',
         'postcss',
         'jshint',
         'uglify',
         'image',
         'notify',
         'copy',
-        'cachebreaker',
-        'browserSync',
-
-        // Remove 'watch' build task (below) if you don't want the "grunt" command to automatically start watch. Then use "grunt watch" to run the watch tasks specifically.
-        // It's needed here to run 'browserSync' on watch. Otherwise 'browserSync' will only run on a manual "grunt" command.
-        'watch'
+        'cachebreaker'
     ]);
 };
 

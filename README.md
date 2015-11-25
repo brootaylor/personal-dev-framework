@@ -22,6 +22,54 @@ You're welcome to use it.
 * Simple, zero-configuration command-line [http server](#http-server).
 * Build directory output example.
 
+## Installation
+*Requirements: Node, NPM and Grunt installed globally*
+
+To install as a new project, checkout the repo and run the following commands
+
+```
+npm install
+```
+
+Should you run in to errors when using the **'npm install'** command, the best solution is to cancel the command using **CTRL+C** and then typing the following command:
+
+```
+npm cache clean
+```
+
+Once this has been done, you can once again attempt to run **'npm install'**. This may take a few attempts if you are running an older version of Node (specifically 0.10.29 or older). It's worth upgrading your version of Node if you can.
+
+### Watching Files
+Automatic watching of files can be used. To run, simply use the command
+
+```
+grunt watch
+```
+
+Any edits of SCSS files or JS files will result in the correct bundle being recreated.
+
+### Full Build
+To produce a full build, run the following command which will output the CSS, JS, Imagery & PHP partials markup into the 'build' directory.
+
+```
+grunt
+```
+
+## Need a simple local server?
+
+[http-server](https://www.npmjs.com/package/http-server) is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
+
+* Install `http-server` globally...
+```shell
+npm install http-server -g
+```
+* Command line to required directory path and run...
+```shell
+http-server
+```
+
+This launches a local server at ```localhost:8080```. The default Grunt build uses **'browserSync'** and watches for any changes to ```.html``` and ```.php``` files or anything in the ```/application``` and ```/static``` directories. The browser automatically renders any changes.
+
 ## Grunt config tasks
 
 This is a breakdown of the Grunt tasks in the Grunt file.
@@ -33,12 +81,12 @@ Compiles SASS or SCSS into CSS.
 sass: {
     styles: {
         options: {
-        	lineNumbers: true, // Boolean. Change to false if required
+            lineNumbers: true, // Boolean. Change to false if required
             style: 'compact', // Use for development output
             //style: 'compressed', // Use for production ready output
         },
         files: {
-        	// Compile SCSS ino CSS...
+            // Compile SCSS ino CSS...
             '<%= dirs.css %>/styles.css': '<%= dirs.scss %>/styles.scss',
         }
     }
@@ -71,24 +119,24 @@ Adds vendor prefixes to CSS.
 
 ```js
 postcss: {
-	options: {
-		// map: false, // inline sourcemaps
+    options: {
+        // map: false, // inline sourcemaps
 
-		// or
-		map: {
-			inline: false, // save all sourcemaps as separate files...
-			annotation: 'static/css/maps/' // ...to the specified directory
-		},
+        // or
+        map: {
+            inline: false, // save all sourcemaps as separate files...
+            annotation: 'static/css/maps/' // ...to the specified directory
+        },
 
-		processors: [
-			//require('pixrem')(), // add fallbacks for rem units
-			require('autoprefixer')({browsers: 'last 10 versions'}), // add vendor prefixes
-			//require('cssnano')() // minify the result
-		]
-	},
-		dist: {
-			src: '<%= dirs.css %>/*.css'
-		}
+        processors: [
+            //require('pixrem')(), // add fallbacks for rem units
+            require('autoprefixer')({browsers: 'last 10 versions'}), // add vendor prefixes
+            //require('cssnano')() // minify the result
+        ]
+    },
+        dist: {
+            src: '<%= dirs.css %>/*.css'
+        }
 },
 ```
 
@@ -116,11 +164,11 @@ Checks JavaScript for any errors.
 
 ```js
 jshint: {
-	all: [
-	    'Gruntfile.js',
-	    '<%= dirs.js %>/main.js',
-	    '<%= dirs.js %>/plugins.js'
-	]
+    all: [
+        'Gruntfile.js',
+        '<%= dirs.js %>/main.js',
+        '<%= dirs.js %>/plugins.js'
+    ]
 },
 ```
 
@@ -131,7 +179,7 @@ Minifies the JavaScript and copies to the `build` directory.
 ```js
 uglify: {
     dist: {
-    	// Specifying multiple dest/src pairs...
+        // Specifying multiple dest/src pairs...
         files: {
             '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
             '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js'
@@ -147,7 +195,7 @@ Compresses imagery and copies to the `build` directory.
 ```js
 image: {
   dynamic: {
-  	options: {
+    options: {
       pngquant: true,
       optipng: false,
       zopflipng: true,
@@ -175,23 +223,23 @@ Copies specified files to the `build` directory.
 ```js
 copy: {
     dist: {
-    	// Specifying multiple dest/src pairs...
+        // Specifying multiple dest/src pairs...
         files: {
-        	// CSS files...
-        	'<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
+            // CSS files...
+            '<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
-        	// Javascript library files...
-        	'<%= dirs.jsBuild %>/vendor/jquery-1.11.3.min.js': '<%= dirs.js %>/vendor/jquery-1.11.3.min.js',
-        	'<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
+            // Javascript library files...
+            '<%= dirs.jsBuild %>/vendor/jquery-1.11.3.min.js': '<%= dirs.js %>/vendor/jquery-1.11.3.min.js',
+            '<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
-        	// PHP partial files...
-        	'<%= dirs.appBuild %>/php_partials/_variables.php': '<%= dirs.app %>/php_partials/_variables.php',
-        	'<%= dirs.appBuild %>/php_partials/_config.php': '<%= dirs.app %>/php_partials/_config.php',
-        	'<%= dirs.appBuild %>/php_partials/_head.php': '<%= dirs.app %>/php_partials/_head.php',
-        	'<%= dirs.appBuild %>/php_partials/_footer.php': '<%= dirs.app %>/php_partials/_footer.php',
+            // PHP partial files...
+            '<%= dirs.appBuild %>/php_partials/_variables.php': '<%= dirs.app %>/php_partials/_variables.php',
+            '<%= dirs.appBuild %>/php_partials/_config.php': '<%= dirs.app %>/php_partials/_config.php',
+            '<%= dirs.appBuild %>/php_partials/_head.php': '<%= dirs.app %>/php_partials/_head.php',
+            '<%= dirs.appBuild %>/php_partials/_footer.php': '<%= dirs.app %>/php_partials/_footer.php',
 
-        	// PHP template files...
-        	'<%= dirs.appBuild %>/php_templates/template.php': '<%= dirs.app %>/php_templates/template.php'
+            // PHP template files...
+            '<%= dirs.appBuild %>/php_templates/template.php': '<%= dirs.app %>/php_templates/template.php'
         }
     }
 },
@@ -272,20 +320,6 @@ browserSync: {
 },
 ```
 
-
-## http-server
-
-[http-server](https://www.npmjs.com/package/http-server) is a simple, zero-configuration command-line http server. It is powerful enough for production usage, but it's simple and hackable enough to be used for testing, local development, and learning.
-
-* Install `http-server` globally...
-```shell
-npm install http-server -g
-```
-* Command line to required directory path and run...
-```shell
-http-server
-```
-
 ## Future enhancements
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
@@ -293,49 +327,60 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * Inlining critical CSS.
 * Loading CSS asynchronously with `<noscript>...</noscript>` fallback.
 * Cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
+* Add Gulp build alternative.
+* A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
 * A more robust MVC.
 * Accessibility considerations and examples.
 
 Suggestions welcome.
 
-## Helpful resource links
+## Helpful resource links & worthwhile reads
 
 ### Web Performance & Testing
 
-* http://www.webpagetest.org/
-* https://www.browserstack.com/
-* https://whatdoesmysitecost.com/
-* https://www.filamentgroup.com/lab/delivering-responsibly.html
-* https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/
+* [Web Page Test](http://www.webpagetest.org/)
+* [BrowserStack](https://www.browserstack.com/)
+* [What Does My Site Cost?](https://whatdoesmysitecost.com/)
+* [Delivering Responsibly](https://www.filamentgroup.com/lab/delivering-responsibly.html) - *(Scott Jehl)*
+* [Strategies for Staying on Top of Web Performance](https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/) - *(Chris Coyier)*
 
-### Compatability
+### Browser Compatability
 
-* http://caniuse.com/
-* https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints
+* [Can I use...?](http://caniuse.com/)
 
 ### Git
 
-* http://nvie.com/posts/a-successful-git-branching-model/
-* https://www.atlassian.com/git/tutorials/
-* http://rogerdudler.github.io/git-guide/
-* http://gitref.org/
+* [Git - the simple guide](http://rogerdudler.github.io/git-guide/)
+* [Git Reference](http://gitref.org/)
+* [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
-### Grunt
+### Grunt & Gulp
 
-* http://24ways.org/2013/grunt-is-not-weird-and-hard/
-* https://medium.com/@verpixelt/get-started-with-grunt-76d29dc25b01
+* [Getting started with Grunt](https://medium.com/@verpixelt/get-started-with-grunt-76d29dc25b01)
+* [Getting Started with Gulp](http://alistapart.com/blog/post/getting-started-with-gulp)
 
 ### SASS/SCSS/CSS
 
-* http://www.atozcss.com/
-* https://adactio.com/journal/8504
+* [A to Z CSS](http://www.atozcss.com/)
+* [CSS Values](http://cssvalues.com/)
+* [CSS3 Click Chart](http://css3clickchart.com/)
+* [Things To Avoid When Writing CSS](https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.jwzjbpoz0) - *(Part 1)*
+* [Things To Avoid When Writing CSS](https://medium.com/@Heydon/things-to-avoid-when-writing-css-part-2-7639f0f6880d#.45ptuw2eg) - *(Part 2)*
+* [Axiomatic CSS and Lobotomized Owls](http://alistapart.com/article/axiomatic-css-and-lobotomized-owls) - *(Heydon Pickering)*
+* [Inlining critical CSS for first-time visits](https://adactio.com/journal/8504) - *(Jeremy Keith)*
 
-### JavaScript
+### JavaScript/jQuery
 
-* http://jshint.com/
-* http://superherojs.com/
+* [JS Hint](http://jshint.com/)
+* [Superhero.js](http://superherojs.com/)
+* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery)
 
 ### Typography
 
-* http://madebymike.com.au/writing/precise-control-responsive-typography/
+* [Precise control over responsive typography](http://madebymike.com.au/writing/precise-control-responsive-typography/)
+
+### Front-end Dev Tools & Helps
+
+* [Totally Tooling Tips](https://developers.google.com/web/shows/ttt/?hl=en) - *(Google)*
+* [Front-end Job Interview Questions](http://h5bp.github.io/Front-end-Developer-Interview-Questions/)
 
