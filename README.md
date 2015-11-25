@@ -342,7 +342,7 @@ Suggestions welcome.
 * [BrowserStack](https://www.browserstack.com/)
 * [What Does My Site Cost?](https://whatdoesmysitecost.com/)
 * [Delivering Responsibly - (Scott Jehl)](https://www.filamentgroup.com/lab/delivering-responsibly.html)
-* [Strategies for Staying on Top of Web Performance - (Chris Coyier)](https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/)
+* [Strategies for Staying on Top of Web Performance](https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/) - *(Chris Coyier)*
 
 ### Browser Compatability
 
