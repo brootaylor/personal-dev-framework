@@ -334,44 +334,54 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 
 Suggestions welcome.
 
-## Helpful resource links
+## Helpful resource links & worthwhile reads
 
 ### Web Performance & Testing
 
-* http://www.webpagetest.org/
-* https://www.browserstack.com/
-* https://whatdoesmysitecost.com/
-* https://www.filamentgroup.com/lab/delivering-responsibly.html
-* https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/
+* [Web Page Test](http://www.webpagetest.org/)
+* [BrowserStack](https://www.browserstack.com/)
+* [What Does My Site Cost?](https://whatdoesmysitecost.com/)
+* [Delivering Responsibly - (Scott Jehl)](https://www.filamentgroup.com/lab/delivering-responsibly.html)
+* [Strategies for Staying on Top of Web Performance - (Chris Coyier)](https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/)
 
-### Compatability
+### Browser Compatability
 
-* http://caniuse.com/
-* https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints
+* [Can I use...?](http://caniuse.com/)
 
 ### Git
 
-* http://nvie.com/posts/a-successful-git-branching-model/
-* https://www.atlassian.com/git/tutorials/
-* http://rogerdudler.github.io/git-guide/
-* http://gitref.org/
+* [Git - the simple guide](http://rogerdudler.github.io/git-guide/)
+* [Git Reference](http://gitref.org/)
+* [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 
-### Grunt
+### Grunt & Gulp
 
-* http://24ways.org/2013/grunt-is-not-weird-and-hard/
-* https://medium.com/@verpixelt/get-started-with-grunt-76d29dc25b01
+* [Getting started with Grunt](https://medium.com/@verpixelt/get-started-with-grunt-76d29dc25b01)
+* [Getting Started with Gulp](http://alistapart.com/blog/post/getting-started-with-gulp)
 
 ### SASS/SCSS/CSS
 
-* http://www.atozcss.com/
-* https://adactio.com/journal/8504
+* [A to Z CSS](http://www.atozcss.com/)
+* [CSS Values](http://cssvalues.com/)
+* [CSS3 Click Chart](http://css3clickchart.com/)
+---
+* [Things To Avoid When Writing CSS - (Part 1)](https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.jwzjbpoz0)
+* [Things To Avoid When Writing CSS - (Part 2)](https://medium.com/@Heydon/things-to-avoid-when-writing-css-part-2-7639f0f6880d#.45ptuw2eg)
+* [Axiomatic CSS and Lobotomized Owls - (Heydon Pickering)](http://alistapart.com/article/axiomatic-css-and-lobotomized-owls)
+* [Inlining critical CSS for first-time visits - (Jeremy Keith)](https://adactio.com/journal/8504)
 
-### JavaScript
+### JavaScript/jQuery
 
-* http://jshint.com/
-* http://superherojs.com/
+* [JS Hint](http://jshint.com/)
+* [Superhero.js](http://superherojs.com/)
+* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery)
 
 ### Typography
 
-* http://madebymike.com.au/writing/precise-control-responsive-typography/
+* [Precise control over responsive typography](http://madebymike.com.au/writing/precise-control-responsive-typography/)
+
+### Front-end Dev Tools & Helps
+
+* [Totally Tooling Tips - (Google)](https://developers.google.com/web/shows/ttt/?hl=en)
+* [Front-end Job Interview Questions](http://h5bp.github.io/Front-end-Developer-Interview-Questions/)
 
