@@ -364,7 +364,6 @@ Suggestions welcome.
 * [A to Z CSS](http://www.atozcss.com/)
 * [CSS Values](http://cssvalues.com/)
 * [CSS3 Click Chart](http://css3clickchart.com/)
----
 * [Things To Avoid When Writing CSS](https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.jwzjbpoz0) - *(Part 1)*
 * [Things To Avoid When Writing CSS](https://medium.com/@Heydon/things-to-avoid-when-writing-css-part-2-7639f0f6880d#.45ptuw2eg) - *(Part 2)*
 * [Axiomatic CSS and Lobotomized Owls](http://alistapart.com/article/axiomatic-css-and-lobotomized-owls) - *(Heydon Pickering)*
