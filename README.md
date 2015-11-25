@@ -341,7 +341,7 @@ Suggestions welcome.
 * [Web Page Test](http://www.webpagetest.org/)
 * [BrowserStack](https://www.browserstack.com/)
 * [What Does My Site Cost?](https://whatdoesmysitecost.com/)
-* [Delivering Responsibly - (Scott Jehl)](https://www.filamentgroup.com/lab/delivering-responsibly.html)
+* [Delivering Responsibly](https://www.filamentgroup.com/lab/delivering-responsibly.html) - *(Scott Jehl)*
 * [Strategies for Staying on Top of Web Performance](https://css-tricks.com/strategies-for-staying-on-top-of-web-performance/) - *(Chris Coyier)*
 
 ### Browser Compatability
@@ -365,10 +365,10 @@ Suggestions welcome.
 * [CSS Values](http://cssvalues.com/)
 * [CSS3 Click Chart](http://css3clickchart.com/)
 ---
-* [Things To Avoid When Writing CSS - (Part 1)](https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.jwzjbpoz0)
-* [Things To Avoid When Writing CSS - (Part 2)](https://medium.com/@Heydon/things-to-avoid-when-writing-css-part-2-7639f0f6880d#.45ptuw2eg)
-* [Axiomatic CSS and Lobotomized Owls - (Heydon Pickering)](http://alistapart.com/article/axiomatic-css-and-lobotomized-owls)
-* [Inlining critical CSS for first-time visits - (Jeremy Keith)](https://adactio.com/journal/8504)
+* [Things To Avoid When Writing CSS](https://medium.com/@Heydon/things-to-avoid-when-writing-css-1a222c43c28f#.jwzjbpoz0) - *(Part 1)*
+* [Things To Avoid When Writing CSS](https://medium.com/@Heydon/things-to-avoid-when-writing-css-part-2-7639f0f6880d#.45ptuw2eg) - *(Part 2)*
+* [Axiomatic CSS and Lobotomized Owls](http://alistapart.com/article/axiomatic-css-and-lobotomized-owls) - *(Heydon Pickering)*
+* [Inlining critical CSS for first-time visits](https://adactio.com/journal/8504) - *(Jeremy Keith)*
 
 ### JavaScript/jQuery
 
@@ -382,6 +382,6 @@ Suggestions welcome.
 
 ### Front-end Dev Tools & Helps
 
-* [Totally Tooling Tips - (Google)](https://developers.google.com/web/shows/ttt/?hl=en)
+* [Totally Tooling Tips](https://developers.google.com/web/shows/ttt/?hl=en) - *(Google)*
 * [Front-end Job Interview Questions](http://h5bp.github.io/Front-end-Developer-Interview-Questions/)
 
