@@ -43,7 +43,7 @@ Once this has been done, you can once again attempt to run **'npm install'**. Th
 Automatic watching of files can be used. To run, simply use the command
 
 ```
-grunt
+grunt watch
 ```
 
 Any edits of SCSS files or JS files will result in the correct bundle being recreated.
@@ -52,7 +52,7 @@ Any edits of SCSS files or JS files will result in the correct bundle being recr
 To produce a full build, run the following command which will output the CSS, JS, Imagery & PHP partials markup into the 'build' directory.
 
 ```
-grunt build
+grunt
 ```
 
 ## Need a simple local server?
