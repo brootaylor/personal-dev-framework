@@ -290,7 +290,7 @@ module.exports = function (grunt) {
     // =========================
 
     // Type 'grunt'
-    grunt.registerTask('default', [
+    grunt.registerTask('watch', [
         'sass:dev',
         'postcss',
         'jshint',
@@ -307,7 +307,7 @@ module.exports = function (grunt) {
     // =======================
 
     // Type 'grunt build'
-    grunt.registerTask('build', [
+    grunt.registerTask('default', [
         'sass:prod',
         'postcss',
         'jshint',
