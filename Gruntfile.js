@@ -27,37 +27,6 @@ module.exports = function (grunt) {
         },
 
         //
-        // WATCH
-        //
-        watch: {
-        	// Compiling SCSS on watch...
-			sass: {
-                // Development output...
-                dev: {
-    				files: [
-    				    '<%= dirs.scss %>/**/*.scss'
-    				],
-    				tasks: [
-    				    'sass',
-    				    'notify:sass'
-    				]
-                }
-			},
-			// Checking JS on watch...
-			js: {
-				files: [
-				    'Gruntfile.js',
-				    'static/**/main.js',
-				    'static/**/plugins.js'
-				],
-				tasks: [
-				    'jshint',
-				    'notify:jshint'
-				]
-			}
-		},
-
-        //
         // SASS
         //
         sass: {
@@ -281,16 +250,44 @@ module.exports = function (grunt) {
                     proxy: "localhost"
                 }
             }
+        },
+
+        //
+        // WATCH
+        //
+        watch: {
+            // Compiling SCSS on watch...
+            sass: {
+                files: [
+                    '<%= dirs.scss %>/**/*.scss'
+                ],
+                tasks: [
+                    'sass:dev:options',
+                    'notify:sass'
+                ]
+            },
+            // Checking JS on watch...
+            js: {
+                files: [
+                    'Gruntfile.js',
+                    'static/**/main.js',
+                    'static/**/plugins.js'
+                ],
+                tasks: [
+                    'jshint',
+                    'notify:jshint'
+                ]
+            }
         }
 
 
     });
 
-    // DEFAULT 'WATCH' TASKS...
-    // =========================
+    // DEVELOP BUILD TASKS...
+    // ==========================
 
-    // Type 'grunt'
-    grunt.registerTask('watch', [
+    // Type 'grunt develop'
+    grunt.registerTask('develop', [
         'sass:dev',
         'postcss',
         'jshint',
@@ -304,9 +301,9 @@ module.exports = function (grunt) {
 
 
     // FULL BUILD TASKS...
-    // =======================
+    // ==========================
 
-    // Type 'grunt build'
+    // Type 'grunt'
     grunt.registerTask('default', [
         'sass:prod',
         'postcss',
@@ -317,6 +314,7 @@ module.exports = function (grunt) {
         'copy',
         'cachebreaker'
     ]);
+
 };
 
 
