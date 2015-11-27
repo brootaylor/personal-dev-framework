@@ -49,7 +49,7 @@ grunt develop
 Any edits of SCSS files or JS files will result in the correct bundle being recreated.
 
 ### Full Build
-To produce a full build, run the following command which will output the CSS, JS, Imagery & PHP partials markup into the 'build' directory.
+To produce a full build, run the following command which will output the necessary CSS, JS, Imagery & PHP partials markup into the 'build' directory. This is what can then be deployed to your server.
 
 ```
 grunt
