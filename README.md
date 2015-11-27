@@ -334,7 +334,7 @@ browserSync: {
 
 ### "watch"
 
-For synchronised browser testing. eg. live reloads etc.
+Watches specified files while you're developing.
 
 ```js
 watch: {
