@@ -373,7 +373,7 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * Add Gulp build alternative.
 * A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
 * A more robust MVC.
-* Accessibility considerations and examples.
+* Accessibility considerations and examples - eg. colour contrast, TAB, SHIFT+TAB & ENTER keys to navigate site, Zoom (make things work at 200% - Microsoft homepage does this well) and "View Document Outline" in Web Developer tool to check semantics.
 
 Suggestions welcome.
 
@@ -390,6 +390,11 @@ Suggestions welcome.
 ### Browser Compatability
 
 * [Can I use...?](http://caniuse.com/)
+
+### Accessibility
+
+* [WebAIM](http://webaim.org/)
+* [Colour Contrast Checker](http://webaim.org/resources/contrastchecker/)
 
 ### Git
 
