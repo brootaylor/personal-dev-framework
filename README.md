@@ -367,9 +367,10 @@ watch: {
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
+* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html)
+* Cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
 * Inlining critical CSS.
 * Loading CSS asynchronously with `<noscript>...</noscript>` fallback.
-* Cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
 * Add Gulp build alternative.
 * A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
 * A more robust MVC.
