@@ -40,10 +40,10 @@ npm cache clean
 Once this has been done, you can once again attempt to run **'npm install'**. This may take a few attempts if you are running an older version of Node (specifically 0.10.29 or older). It's worth upgrading your version of Node if you can.
 
 ### Watching Files
-Automatic watching of files can be used. To run, simply use the command
+Automatic watching of files can be used. To run, simply use the command...
 
 ```
-grunt watch
+grunt develop
 ```
 
 Any edits of SCSS files or JS files will result in the correct bundle being recreated.
@@ -79,11 +79,22 @@ This is a breakdown of the Grunt tasks in the Grunt file.
 Compiles SASS or SCSS into CSS.
 ```js
 sass: {
-    styles: {
+    // Development output...
+    dev: {
         options: {
-            lineNumbers: true, // Boolean. Change to false if required
+            lineNumbers: true,
             style: 'compact', // Use for development output
-            //style: 'compressed', // Use for production ready output
+        },
+        files: {
+            // Compile SCSS ino CSS...
+            '<%= dirs.css %>/styles.css': '<%= dirs.scss %>/styles.scss',
+        }
+    },
+    // Production output...
+    prod: {
+        options: {
+            lineNumbers: false,
+            style: 'compressed', // Use for production ready output
         },
         files: {
             // Compile SCSS ino CSS...
@@ -155,20 +166,6 @@ concat: {
         ],
         dest: '<%= dirs.jsBuild %>/scripts.js',
     }
-},
-```
-
-### "jshint"
-
-Checks JavaScript for any errors.
-
-```js
-jshint: {
-    all: [
-        'Gruntfile.js',
-        '<%= dirs.js %>/main.js',
-        '<%= dirs.js %>/plugins.js'
-    ]
 },
 ```
 
@@ -271,6 +268,20 @@ cachebreaker: {
 },
 ```
 
+### "jshint"
+
+Checks JavaScript for any errors.
+
+```js
+jshint: {
+    all: [
+        'Gruntfile.js',
+        '<%= dirs.js %>/main.js',
+        '<%= dirs.js %>/plugins.js'
+    ]
+},
+```
+
 ### "notify"
 
 Various notification messages for tasks you wish to be notified about when they've completed successfully.
@@ -318,6 +329,38 @@ browserSync: {
         }
     }
 },
+```
+
+
+### "watch"
+
+For synchronised browser testing. eg. live reloads etc.
+
+```js
+watch: {
+    // Compiling SCSS on watch...
+    sass: {
+        files: [
+            '<%= dirs.scss %>/**/*.scss'
+        ],
+        tasks: [
+            'sass:dev:options',
+            'notify:sass'
+        ]
+    },
+    // Checking JS on watch...
+    js: {
+        files: [
+            'Gruntfile.js',
+            'static/**/main.js',
+            'static/**/plugins.js'
+        ],
+        tasks: [
+            'jshint',
+            'notify:jshint'
+        ]
+    }
+}
 ```
 
 ## Future enhancements
