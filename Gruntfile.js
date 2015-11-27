@@ -293,10 +293,7 @@ module.exports = function (grunt) {
         'jshint',
         'notify',
         'browserSync',
-
-        // Remove 'watch' build task (below) if you don't want the "grunt" command to automatically start watch. Then use "grunt watch" to run the watch tasks specifically.
-        // It's needed here to run 'browserSync' on watch. Otherwise 'browserSync' will only run on a manual "grunt" command.
-        'watch'
+        'watch' // It's needed here to run 'browserSync' on watch.
     ]);
 
 
