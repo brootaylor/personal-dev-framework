@@ -430,6 +430,7 @@ Suggestions welcome.
 
 ### Front-end Dev Tools & Helps
 
+* [Front-end Developer Handbook](http://www.frontendhandbook.com/index.html)
 * [Totally Tooling Tips](https://developers.google.com/web/shows/ttt/?hl=en) - *(Google)*
 * [Front-end Job Interview Questions](http://h5bp.github.io/Front-end-Developer-Interview-Questions/)
 
