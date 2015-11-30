@@ -14,10 +14,13 @@
         <meta charset="utf-8">
         <title>Title of some sort</title>
         <meta name="description" content="Page description of some sort">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+
+        <!-- Define a viewport for mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- For Mobile Internet Explorer. Smoothes fonts for easy reading -->
         <meta http-equiv="cleartype" content="on">
+
         <!-- Disable link highlighting upon tap in IE10 -->
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="copyright" content="Somebody">
@@ -25,11 +28,11 @@
         <link rel="author" href="humans.txt">
         <link rel="canonical" href="http://brootaylor.com">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <style>
-            /* Inline Critical CSS */
+            /* Inline Critical CSS will generate here */
         </style>
         
         <link rel="stylesheet" href="static/css/styles.css">
@@ -37,7 +40,7 @@
         <!-- Pick up the latest version or generate a custom Modernizr build -->
         <script src="static/js/vendor/modernizr.custom.72511.js"></script>
 
-        <!-- Or use the html5shiv instead of modernizr -->
+        <!-- Or use the html5shiv instead of modernizr for Internet Explorer browsers 8 and below -->
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script>window.html5 || document.write('<script src="static/js/vendor/html5shiv.js"><\/script>')</script>
@@ -67,7 +70,8 @@
 
         -->
 
-        <!-- Masthead & Nav -->
+        <!-- The page header typically contains items such as your site heading, logo and possibly the main site navigation -->
+        <!-- ARIA: the landmark role "banner" is set as it is the prime heading or internal title of the page -->
         <header role="banner" id="masthead">
 
             <!-- Logo -->
@@ -79,11 +83,21 @@
             <a href="#" class="menu-button" id="menuButton">
                 <span class="burger-icon"></span>
             </a>
+
+            <!--
+                ARIA: the landmark role "navigation" is added here as the element contains site navigation
+                NOTE: The <nav> element does not have to be contained within a <header> element, even though the two examples on this page are.
+            -->
+            <nav role="navigation">
+                <!-- This can contain your site navigation in something like an unordered list -->
+            </nav>
             
         </header>
         <!-- / Masthead & Nav -->
 
-        <!-- Main content -->
+        <!-- The <main> element is used to enclose the main content, i.e. that which contains the central topic of a document -->
+        <!-- ARIA: the landmark role "main" is added here as it contains the main content of the document, and it is recommended to add it to the
+        <main> element until user agents implement the required role mapping. -->
         <main role="main" id="main">
 
             <h1>This is my template</h1>
@@ -92,10 +106,26 @@
             
         </main>
         <!-- / Main content -->
+
+        <!-- An <aside> is used to enclose content that is additional to the main content but not essential. If it were removed, the meaning of the main content should not be lost, but the content of the <aside> also retains its meaning.
+        NOTE: the aside is placed outside of the <main> element as while its content is related to the content that is within the <main>
+        element, it is not part of it -->
+        <!-- ARIA: the landmark role "complementary" is added here as it contains supporting information for the main content that remains meaningful even when separated from it -->
+        <aside role="complementary">
         
-        <!-- Footer content -->
+            <!-- A <header> element is not required here as the heading only contains a single <h3> element --> 
+            <h3>Did you know?</h3>
+            
+            <!-- Content -->
+            <p>The article and section elements cause a lot of confusion when people are trying to decide how and when to use them. The article: <a href="http://www.iandevlin.com/blog/2011/04/html5/html5-section-or-article">section or article?</a> might help you choose.</p>
+            
+        </aside>
+        
+        <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
+        <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
         <footer role="contentinfo" id="footer">
-            <small>Copyright &copy; 2002&ndash;2015 Bruce Taylor</small>
+            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2015' is a date -->
+            <small>Copyright &copy; 2002&ndash;<time datetime="2015">2015</time> Bruce Taylor</small>
         </footer>
         <!-- / Footer content -->
 
