@@ -75,7 +75,7 @@
         <header role="banner" id="masthead">
 
             <!-- Logo -->
-            <a href=""class="logo">
+            <a href="" class="logo">
                 <img src="static/img/common/logo.png" alt="Logo">
             </a>
             
