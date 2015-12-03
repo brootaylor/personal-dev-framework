@@ -423,7 +423,7 @@ Suggestions welcome.
 
 * [JS Hint](http://jshint.com/)
 * [Superhero.js](http://superherojs.com/)
-* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery)
+* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery) - *(Jeffrey Way)*
 
 ### Typography
 
