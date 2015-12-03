@@ -432,6 +432,8 @@ Suggestions welcome.
 ### Iconography
 
 * [SVG Icons](https://icomoon.io/)
+* [An Overview of SVG Sprite Creation Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/) - *(Sara Soueidan)*
+* [Inline SVG vs Icon Fonts](https://css-tricks.com/icon-fonts-vs-svg/) - *(Chris Coyier)*
 
 
 ### Front-end Dev Tools & Helps
