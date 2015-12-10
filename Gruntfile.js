@@ -174,6 +174,47 @@ module.exports = function (grunt) {
 		    }
 		},
 
+        //
+        // Process html files at build time to modify them depending on the release environment eg. jQuery file change to min version for production.
+        //
+        processhtml: {
+            dev: {
+                options: {
+                    data: {
+                        message: 'This is development environment'
+                    }
+                },
+                files: {
+                    'dev/index.html': ['index.html']
+                }
+            },
+            dist: {
+                options: {
+                    process: true,
+                    data: {
+                        title: 'My app',
+                        message: 'This is production distribution'
+                    }
+                },
+                files: {
+                    'dest/index.html': ['index.html']
+                }
+            },
+            custom: {
+                options: {
+                    templateSettings: {
+                        interpolate: /{{([\s\S]+?)}}/g // mustache 
+                    },
+                    data: {
+                        message: 'This has custom template delimiters'
+                    }
+                },
+                files: {
+                    'custom/custom.html': ['custom.html']
+                }
+            }
+        },
+
 		// 
 		// Append a 'cachebreaker' timestamp to 'plugins.js', 'main.js' & 'styles.css' which are all located in the 'build' directory...
 		//
@@ -309,6 +350,7 @@ module.exports = function (grunt) {
         'image',
         'notify',
         'copy',
+        'processhtml',
         'cachebreaker'
     ]);
 
