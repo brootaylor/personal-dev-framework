@@ -369,6 +369,7 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 
 * Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
 * Cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
+* Process html files at build time to modify them depending on the release environment - [grunt-processhtml](https://www.npmjs.com/package/grunt-processhtml)
 * Inlining critical CSS.
 * Loading CSS asynchronously with `<noscript>...</noscript>` fallback.
 * Add Gulp build alternative.
@@ -423,7 +424,7 @@ Suggestions welcome.
 
 * [JS Hint](http://jshint.com/)
 * [Superhero.js](http://superherojs.com/)
-* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery)
+* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery) - *(Jeffrey Way)*
 
 ### Typography
 
@@ -432,11 +433,13 @@ Suggestions welcome.
 ### Iconography
 
 * [SVG Icons](https://icomoon.io/)
+* [An Overview of SVG Sprite Creation Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/) - *(Sara Soueidan)*
+* [Inline SVG vs Icon Fonts](https://css-tricks.com/icon-fonts-vs-svg/) - *(Chris Coyier)*
 
 
 ### Front-end Dev Tools & Helps
 
-* [Front-end Developer Handbook](http://www.frontendhandbook.com/index.html)
+* [Front-end Developer Handbook](http://www.frontendhandbook.com/index.html) - *(Cody Lindley)*
 * [Totally Tooling Tips](https://developers.google.com/web/shows/ttt/?hl=en) - *(Google)*
 * [Front-end Job Interview Questions](http://h5bp.github.io/Front-end-Developer-Interview-Questions/)
 

@@ -21,6 +21,7 @@
     "grunt-image": "^1.1.1",
     "grunt-notify": "^0.4.1",
     "grunt-postcss": "^0.7.1",
+    "grunt-processhtml": "^0.3.8",
     "load-grunt-tasks": "^3.2.0",
     "time-grunt": "^1.2.1"
   }
