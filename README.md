@@ -398,6 +398,7 @@ Suggestions welcome.
 
 * [WebAIM](http://webaim.org/)
 * [Colour Contrast Checker](http://webaim.org/resources/contrastchecker/)
+* [The web accessibility basics](https://www.marcozehe.de/2015/12/14/the-web-accessibility-basics/) - *(Marco)*
 
 ### Git
 
