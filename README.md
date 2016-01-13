@@ -23,7 +23,7 @@ You're welcome to use it.
 * Build directory output example.
 
 ## Installation
-*Requirements: Node, NPM and Grunt installed globally*
+*Requirements: Node, NPM, Grunt and SASS installed globally*
 
 To install as a new project, checkout the repo and run the following commands
 
