@@ -1,20 +1,15 @@
-        <!-- Footer content -->
+        <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
+        <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
         <footer role="contentinfo" id="footer">
-            <small>Copyright &copy; 2002&ndash;<?php echo date("Y") ?> Bruce Taylor</small>
+            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2015' is a date -->
+            <small>Copyright &copy; 2002&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor</small>
         </footer>
         <!-- / Footer content -->
-
 
         <!--
 
             ...and ends here
 
-        -->
-
-        <!-- 
-        
-            Check out this for using JS without jQuery
-            ==>> http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
         -->
 
         <!-- /// JavaScript \\\ -->
@@ -28,9 +23,9 @@
         <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.11.3.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1447522764913.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1452714040759.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1447522764914.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1452714040759.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
