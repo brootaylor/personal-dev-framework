@@ -19,8 +19,11 @@
             ===============
             These are calls to the development (uncompressed) version. Change to compressed versions for production.
         -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.js"></script>
-        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.11.3.js"><\/script>')</script>
+        <!-- Processhtml Grunt task changes jquery cdn call to the .min version on build -->
+        <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.js"></script>
+        <!-- /build -->
+        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
         <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.js"></script>
