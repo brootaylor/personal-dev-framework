@@ -393,7 +393,7 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * Loading CSS asynchronously with `<noscript>...</noscript>` fallback.
 * Add Gulp build alternative.
 * A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
-* Set up [SVG Icons](https://icomoon.io/)
+* Set up [SVG Icons](https://icomoon.io/).
 * A more robust MV* of sorts. May stick with PHP for now.
 * Accessibility considerations and examples - eg. colour contrast, TAB, SHIFT+TAB & ENTER keys to navigate site, Zoom (make things work at 200% - Microsoft homepage does this well) and "View Document Outline" in Web Developer tool to check semantics.
 
