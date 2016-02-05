@@ -391,6 +391,7 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
 * Inlining critical CSS - probably look at [filament groups solution](https://github.com/filamentgroup/criticalCSS) 
 * Loading CSS asynchronously with `<noscript>...</noscript>` fallback.
+* Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
 * Add Gulp build alternative.
 * A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
 * Set up [SVG Icons](https://icomoon.io/).
