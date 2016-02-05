@@ -159,7 +159,7 @@ module.exports = function (grunt) {
 		        	'<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
 		        	// Javascript library files...
-		        	'<%= dirs.jsBuild %>/vendor/jquery-1.11.3.min.js': '<%= dirs.js %>/vendor/jquery-1.11.3.min.js',
+		        	'<%= dirs.jsBuild %>/vendor/jquery-1.12.0.min.js': '<%= dirs.js %>/vendor/jquery-1.12.0.min.js',
 		        	'<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
 		        	// PHP partial files...
@@ -178,16 +178,16 @@ module.exports = function (grunt) {
         // Process html files at build time to modify them depending on the release environment eg. jQuery file change to min version for production.
         //
         processhtml: {
-            dev: {
-                options: {
-                    data: {
-                        message: 'This is development environment'
-                    }
-                },
-                files: {
-                    'dev/index.html': ['index.html']
-                }
-            },
+            // dev: {
+            //     options: {
+            //         data: {
+            //             message: 'This is development environment'
+            //         }
+            //     },
+            //     files: {
+            //         'build/application/php_partials/_footer.php': ['application/php_partials/_footer.php']
+            //     }
+            // },
             dist: {
                 options: {
                     process: true,
@@ -197,22 +197,22 @@ module.exports = function (grunt) {
                     }
                 },
                 files: {
-                    'dest/index.html': ['index.html']
+                    'build/application/php_partials/_footer.php': ['application/php_partials/_footer.php']
                 }
             },
-            custom: {
-                options: {
-                    templateSettings: {
-                        interpolate: /{{([\s\S]+?)}}/g // mustache 
-                    },
-                    data: {
-                        message: 'This has custom template delimiters'
-                    }
-                },
-                files: {
-                    'custom/custom.html': ['custom.html']
-                }
-            }
+            // custom: {
+            //     options: {
+            //         templateSettings: {
+            //             interpolate: /{{([\s\S]+?)}}/g // mustache 
+            //         },
+            //         data: {
+            //             message: 'This has custom template delimiters'
+            //         }
+            //     },
+            //     files: {
+            //         'custom/custom.html': ['custom.html']
+            //     }
+            // }
         },
 
 		// 
