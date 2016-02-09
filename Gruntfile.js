@@ -76,13 +76,13 @@ module.exports = function (grunt) {
         //
         postcss: {
 			options: {
-				// map: false, // inline sourcemaps
+				map: false, // inline sourcemaps
 
 				// or
-				map: {
-					inline: false, // save all sourcemaps as separate files...
-					annotation: 'static/css/maps/' // ...to the specified directory
-				},
+				// map: {
+				// 	inline: false, // save all sourcemaps as separate files...
+				// 	annotation: 'static/css/maps/' // ...to the specified directory
+				// },
 
 				processors: [
 					//require('pixrem')(), // add fallbacks for rem units
@@ -94,6 +94,38 @@ module.exports = function (grunt) {
 					src: '<%= dirs.css %>/*.css'
 				}
 		},
+
+        //
+        // CRITICAL CSS
+        //
+        criticalcss: {
+            custom: {
+                options: {
+                    url: "http://localhost",
+                    width: 1024, // Screen width
+                    height: 300, // Screen height
+                    outputfile: "<%= dirs.css %>/critical.css",
+                    forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+                    filename: "<%= dirs.css %>/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+                    buffer: 800*1024, // Sets the maxBuffer for child_process.execFile in Node. Necessary for potential memory issues.
+                    ignoreConsole: false
+                }
+            }
+        },
+
+        //
+        // CSS MINIFICATION
+        //
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.css %>',
+                    src: ['critical.css'], // Primarily for the critical inline CSS
+                    dest: '<%= dirs.css %>'
+                }]
+            }
+        },
 
         //
         // JS Concatenation...
@@ -118,7 +150,7 @@ module.exports = function (grunt) {
 		    	// Specifying multiple dest/src pairs...
 		        files: {
 		            '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
-		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js'
+		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
 		        }
 		    }
 		},
@@ -156,6 +188,7 @@ module.exports = function (grunt) {
 		    	// Specifying multiple dest/src pairs...
 		        files: {
 		        	// CSS files...
+                    '<%= dirs.cssBuild %>/critical.css': '<%= dirs.css %>/critical.css',
 		        	'<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
 		        	// Javascript library files...
@@ -330,6 +363,7 @@ module.exports = function (grunt) {
     // Type 'grunt develop'
     grunt.registerTask('develop', [
         'sass:dev',
+        'criticalcss',
         'postcss',
         'jshint',
         'notify',
@@ -344,8 +378,10 @@ module.exports = function (grunt) {
     // Type 'grunt'
     grunt.registerTask('default', [
         'sass:prod',
+        'criticalcss',
         'postcss',
         'jshint',
+        'cssmin',
         'uglify',
         'image',
         'notify',

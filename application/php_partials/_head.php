@@ -31,8 +31,17 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        
         <style>
-            /* Inline Critical CSS will generate here */
+
+            /* Inline Critical CSS */
+
+            <?php
+                $css = file_get_contents('static/css/critical.css');
+                echo $css;
+            ?>
+
+        
         </style>
         
         <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.css">
