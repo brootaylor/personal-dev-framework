@@ -31,11 +31,20 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        
         <style>
-            /* Inline Critical CSS will generate here */
+
+            /* Inline Critical CSS */
+
+            <?php
+                $css = file_get_contents('static/css/critical.css');
+                echo $css;
+            ?>
+
+        
         </style>
         
-        <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.1452724075253.css">
+        <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.1455049825757.css">
 
         <!-- Pick up the latest version or generate a custom Modernizr build -->
         <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/modernizr.custom.72511.js"></script>
