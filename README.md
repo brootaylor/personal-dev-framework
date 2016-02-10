@@ -172,6 +172,23 @@ criticalcss: {
 },
 ```
 
+### "cssmin"
+
+In this instance it's used to minify the 'critical css' output before inserting into the ```<head>```.
+
+```js
+cssmin: {
+    target: {
+        files: [{
+            expand: true,
+            cwd: '<%= dirs.css %>',
+            src: ['critical.css'], // Primarily for the critical inline CSS
+            dest: '<%= dirs.css %>'
+        }]
+    }
+},
+```
+
 ### "concat"
 
 Concatenation of files. In this instance it's just JavaScript.
