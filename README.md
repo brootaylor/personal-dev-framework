@@ -153,7 +153,7 @@ postcss: {
 
 ### "criticalcss"
 
-Creates a critical CSS output that can then be added inline to the <head>.
+Creates a critical CSS output that can then be added inline to the ```<head>```.
 
 ```js
 criticalcss: {
