@@ -41,7 +41,6 @@
                 echo $css;
             ?>
 
-        
         </style>
         
         <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.css">

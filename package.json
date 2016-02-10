@@ -1,12 +1,17 @@
 {
   "name": "personal-web-dev-framework",
-  "version": "0.0.1",
-  "description": "The web dev framework dependencies.",
-  "author": "Bruce Taylor (http://brootaylor.com)",
+  "version": "0.0.5",
+  "description": "A reusable front-end template/framework for web projects.",
   "repository": {
     "type": "git",
     "url": "https://github.com/brootaylor/personal-dev-framework.git"
   },
+  "author": "Bruce Taylor (http://brootaylor.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brootaylor/personal-dev-framework/issues"
+  },
+  "homepage": "https://github.com/brootaylor/personal-dev-framework",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-browser-sync": "^2.1.3",
@@ -26,5 +31,8 @@
     "grunt-scss-lint": "^0.3.8",
     "load-grunt-tasks": "^3.2.0",
     "time-grunt": "^1.2.1"
+  },
+  "engines": {
+    "node": ">= 5.0.0"
   }
 }

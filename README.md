@@ -151,6 +151,27 @@ postcss: {
 },
 ```
 
+### "criticalcss"
+
+Creates a critical CSS output that can then be added inline to the <head>.
+
+```js
+criticalcss: {
+    custom: {
+        options: {
+            url: "http://localhost", // State the URL the script needs to run against
+            width: 1024, // Screen width
+            height: 0, // Screen height
+            outputfile: "<%= dirs.css %>/critical.css",
+            forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+            filename: "<%= dirs.css %>/styles.css", // The file where the critical CSS is to be picked up from
+            buffer: 800*1024, // Sets the maxBuffer for child_process.execFile in Node. Necessary for potential memory issues.
+            ignoreConsole: false
+        }
+    }
+},
+```
+
 ### "concat"
 
 Concatenation of files. In this instance it's just JavaScript.
@@ -388,8 +409,7 @@ watch: {
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
-* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
-* Inlining critical CSS - probably look at [filament group solution](https://github.com/filamentgroup/criticalCSS) 
+* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache. 
 * Loading non-critical CSS asynchronously with `<noscript>...</noscript>` fallback - - [filament group solution](https://github.com/filamentgroup/loadCSS/)
 * Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
 * Add Gulp build alternative.
