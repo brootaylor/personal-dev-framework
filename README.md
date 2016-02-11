@@ -19,6 +19,7 @@ You're welcome to use it.
 * Apache server caching, compression, and other configuration defaults for
   Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A basic PHP based application framework.
+* [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)* 
 * Simple, zero-configuration command-line [http server](#http-server).
 * Build directory output examples.
 
@@ -161,7 +162,7 @@ criticalcss: {
         options: {
             url: "http://localhost", // State the URL the script needs to run against
             width: 1024, // Screen width
-            height: 0, // Screen height
+            height: 768, // Screen height
             outputfile: "<%= dirs.css %>/critical.css",
             forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
             filename: "<%= dirs.css %>/styles.css", // The file where the critical CSS is to be picked up from
