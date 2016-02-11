@@ -19,11 +19,12 @@ You're welcome to use it.
 * Apache server caching, compression, and other configuration defaults for
   Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A basic PHP based application framework.
+* [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)* 
 * Simple, zero-configuration command-line [http server](#http-server).
-* Build directory output example.
+* Build directory output examples.
 
 ## Installation
-*Requirements: Node, NPM and Grunt installed globally*
+*Requirements: Node, NPM, Grunt and SASS installed globally, then...*
 
 To install as a new project, checkout the repo and run the following commands
 
@@ -151,6 +152,44 @@ postcss: {
 },
 ```
 
+### "criticalcss"
+
+Creates a critical CSS output that can then be added inline to the ```<head>```.
+
+```js
+criticalcss: {
+    custom: {
+        options: {
+            url: "http://localhost", // State the URL the script needs to run against
+            width: 1024, // Screen width
+            height: 768, // Screen height
+            outputfile: "<%= dirs.css %>/critical.css",
+            forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+            filename: "<%= dirs.css %>/styles.css", // The file where the critical CSS is to be picked up from
+            buffer: 800*1024, // Sets the maxBuffer for child_process.execFile in Node. Necessary for potential memory issues.
+            ignoreConsole: false
+        }
+    }
+},
+```
+
+### "cssmin"
+
+In this instance it's used to minify the 'critical css' output before inserting into the ```<head>```.
+
+```js
+cssmin: {
+    target: {
+        files: [{
+            expand: true,
+            cwd: '<%= dirs.css %>',
+            src: ['critical.css'], // Primarily for the critical inline CSS
+            dest: '<%= dirs.css %>'
+        }]
+    }
+},
+```
+
 ### "concat"
 
 Concatenation of files. In this instance it's just JavaScript.
@@ -179,7 +218,8 @@ uglify: {
         // Specifying multiple dest/src pairs...
         files: {
             '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
-            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js'
+            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
+            '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js'
         }
     }
 },
@@ -226,7 +266,7 @@ copy: {
             '<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
             // Javascript library files...
-            '<%= dirs.jsBuild %>/vendor/jquery-1.11.3.min.js': '<%= dirs.js %>/vendor/jquery-1.11.3.min.js',
+            '<%= dirs.jsBuild %>/vendor/jquery-1.12.0.min.js': '<%= dirs.js %>/vendor/jquery-1.12.0.min.js',
             '<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
             // PHP partial files...
@@ -237,6 +277,27 @@ copy: {
 
             // PHP template files...
             '<%= dirs.appBuild %>/php_templates/template.php': '<%= dirs.app %>/php_templates/template.php'
+        }
+    }
+},
+```
+
+### "processhtml"
+
+Process html files at build time to modify them depending on the release environment eg. jQuery file call change to min version for production.
+
+```js
+processhtml: {
+    dist: {
+        options: {
+            process: true,
+            data: {
+                title: 'My app',
+                message: 'This is production distribution'
+            }
+        },
+        files: {
+            'build/application/php_partials/_footer.php': ['application/php_partials/_footer.php']
         }
     }
 },
@@ -367,13 +428,12 @@ watch: {
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
-* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
-* Cache-busting CSS & JS in the browser using a rewrite rule in `.htaccess`.
-* Inlining critical CSS.
-* Loading CSS asynchronously with `<noscript>...</noscript>` fallback.
+* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache. 
+* Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
 * Add Gulp build alternative.
 * A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
-* A more robust MVC.
+* Set up [SVG Icons](https://icomoon.io/).
+* A more robust MV* of sorts. May stick with PHP for now.
 * Accessibility considerations and examples - eg. colour contrast, TAB, SHIFT+TAB & ENTER keys to navigate site, Zoom (make things work at 200% - Microsoft homepage does this well) and "View Document Outline" in Web Developer tool to check semantics.
 
 Suggestions welcome.
@@ -396,6 +456,7 @@ Suggestions welcome.
 
 * [WebAIM](http://webaim.org/)
 * [Colour Contrast Checker](http://webaim.org/resources/contrastchecker/)
+* [The web accessibility basics](https://www.marcozehe.de/2015/12/14/the-web-accessibility-basics/) - *(Marco)*
 
 ### Git
 
@@ -422,15 +483,22 @@ Suggestions welcome.
 
 * [JS Hint](http://jshint.com/)
 * [Superhero.js](http://superherojs.com/)
-* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery)
+* [30 Days to Learn jQuery](http://code.tutsplus.com/courses/30-days-to-learn-jquery) - *(Jeffrey Way)*
 
 ### Typography
 
 * [Precise control over responsive typography](http://madebymike.com.au/writing/precise-control-responsive-typography/)
 
+### Iconography
+
+* [SVG Icons](https://icomoon.io/)
+* [An Overview of SVG Sprite Creation Techniques](https://24ways.org/2014/an-overview-of-svg-sprite-creation-techniques/) - *(Sara Soueidan)*
+* [Inline SVG vs Icon Fonts](https://css-tricks.com/icon-fonts-vs-svg/) - *(Chris Coyier)*
+
+
 ### Front-end Dev Tools & Helps
 
-* [Front-end Developer Handbook](http://www.frontendhandbook.com/index.html)
+* [Front-end Developer Handbook](http://www.frontendhandbook.com/index.html) - *(Cody Lindley)*
 * [Totally Tooling Tips](https://developers.google.com/web/shows/ttt/?hl=en) - *(Google)*
 * [Front-end Job Interview Questions](http://h5bp.github.io/Front-end-Developer-Interview-Questions/)
 

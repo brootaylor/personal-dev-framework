@@ -76,13 +76,13 @@ module.exports = function (grunt) {
         //
         postcss: {
 			options: {
-				// map: false, // inline sourcemaps
+				map: false, // inline sourcemaps
 
 				// or
-				map: {
-					inline: false, // save all sourcemaps as separate files...
-					annotation: 'static/css/maps/' // ...to the specified directory
-				},
+				// map: {
+				// 	inline: false, // save all sourcemaps as separate files...
+				// 	annotation: 'static/css/maps/' // ...to the specified directory
+				// },
 
 				processors: [
 					//require('pixrem')(), // add fallbacks for rem units
@@ -94,6 +94,38 @@ module.exports = function (grunt) {
 					src: '<%= dirs.css %>/*.css'
 				}
 		},
+
+        //
+        // CRITICAL CSS
+        //
+        criticalcss: {
+            custom: {
+                options: {
+                    url: "http://localhost",
+                    width: 1024, // Screen width
+                    height: 300, // Screen height
+                    outputfile: "<%= dirs.css %>/critical.css",
+                    forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
+                    filename: "<%= dirs.css %>/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+                    buffer: 800*1024, // Sets the maxBuffer for child_process.execFile in Node. Necessary for potential memory issues.
+                    ignoreConsole: false
+                }
+            }
+        },
+
+        //
+        // CSS MINIFICATION
+        //
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= dirs.css %>',
+                    src: ['critical.css'], // Primarily for the critical inline CSS
+                    dest: '<%= dirs.css %>'
+                }]
+            }
+        },
 
         //
         // JS Concatenation...
@@ -118,7 +150,8 @@ module.exports = function (grunt) {
 		    	// Specifying multiple dest/src pairs...
 		        files: {
 		            '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
-		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js'
+		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
+                    '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js',
 		        }
 		    }
 		},
@@ -156,10 +189,11 @@ module.exports = function (grunt) {
 		    	// Specifying multiple dest/src pairs...
 		        files: {
 		        	// CSS files...
+                    '<%= dirs.cssBuild %>/critical.css': '<%= dirs.css %>/critical.css',
 		        	'<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
 		        	// Javascript library files...
-		        	'<%= dirs.jsBuild %>/vendor/jquery-1.11.3.min.js': '<%= dirs.js %>/vendor/jquery-1.11.3.min.js',
+		        	'<%= dirs.jsBuild %>/vendor/jquery-1.12.0.min.js': '<%= dirs.js %>/vendor/jquery-1.12.0.min.js',
 		        	'<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
 		        	// PHP partial files...
@@ -174,8 +208,49 @@ module.exports = function (grunt) {
 		    }
 		},
 
+        //
+        // Process html files at build time to modify them depending on the release environment eg. jQuery file change to min version for production.
+        //
+        processhtml: {
+            // dev: {
+            //     options: {
+            //         data: {
+            //             message: 'This is development environment'
+            //         }
+            //     },
+            //     files: {
+            //         'build/application/php_partials/_footer.php': ['application/php_partials/_footer.php']
+            //     }
+            // },
+            dist: {
+                options: {
+                    process: true,
+                    data: {
+                        title: 'My app',
+                        message: 'This is production distribution'
+                    }
+                },
+                files: {
+                    'build/application/php_partials/_footer.php': ['application/php_partials/_footer.php']
+                }
+            },
+            // custom: {
+            //     options: {
+            //         templateSettings: {
+            //             interpolate: /{{([\s\S]+?)}}/g // mustache 
+            //         },
+            //         data: {
+            //             message: 'This has custom template delimiters'
+            //         }
+            //     },
+            //     files: {
+            //         'custom/custom.html': ['custom.html']
+            //     }
+            // }
+        },
+
 		// 
-		// Append a 'cachebreaker' timestamp to 'plugins.js', 'main.js' & 'styles.css' which are all located in the 'build' directory...
+		// Append a 'cachebreaker' timestamp to JavaScript files which are all located in the 'build' directory...
 		//
 		cachebreaker: {
 		    dev: {
@@ -183,13 +258,13 @@ module.exports = function (grunt) {
 		            match: [
 		                'plugins.js',
 		                'main.js',
-		                'styles.css'
+		                //'styles.css' // Leaving CSS off for now as using manual PHP variable to determine this.
 		            ],
 		            position: 'filename'
 		        },
 		        files: {
 		            src: [
-		                '<%= dirs.appBuild %>/php_partials/_head.php',
+		                //'<%= dirs.appBuild %>/php_partials/_head.php', // Not needed at the moment.
 		                '<%= dirs.appBuild %>/php_partials/_footer.php'
 		            ]
 		        }
@@ -289,6 +364,7 @@ module.exports = function (grunt) {
     // Type 'grunt develop'
     grunt.registerTask('develop', [
         'sass:dev',
+        'criticalcss',
         'postcss',
         'jshint',
         'notify',
@@ -303,12 +379,15 @@ module.exports = function (grunt) {
     // Type 'grunt'
     grunt.registerTask('default', [
         'sass:prod',
+        'criticalcss',
         'postcss',
         'jshint',
+        'cssmin',
         'uglify',
         'image',
         'notify',
         'copy',
+        'processhtml',
         'cachebreaker'
     ]);
 

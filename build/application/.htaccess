@@ -1,0 +1,7 @@
+# This htaccess file is for the purposes of preventing access to this directory and files. Security reasons
+# ==========================================================================================================
+
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+</Files>

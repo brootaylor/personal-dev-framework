@@ -1,9 +1,18 @@
-        <!-- Footer content -->
+        <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
+        <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
         <footer role="contentinfo" id="footer">
-            <small>Copyright &copy; 2002&ndash;<?php echo date("Y") ?> Bruce Taylor</small>
+            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2015' is a date -->
+            <small>Copyright &copy; 2002&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor. All rights reserved.</small>
+            <ul>
+                <li>
+                    <a href="//<?php echo $server; ?>/accessibility">Accessibility</a>
+                </li>
+                <li>
+                    <a href="//<?php echo $server; ?>/cookies">Cookies</a>
+                </li>
+            </ul>
         </footer>
         <!-- / Footer content -->
-
 
         <!--
 
@@ -11,22 +20,21 @@
 
         -->
 
-        <!-- 
-        
-            Check out this for using JS without jQuery
-            ==>> http://www.smashingmagazine.com/2014/09/04/animating-without-jquery/
-        -->
-
         <!-- /// JavaScript \\\ -->
 
-        <!-- Vendor JS calls -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <!--
+            Vendor JS calls
+            ===============
+            These are calls to the development (uncompressed) version. Change to compressed versions for production.
+        -->
+        <!-- Processhtml Grunt task changes jquery cdn call to the .min version on build -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="//<?php echo $server; ?>/static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1447522764913.js"></script>
+        <script src="//<?php echo $server; ?>/static/js/plugins.1455190107931.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1447522764914.js"></script>
+        <script src="//<?php echo $server; ?>/static/js/main.1455190107931.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

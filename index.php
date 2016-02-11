@@ -9,7 +9,9 @@
     ob_start();
 ?>
 
-        <!-- Main content -->
+        <!-- The <main> element is used to enclose the main content, i.e. that which contains the central topic of a document -->
+        <!-- ARIA: the landmark role "main" is added here as it contains the main content of the document, and it is recommended to add it to the
+        <main> element until user agents implement the required role mapping. -->
         <main role="main" id="main">
 
             <h1><?php echo $page_title; ?></h1>
