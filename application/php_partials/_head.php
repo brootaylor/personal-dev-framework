@@ -1,3 +1,7 @@
+<?php
+    // Set the cookie... 
+    setcookie($cookie_cssupdate, $cssupdate_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
 
@@ -25,33 +29,33 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="copyright" content="Somebody">
 
-        <link rel="author" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/humans.txt">
-        <link rel="canonical" href="http://<?php echo $_SERVER['SERVER_NAME']; ?><?php echo $page_canonical; ?>">
+        <link rel="author" href="//<?php echo $server; ?>/humans.txt">
+        <link rel="canonical" href="http://<?php echo $server; ?><?php echo $page_canonical; ?>">
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        
-        <style>
-
-            /* Inline Critical CSS */
-
-            <?php
-                $css = file_get_contents('static/css/critical.css');
-                echo $css;
-            ?>
-
-        </style>
-        
-        <link rel="stylesheet" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/css/styles.css">
+        <?php
+            // If cookie exists/matches then load the normal external stylesheet...
+            if(isset($_COOKIE[$cookie_cssupdate]) && $_COOKIE[$cookie_cssupdate] == $cssupdate_value) {
+                echo '<link rel="stylesheet" href="//' . $server . '/static/css/styles.' . $cssupdate_value . '.css">' . "\n";
+            } else {
+                // If it's not set/matches then get the critical CSS and inline it...
+                echo "<style>\n\t" . $css_critical . "\n\t</style>\n";
+                // Then load the non-critical CSS asynchronously...
+                echo "\n\t<script>\t" . $loadCSS_JS . "\n\t</script>\n";
+                // Create a fallback CSS call incase JavaScript isn't enabled...
+                echo "\n\t<noscript>" . '<link rel="stylesheet" href="//' . $server . '/static/css/styles.' . $cssupdate_value . '.css">' . "</noscript>\n";
+            }
+        ?>
 
         <!-- Pick up the latest version or generate a custom Modernizr build -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/modernizr.custom.72511.js"></script>
+        <script src="//<?php echo $server; ?>/static/js/vendor/modernizr.custom.72511.js"></script>
 
         <!-- Or use the html5shiv instead of modernizr for Internet Explorer browsers 8 and below -->
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <script>window.html5 || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/html5shiv.js"><\/script>')</script>
+            <script>window.html5 || document.write('<script src="//<?php echo $server; ?>/static/js/vendor/html5shiv.js"><\/script>')</script>
         <![endif]-->
     </head>
     <body>
@@ -83,8 +87,8 @@
         <header role="banner" id="masthead">
 
             <!-- Logo -->
-            <a href="" class="logo">
-                <img src="static/img/common/logo.png" alt="Logo">
+            <a href="//<?php echo $server; ?>" class="logo">
+                <img src="//<?php echo $server; ?>/static/img/common/logo.png" alt="Logo">
             </a>
             
             <!-- 'Burger' icon for menu (navigation) -->

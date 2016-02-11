@@ -85,7 +85,14 @@
 # Customize what Apache returns to the client in case of an error.
 # https://httpd.apache.org/docs/current/mod/core.html#errordocument
 
-ErrorDocument 404 /404.html
+ErrorDocument 404 /404.php
+
+# ====================================================================================================
+# The 500 Internal Server Error is a very general HTTP status code that means something has gone wrong on the web site's server but the server could not be more specific on what the exact problem is.
+
+# Most of the time, "gone wrong" means an issue with the page or site's programming, nothing you have anything to do with.
+# ====================================================================================================
+ErrorDocument 500 /500.php
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
@@ -329,7 +336,7 @@ AddDefaultCharset utf-8
     # Options +SymLinksIfOwnerMatch
 
     # (4)
-    # RewriteBase /
+    RewriteBase /
 
     # (5)
     # RewriteOptions <options>
@@ -399,6 +406,22 @@ AddDefaultCharset utf-8
 #     RewriteCond %{SERVER_ADDR} !=::1
 #     RewriteRule ^ %{ENV:PROTO}://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # </IfModule>
+
+# ----------------------------------------------------------------------
+# Custom friendly URL creation
+# ----------------------------------------------------------------------
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule .* - [L]
+
+RewriteRule ^accessibility\.php$ /accessibility [R=301,L]
+RewriteRule ^accessibility$ /accessibility.php [L]
+
+RewriteRule ^cookies\.php$ /cookies [R=301,L]
+RewriteRule ^cookies$ /cookies.php [L]
 
 
 # ######################################################################

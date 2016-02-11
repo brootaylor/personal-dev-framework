@@ -101,9 +101,9 @@ module.exports = function (grunt) {
         criticalcss: {
             custom: {
                 options: {
-                    url: "http://localhost:3000",
+                    url: "http://localhost",
                     width: 1024, // Screen width
-                    height: 0, // Screen height
+                    height: 300, // Screen height
                     outputfile: "<%= dirs.css %>/critical.css",
                     forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
                     filename: "<%= dirs.css %>/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
@@ -151,6 +151,7 @@ module.exports = function (grunt) {
 		        files: {
 		            '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
 		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
+                    '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js',
 		        }
 		    }
 		},
@@ -249,7 +250,7 @@ module.exports = function (grunt) {
         },
 
 		// 
-		// Append a 'cachebreaker' timestamp to 'plugins.js', 'main.js' & 'styles.css' which are all located in the 'build' directory...
+		// Append a 'cachebreaker' timestamp to JavaScript files which are all located in the 'build' directory...
 		//
 		cachebreaker: {
 		    dev: {
@@ -257,13 +258,13 @@ module.exports = function (grunt) {
 		            match: [
 		                'plugins.js',
 		                'main.js',
-		                'styles.css'
+		                //'styles.css' // Leaving CSS off for now as using manual PHP variable to determine this.
 		            ],
 		            position: 'filename'
 		        },
 		        files: {
 		            src: [
-		                '<%= dirs.appBuild %>/php_partials/_head.php',
+		                //'<%= dirs.appBuild %>/php_partials/_head.php', // Not needed at the moment.
 		                '<%= dirs.appBuild %>/php_partials/_footer.php'
 		            ]
 		        }
