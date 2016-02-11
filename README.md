@@ -218,7 +218,8 @@ uglify: {
         // Specifying multiple dest/src pairs...
         files: {
             '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
-            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js'
+            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
+            '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js'
         }
     }
 },
@@ -428,7 +429,6 @@ watch: {
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
 * Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache. 
-* Loading non-critical CSS asynchronously with `<noscript>...</noscript>` fallback - - [filament group solution](https://github.com/filamentgroup/loadCSS/)
 * Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
 * Add Gulp build alternative.
 * A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
