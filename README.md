@@ -218,7 +218,8 @@ uglify: {
         // Specifying multiple dest/src pairs...
         files: {
             '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
-            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js'
+            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
+            '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js'
         }
     }
 },
