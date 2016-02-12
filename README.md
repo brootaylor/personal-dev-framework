@@ -40,6 +40,14 @@ npm cache clean
 
 Once this has been done, you can once again attempt to run **'npm install'**. This may take a few attempts if you are running an older version of Node (specifically 0.10.29 or older). It's worth upgrading your version of Node if you can.
 
+**NOTE:** Make sure **'autoprefixer'** has been installed locally as well...
+
+```
+npm install autoprefixer
+```
+
+Now you should be ready to start playing!
+
 ### Watching Files
 Automatic watching of files can be used. To run, simply use the command...
 
@@ -263,10 +271,12 @@ copy: {
         // Specifying multiple dest/src pairs...
         files: {
             // CSS files...
+            '<%= dirs.cssBuild %>/critical.css': '<%= dirs.css %>/critical.css',
             '<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
             // Javascript library files...
             '<%= dirs.jsBuild %>/vendor/jquery-1.12.0.min.js': '<%= dirs.js %>/vendor/jquery-1.12.0.min.js',
+            '<%= dirs.jsBuild %>/vendor/html5shiv.js': '<%= dirs.js %>/vendor/html5shiv.js',
             '<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
             // PHP partial files...
@@ -314,7 +324,7 @@ cachebreaker: {
             match: [
                 'plugins.js',
                 'main.js',
-                'styles.css'
+                //'styles.css' // Leaving CSS off for now as using manual PHP variable to determine this.
             ],
             position: 'filename'
         },
