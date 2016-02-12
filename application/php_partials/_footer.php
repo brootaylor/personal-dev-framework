@@ -2,15 +2,18 @@
         <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
         <footer role="contentinfo" id="footer">
             <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2015' is a date -->
-            <small>Copyright &copy; 2002&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor. All rights reserved.</small>
-            <ul>
-                <li>
-                    <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/accessibility">Accessibility</a>
-                </li>
-                <li>
-                    <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/cookies">Cookies</a>
-                </li>
-            </ul>
+            <small>
+                <ul>
+                    <li>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/accessibility">Accessibility</a>
+                    </li>
+                    <li>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/cookies">Cookies</a>
+                    </li>
+                </ul>
+                <em>Made by <a href="http://brootaylor.com" rel="external">Bruce Taylor</a> in Horley, England</em>
+                &copy; 2002&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor. All rights reserved.
+            </small>
         </footer>
         <!-- / Footer content -->
 
