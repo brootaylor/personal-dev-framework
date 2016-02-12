@@ -275,6 +275,7 @@ copy: {
 
             // Javascript library files...
             '<%= dirs.jsBuild %>/vendor/jquery-1.12.0.min.js': '<%= dirs.js %>/vendor/jquery-1.12.0.min.js',
+            '<%= dirs.jsBuild %>/vendor/html5shiv.js': '<%= dirs.js %>/vendor/html5shiv.js',
             '<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
             // PHP partial files...
