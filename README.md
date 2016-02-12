@@ -40,6 +40,14 @@ npm cache clean
 
 Once this has been done, you can once again attempt to run **'npm install'**. This may take a few attempts if you are running an older version of Node (specifically 0.10.29 or older). It's worth upgrading your version of Node if you can.
 
+*NOTE: Make sure **'autoprefixer'** has been installed locally as well...*
+
+```
+npm install autoprefixer
+```
+
+Now you should be ready to start playing!
+
 ### Watching Files
 Automatic watching of files can be used. To run, simply use the command...
 
