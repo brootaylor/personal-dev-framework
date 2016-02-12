@@ -271,6 +271,7 @@ copy: {
         // Specifying multiple dest/src pairs...
         files: {
             // CSS files...
+            '<%= dirs.cssBuild %>/critical.css': '<%= dirs.css %>/critical.css',
             '<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
             // Javascript library files...
@@ -323,7 +324,7 @@ cachebreaker: {
             match: [
                 'plugins.js',
                 'main.js',
-                'styles.css'
+                //'styles.css' // Leaving CSS off for now as using manual PHP variable to determine this.
             ],
             position: 'filename'
         },
