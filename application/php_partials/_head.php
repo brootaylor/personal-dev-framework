@@ -64,7 +64,7 @@
         <noscript>
             <div class="tech-missing">
                 <h2>Looks like JavaScript is disabled</h2>
-                <p>brootaylor.com requires JavaScript enabled to work properly, unfortunately it is disabled on your computer. <a href="http://enable-javascript.com/">Need help enabling JavaScript?</a></p>
+                <p><?php echo $_SERVER['SERVER_NAME']; ?> requires JavaScript enabled to work properly, unfortunately it is disabled on your computer. <a href="http://enable-javascript.com/">Need help enabling JavaScript?</a></p>
             </div>
         </noscript>
 
@@ -72,7 +72,7 @@
         <!--[if lt IE 9]>
             <div class="tech-missing">
                 <h2>You are using an outdated browser</h2>
-                <p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of brootaylor.com.</p>
+                <p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience of <?php echo $_SERVER['SERVER_NAME']; ?>.</p>
             </div>
         <![endif]-->
 
