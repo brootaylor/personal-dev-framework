@@ -14,8 +14,8 @@
 
 
 html {
-    color: darken($white, 30%);
-    background-color: $black;
+    color: light($black, 10%);
+    background-color: $white;
     font-family: $font-primary;
     font-weight: $fw-primary-light;
     font-size: $base-font-size;
@@ -85,23 +85,19 @@ html {
 //////////
 
 h1, h2, h3, h4, h5 {
-    font-weight: $fw-primary-light;
+    font-weight: $fw-primary-normal;
 }
 h1 {
     @include fontSize(24px);
-    color: $white;
-
     @include break-point(640px) {
         @include fontSize(28px);
     }
 }
 h2 {
     @include fontSize(22px);
-    color: darken($white, 10%);
 }
 h3 {
     @include fontSize(18px);
-    color: darken($white, 20%);
 }
 
 // <p> tag snuck in here...
