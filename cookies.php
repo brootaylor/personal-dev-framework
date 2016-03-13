@@ -14,38 +14,42 @@
         <main> element until user agents implement the required role mapping. -->
         <main role="main" id="main">
 
-            <h1><?php echo $page_title; ?></h1>
+            <article>
 
-            <p>This website uses various electronic cookies for anonymous analytics purposes as well as to aid better technical performance decisions.</p>
+                <h1><?php echo $page_title; ?></h1>
 
-            <h2>What is a cookie?</h2>
-            <p>Tincidunt cras lectus arcu habitasse aliquam? Scelerisque in, et montes, lorem porttitor tincidunt parturient, ut etiam. Phasellus enim elementum, adipiscing adipiscing! Lundium tortor non et natoque integer massa lundium platea? Etiam platea, elementum, ultrices enim dis purus natoque dolor et? Quis cursus ac mus a elementum etiam urna. Mus adipiscing.</p>
+                <p>This website uses various electronic cookies for anonymous analytics purposes as well as to aid better technical performance decisions.</p>
 
-            <h2>Opting Out</h2>
-            <p>If you’d prefer to opt out of cookies on this website please click the button below.</p>
-            <p>By clicking this button a single cookie named <code>ck-optout</code> will be added and all other cookies removed. This cookie is required to remember your preference.</p>
+                <h2>What is a cookie?</h2>
+                <p>Tincidunt cras lectus arcu habitasse aliquam? Scelerisque in, et montes, lorem porttitor tincidunt parturient, ut etiam. Phasellus enim elementum, adipiscing adipiscing! Lundium tortor non et natoque integer massa lundium platea? Etiam platea, elementum, ultrices enim dis purus natoque dolor et? Quis cursus ac mus a elementum etiam urna. Mus adipiscing.</p>
 
-            <button>Opt out of cookies</button>
+                <h2>Opting Out</h2>
+                <p>If you’d prefer to opt out of cookies on this website please click the button below.</p>
+                <p>By clicking this button a single cookie named <code>ck-optout</code> will be added and all other cookies removed. This cookie is required to remember your preference.</p>
 
-            <h2>Cookies used on this website</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Expiration</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <code>cssupdate</code>
-                        </td>
-                        <td>This cookie is used to help the website determine whether you're a first time visitor. If you are, it ensures the optimum code is delivered to the browser to ensure as speedy an experience as possible.</td>
-                        <td>30 days from set/update</td>
-                    </tr>
-                </tbody>
-            </table>
+                <button>Opt out of cookies</button>
+
+                <h2>Cookies used on this website</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Expiration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code>cssupdate</code>
+                            </td>
+                            <td>This cookie is used to help the website determine whether you're a first time visitor. If you are, it ensures the optimum code is delivered to the browser to ensure as speedy an experience as possible.</td>
+                            <td>30 days from set/update</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </article>
             
         </main>
         <!-- / Main content -->
