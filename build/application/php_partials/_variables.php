@@ -11,9 +11,6 @@
 	// ===================================
 	//$dir_path = $_SERVER["DOCUMENT_ROOT"]. "/beta/application/";
 
-	// Get server name...
-	$server = $_SERVER['SERVER_NAME'];
-
 	/////////////////////////////////////////////////////////////////////////////////////////////
 	// Critical CSS & non-critical CSS decision making...
 	$css_critical = file_get_contents("static/css/critical.css");
