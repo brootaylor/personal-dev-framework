@@ -101,7 +101,7 @@ module.exports = function (grunt) {
         criticalcss: {
             custom: {
                 options: {
-                    url: "http://localhost",
+                    url: "http://local.personal-dev-framework",
                     width: 1024, // Screen width
                     height: 300, // Screen height
                     outputfile: "<%= dirs.css %>/critical.css",
@@ -322,8 +322,8 @@ module.exports = function (grunt) {
                 },
                 options: {
                     watchTask: true,
-                    // server: 'localhost:80'
-                    proxy: "localhost"
+                    server: 'http://local.personal-dev-framework/'
+                    //proxy: "localhost"
                 }
             }
         },
@@ -369,7 +369,7 @@ module.exports = function (grunt) {
         'postcss',
         'jshint',
         'notify',
-        'browserSync',
+        //'browserSync',
         'watch' // It's needed here to run 'browserSync' on watch.
     ]);
 
