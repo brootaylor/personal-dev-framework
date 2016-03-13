@@ -3,5 +3,45 @@
    ========================================================================== */
 
 
+#masthead {
+	position: relative;
+	margin-top: pxToEm(15px, $base-font-size);
+}
+
+// Using 'enhanced' class as the selector for devices that cut the mustard
+.enhanced {
+	.nav {
+		.menu-button {
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			.burger-text {
+				@include fontSize(14px);
+			}
+
+				// Hide the menu button now that space allows for the navigation to be visible
+				@include break-point(480px) {
+					display: none;
+				}
+		}
+
+		ul {
+			max-height: 0;
+			overflow: hidden;
+
+				// Show the full menu now that space allows
+				@include break-point(480px) {
+					overflow: auto;
+					max-height: inherit;
+				}
+
+			&.open {
+				max-height: pxToEm(200px, $base-font-size);
+				transition: max-height 0.25s ease-out;
+			}
+		}
+	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////
