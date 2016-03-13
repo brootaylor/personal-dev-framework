@@ -1,7 +1,7 @@
-        <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
+        <!-- The main page footer can contain items such as copyright and contact information. -->
         <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
         <footer role="contentinfo" id="footer">
-            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2015' is a date -->
+            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the current year '2016' is a date -->
             <small>
                 <ul>
                     <li>
