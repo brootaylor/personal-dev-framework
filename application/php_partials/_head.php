@@ -3,7 +3,7 @@
     setcookie($cookie_cssupdate, $cssupdate_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 <!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<html lang="en" dir="ltr">
 
 <!--
     AppCache manifest file referencing:
@@ -11,7 +11,7 @@
 
     If you want to enable your website visitors to browse your website when they are offline...
 
-    <html class="no-js" lang="en" dir="ltr" manifest="manifest.appcache">
+    <html lang="en" dir="ltr" manifest="manifest.appcache">
 -->
 
     <head>
@@ -35,6 +35,27 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        <script>
+            (function (win, doc) {
+
+                var cutsTheMustard = function() {
+                    if (doc.querySelector && win.addEventListener && win.localStorage) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                };
+
+                var enhanceclass = 'enhanced';
+
+                if (cutsTheMustard() === true) {
+                    // Browser cuts the mustard...
+                    doc.documentElement.className += '' + enhanceclass;
+                }
+
+            }(this, this.document));
+        </script>
+
         <?php
             // If cookie exists/matches then load the normal external stylesheet...
             if(isset($_COOKIE[$cookie_cssupdate]) && $_COOKIE[$cookie_cssupdate] == $cssupdate_value) {
@@ -48,9 +69,6 @@
                 echo "\n\t<noscript>" . '<link rel="stylesheet" href="//' . $_SERVER['SERVER_NAME'] . '/static/css/styles.' . $cssupdate_value . '.css">' . "</noscript>\n";
             }
         ?>
-
-        <!-- Pick up the latest version or generate a custom Modernizr build -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/modernizr.custom.72511.js"></script>
 
         <!-- Or use the html5shiv instead of modernizr for Internet Explorer browsers 8 and below -->
         <!--[if lt IE 9]>
@@ -76,6 +94,10 @@
             </div>
         <![endif]-->
 
+        <!-- Helps assistive technologies -->
+        <a class="visuallyhidden" href="#nav">Skip to the site navigation</a>
+        <a class="visuallyhidden" href="#main">Skip to the content</a>
+
         <!--
         
             Website content starts here...
@@ -88,20 +110,40 @@
 
             <!-- Logo -->
             <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>" class="logo">
+                <h1 class="visuallyhidden">Personal Dev Framework</h1>
                 <img src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/img/common/logo.png" alt="Logo">
-            </a>
-            
-            <!-- 'Burger' icon for menu (navigation) -->
-            <a href="#" class="menu-button" id="menuButton">
-                <span class="burger-icon"></span>
             </a>
 
             <!--
                 ARIA: the landmark role "navigation" is added here as the element contains site navigation
-                NOTE: The <nav> element does not have to be contained within a <header> element, even though the two examples on this page are.
-            -->
-            <nav role="navigation">
+            --> 
+            <nav role="navigation" class="nav" id="nav">
+                <h1 class="visuallyhidden">Main navigation</h1>
+
+                <!-- 'Burger' icon for smaller screen menu (navigation) -->
+                <a href="#menu" class="menu-button" id="menuButton">
+                    <span class="burger-icon"></span>
+                    <span class="burger-text">Menu</span>
+                </a>
+
                 <!-- This can contain your site navigation in something like an unordered list -->
+                <ul id="menu">
+                    <li>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>">Home</a>
+                    </li>
+                    <li>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/about-us">About Us</a>
+                    </li>
+                    <li>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/contact-us">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/accessibility">Accessibility</a>
+                    </li>
+                    <li>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/cookies">Cookies</a>
+                    </li>
+                </ul>
             </nav>
             
         </header>
