@@ -9,9 +9,15 @@
   @include clearfix-me(micro);
 
   .col {
+
+    &:last-of-type { // Last column in grid...
+      padding-right: 0;
+    }
+
     @include break-point(560px) {
       float: left;
       width: calculate-width(2);
+      padding-right: pxToEm(20px, $base-font-size);
 
       &:nth-child(2n+1) {
         clear: left;
@@ -40,6 +46,21 @@
       }
     }
   }
+}
+
+/* Opt-in outside padding */
+.grid-pad {
+
+  @include break-point(560px) {
+    padding: pxToEm(20px 0 20px 20px, $base-font-size);
+  }
+
+  .col {
+    &:last-of-type {
+      padding-right: pxToEm(20px, $base-font-size);
+    }
+  }
+
 }
 ///////////////////////////////////////////////////////////////////
 
