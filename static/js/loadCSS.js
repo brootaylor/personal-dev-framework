@@ -1,10 +1,9 @@
 
-        <!--
         (function (win, doc) {
             'use strict';
 
             var originPart = window.location.origin,
-                cssupdate_value = "11022016";
+                cssupdate_value = "14032016";
 
             function loadCSS(href) {
                 var ss = doc.createElement('link'),
@@ -34,4 +33,3 @@
             loadCSS(originPart + "/static/css/styles." + cssupdate_value + ".css");
             doc.cookie = 'cssupdate=' + cssupdate_value + ';expires="Wed, 19 Feb 2020 06:05:15 GMT";path=/';
         }(this, this.document));
-        //-->

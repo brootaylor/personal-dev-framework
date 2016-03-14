@@ -46,7 +46,7 @@
                     }
                 };
 
-                var enhanceclass = 'cutsthemustard';
+                var enhanceclass = 'enhanced';
 
                 if (cutsTheMustard() === true) {
                     // Browser cuts the mustard...
@@ -116,19 +116,18 @@
 
             <!--
                 ARIA: the landmark role "navigation" is added here as the element contains site navigation
-                NOTE: The <nav> element does not have to be contained within a <header> element, even though the two examples on this page are.
             --> 
-            <nav role="navigation" id="nav">
+            <nav role="navigation" class="nav" id="nav">
                 <h1 class="visuallyhidden">Main navigation</h1>
 
                 <!-- 'Burger' icon for smaller screen menu (navigation) -->
-                <a href="#" class="menu-button" id="menuButton">
+                <a href="#menu" class="menu-button" id="menuButton">
                     <span class="burger-icon"></span>
                     <span class="burger-text">Menu</span>
                 </a>
 
                 <!-- This can contain your site navigation in something like an unordered list -->
-                <ul>
+                <ul id="menu">
                     <li>
                         <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>">Home</a>
                     </li>
@@ -136,13 +135,13 @@
                         <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/about-us">About Us</a>
                     </li>
                     <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/about-us">Contact Us</a>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/contact-us">Contact Us</a>
                     </li>
                     <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/about-us">Accessibility</a>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/accessibility">Accessibility</a>
                     </li>
                     <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/about-us">Home</a>
+                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/cookies">Cookies</a>
                     </li>
                 </ul>
             </nav>
