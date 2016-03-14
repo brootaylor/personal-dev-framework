@@ -8,6 +8,36 @@
 	margin-top: pxToEm(15px, $base-font-size);
 }
 
+.logo {
+	display: inline-block;
+
+	img {
+		display: block;
+	}
+}
+
+.nav {
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	@include break-point(560px) {
+		display: inline-block;
+
+		ul {
+			margin-left: pxToEm(20px, $base-font-size)
+		}
+
+		li {
+			display: inline-block;
+			margin-right: pxToEm(15px, $base-font-size);
+		}
+	}
+}
+
 // Using 'enhanced' class as the selector for devices that cut the mustard
 .enhanced {
 	.nav {
@@ -21,7 +51,7 @@
 			}
 
 				// Hide the menu button now that space allows for the navigation to be visible
-				@include break-point(480px) {
+				@include break-point(560px) {
 					display: none;
 				}
 		}
@@ -31,7 +61,7 @@
 			overflow: hidden;
 
 				// Show the full menu now that space allows
-				@include break-point(480px) {
+				@include break-point(560px) {
 					overflow: auto;
 					max-height: inherit;
 				}

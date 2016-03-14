@@ -103,7 +103,7 @@ module.exports = function (grunt) {
                 options: {
                     url: "http://local.personal-dev-framework",
                     width: 1024, // Screen width
-                    height: 300, // Screen height
+                    height: 768, // Screen height
                     outputfile: "<%= dirs.css %>/critical.css",
                     forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
                     filename: "<%= dirs.css %>/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here

@@ -378,41 +378,70 @@ img { max-width: 100%; }
 #masthead, #main, #footer { margin-left: 0.9375em; margin-right: 0.9375em; }
 
 /* ========================================================================== Grid ========================================================================== */
+/* line 13, ../../scss/framework/_grid.scss */
+.grid .col:last-of-type { padding-right: 0; }
 @media (min-width: 35em) { /* line 11, ../../scss/framework/_grid.scss */
-  .grid .col { float: left; width: 50%; }
-  /* line 16, ../../scss/framework/_grid.scss */
+  .grid .col { float: left; width: 50%; padding-right: 1.25em; }
+  /* line 22, ../../scss/framework/_grid.scss */
   .grid .col:nth-child(2n+1) { clear: left; } }
 @media (min-width: 48em) { /* line 11, ../../scss/framework/_grid.scss */
   .grid .col { width: 33.33333%; }
-  /* line 24, ../../scss/framework/_grid.scss */
+  /* line 30, ../../scss/framework/_grid.scss */
   .grid .col:nth-child(n) { clear: none; }
-  /* line 27, ../../scss/framework/_grid.scss */
+  /* line 33, ../../scss/framework/_grid.scss */
   .grid .col:nth-child(3n+1) { clear: left; } }
 @media (min-width: 64em) { /* line 11, ../../scss/framework/_grid.scss */
   .grid .col { width: 25%; }
-  /* line 35, ../../scss/framework/_grid.scss */
+  /* line 41, ../../scss/framework/_grid.scss */
   .grid .col:nth-child(n) { clear: none; }
-  /* line 38, ../../scss/framework/_grid.scss */
+  /* line 44, ../../scss/framework/_grid.scss */
   .grid .col:nth-child(4n+1) { clear: left; } }
+
+/* Opt-in outside padding */
+@media (min-width: 35em) { /* line 52, ../../scss/framework/_grid.scss */
+  .grid-pad { padding: 1.25em 0 1.25em 1.25em; } }
+/* line 59, ../../scss/framework/_grid.scss */
+.grid-pad .col:last-of-type { padding-right: 1.25em; }
 
 /* ========================================================================== Masthead styles (eg. Logo, strapline & main navigation / menu). ========================================================================== */
 /* line 6, ../../scss/framework/_masthead.scss */
 #masthead { position: relative; margin-top: 0.9375em; }
 
+/* line 11, ../../scss/framework/_masthead.scss */
+.logo { display: inline-block; }
 /* line 14, ../../scss/framework/_masthead.scss */
+.logo img { display: block; }
+
+/* line 21, ../../scss/framework/_masthead.scss */
+.nav ul { list-style: none; padding: 0; margin: 0; }
+@media (min-width: 35em) { /* line 19, ../../scss/framework/_masthead.scss */
+  .nav { display: inline-block; }
+  /* line 30, ../../scss/framework/_masthead.scss */
+  .nav ul { margin-left: 1.25em; }
+  /* line 34, ../../scss/framework/_masthead.scss */
+  .nav li { display: inline-block; margin-right: 0.9375em; } }
+
+/* line 44, ../../scss/framework/_masthead.scss */
 .enhanced .nav .menu-button { position: absolute; right: 0; top: 0; }
-/* line 19, ../../scss/framework/_masthead.scss */
+/* line 49, ../../scss/framework/_masthead.scss */
 .enhanced .nav .menu-button .burger-text { font-size: 14px; font-size: 0.875rem; }
-@media (min-width: 30em) { /* line 14, ../../scss/framework/_masthead.scss */
+@media (min-width: 35em) { /* line 44, ../../scss/framework/_masthead.scss */
   .enhanced .nav .menu-button { display: none; } }
-/* line 29, ../../scss/framework/_masthead.scss */
+/* line 59, ../../scss/framework/_masthead.scss */
 .enhanced .nav ul { max-height: 0; overflow: hidden; }
-@media (min-width: 30em) { /* line 29, ../../scss/framework/_masthead.scss */
+@media (min-width: 35em) { /* line 59, ../../scss/framework/_masthead.scss */
   .enhanced .nav ul { overflow: auto; max-height: inherit; } }
-/* line 39, ../../scss/framework/_masthead.scss */
+/* line 69, ../../scss/framework/_masthead.scss */
 .enhanced .nav ul.open { max-height: 12.5em; transition: max-height 0.25s ease-out; }
 
 /* ========================================================================== Main Footer ========================================================================== */
+/* line 6, ../../scss/framework/_footer.scss */
+#footer { margin-top: 0.9375em; padding-top: 0.9375em; border-top: 1px solid #000; }
+/* line 11, ../../scss/framework/_footer.scss */
+#footer ul { list-style: none; padding: 0; margin: 0; }
+/* line 16, ../../scss/framework/_footer.scss */
+#footer li { display: inline-block; margin-right: 0.9375em; }
+
 /* ========================================================================== Print styles. Inlined to avoid the additional HTTP request: h5bp.com/r ========================================================================== */
 @media print { /* line 8, ../../scss/framework/_print.scss */
   * { background: transparent !important; color: #000 !important; /* Black prints faster: h5bp.com/s */ box-shadow: none !important; text-shadow: none !important; }

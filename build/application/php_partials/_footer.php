@@ -1,7 +1,7 @@
-        <!-- The main page footer can contain items such as copyright and contact information. It can also contain a duplicated navigation of your site which is not usually contained within a <nav> -->
+        <!-- The main page footer can contain items such as copyright and contact information. -->
         <!-- ARIA: the landmark role "contentinfo" is added here as it contains metadata that applies to the parent document -->
         <footer role="contentinfo" id="footer">
-            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the '2015' is a date -->
+            <!-- Copyright information can be contained within the <small> element. The <time> element is used here to indicate that the current year '2016' is a date -->
             <small>
                 <ul>
                     <li>
@@ -35,9 +35,9 @@
         <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1457885930962.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1457986504140.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1457885930962.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1457986504140.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
