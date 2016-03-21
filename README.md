@@ -22,6 +22,7 @@ You're welcome to use it.
 * [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)* 
 * Simple, zero-configuration command-line [http server](#http-server).
 * Build directory output examples.
+* It's built using a [Mobile First](http://www.lukew.com/resources/mobile_first.asp) approach which can then be progressively enhanced as screen space and device features allow.
 
 ## Installation
 *Requirements: Node, NPM, Grunt and SASS installed globally, then...*
