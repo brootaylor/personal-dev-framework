@@ -4,16 +4,6 @@
 ?>
 <!doctype html>
 <html lang="en" dir="ltr">
-
-<!--
-    AppCache manifest file referencing:
-    ===================================
-
-    If you want to enable your website visitors to browse your website when they are offline...
-
-    <html lang="en" dir="ltr" manifest="manifest.appcache">
--->
-
     <head>
         <meta charset="utf-8">
         <title><?php echo $page_title; ?> <?php echo $page_title_extra; ?></title>
