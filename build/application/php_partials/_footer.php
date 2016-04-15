@@ -11,8 +11,8 @@
                         <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/cookies">Cookies</a>
                     </li>
                 </ul>
-                <em>Made by <a href="http://brootaylor.com" rel="external">Bruce Taylor</a> in Horley, England</em>
-                &copy; 2002&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor. All rights reserved.
+                <em>Made by <a href="http://brootaylor.com" rel="external">Bruce Taylor</a> in Horley, England. </em>
+                &copy; 2003&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor. All rights reserved.
             </small>
         </footer>
         <!-- / Footer content -->
@@ -31,13 +31,13 @@
             These are calls to the development (uncompressed) version. Change to compressed versions for production.
         -->
         <!-- Processhtml Grunt task changes jquery cdn call to the .min version on build -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.3.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1457986504140.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1460737285079.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1457986504140.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1460737285079.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
