@@ -346,6 +346,7 @@ module.exports = function (grunt) {
             js: {
                 files: [
                     'Gruntfile.js',
+                    'static/**/loadCSS.js',
                     'static/**/main.js',
                     'static/**/plugins.js'
                 ],
