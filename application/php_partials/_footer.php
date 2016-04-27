@@ -51,49 +51,6 @@
             ga('create','UA-XXXXX-X','auto');
             ga('send','pageview');
             ga('require', 'displayfeatures');
-
-
-            // Some more Google Analytics options...
-            ////////////////////////////////////////
-
-            // Track JavaScript errors in Google Analytics:
-            (function(window){
-                var undefined,
-                    link = function (href) {
-                        var a = window.document.createElement('a');
-                        a.href = href;
-                        return a;
-                    };
-                window.onerror = function (message, file, line, column) {
-                    var host = link(file).hostname;
-                    ga('send', {
-                      'hitType': 'event',
-                      'eventCategory': (host == window.location.hostname || host == undefined || host == '' ? '' : 'external ') + 'error',
-                      'eventAction': message,
-                      'eventLabel': (file + ' LINE: ' + line + (column ? ' COLUMN: ' + column : '')).trim(),
-                      'nonInteraction': 1
-                    });
-                };
-            }(window));
-
-            // Track page scroll:
-            $(function(){
-                var isDuplicateScrollEvent,
-                    scrollTimeStart = new Date,
-                    $window = $(window),
-                    $document = $(document),
-                    scrollPercent;
-
-                $window.scroll(function() {
-                    scrollPercent = Math.round(100 * ($window.height() + $window.scrollTop())/$document.height());
-                    if (scrollPercent > 90 && !isDuplicateScrollEvent) { //page scrolled to 90%
-                        isDuplicateScrollEvent = 1;
-                        ga('send', 'event', 'scroll',
-                            'Window: ' + $window.height() + 'px; Document: ' + $document.height() + 'px; Time: ' + Math.round((new Date - scrollTimeStart )/1000,1) + 's'
-                        );
-                    }
-                });
-            });
         </script>
         <!-- / JavaScript -->
 
