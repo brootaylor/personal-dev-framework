@@ -26,6 +26,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <script>
+            // Check whether browser 'cuts the mustard'
             (function (win, doc) {
 
                 var cutsTheMustard = function() {
@@ -44,6 +45,20 @@
                 }
 
             }(this, this.document));
+
+            // Google font call
+            WebFontConfig = {
+                google: { families: [ 'Open+Sans:400,700,300,600:latin' ] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
         </script>
 
         <?php
@@ -111,7 +126,7 @@
                 <h1 class="visuallyhidden">Main navigation</h1>
 
                 <!-- 'Burger' icon for smaller screen menu (navigation) -->
-                <a href="#menu" class="menu-button" id="menuButton">
+                <a href="#menu" class="menu-button" id="menuButton" aria-controls="menu">
                     <span class="burger-icon"></span>
                     <span class="burger-text">Menu</span>
                 </a>
