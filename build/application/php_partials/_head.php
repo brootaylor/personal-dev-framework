@@ -26,6 +26,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <script>
+            // Check whether browser 'cuts the mustard'
             (function (win, doc) {
 
                 var cutsTheMustard = function() {
@@ -44,6 +45,20 @@
                 }
 
             }(this, this.document));
+
+            // Google font call
+            WebFontConfig = {
+                google: { families: [ 'Open+Sans:400,700,300,600:latin' ] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
         </script>
 
         <?php
@@ -60,7 +75,7 @@
             }
         ?>
 
-        <!-- Or use the html5shiv instead of modernizr for Internet Explorer browsers 8 and below -->
+        <!-- Use the html5shiv for Internet Explorer browsers 8 and below -->
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
             <script>window.html5 || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/html5shiv.js"><\/script>')</script>
@@ -111,7 +126,7 @@
                 <h1 class="visuallyhidden">Main navigation</h1>
 
                 <!-- 'Burger' icon for smaller screen menu (navigation) -->
-                <a href="#menu" class="menu-button" id="menuButton">
+                <a href="#menu" class="menu-button" id="menuButton" aria-controls="menu">
                     <span class="burger-icon"></span>
                     <span class="burger-text">Menu</span>
                 </a>
