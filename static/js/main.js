@@ -7,27 +7,33 @@
 // For larger projects, you can make use of a JavaScript module loader, like Require.js, to load any other scripts you need to run.
 
 
-// Hamburger icon toggling & menu show / hide
-//////////////////////////////////////////////
+(function($) {
 
-(function() {
-    var menuButton = document.querySelector('#menuButton'),
-    	nav = document.querySelector("#nav ul");
+	'use strict';
 
-    if (menuButton) {
-    	menuButton.addEventListener('click', function (e) {
-	        menuButton.classList.toggle('is-active');
+	// Hamburger icon toggling & menu show / hide
+	//////////////////////////////////////////////
 
-	        if (nav.className === "open") {
-	        	nav.className = "";
-	        } else {
-	        	nav.className = "open";
-	        }
+	(function() {
+	    var menuButton = document.querySelector('#menuButton'),
+	    	nav = document.querySelector("#nav ul");
 
-	        e.preventDefault();
-	    }, false);
-    }
-})();
+	    if (menuButton) {
+	    	menuButton.addEventListener('click', function (e) {
+		        menuButton.classList.toggle('is-active'); // May need to use something other than 'classList' because of sketchy browser support
 
-///////////////////////////////////////////////////////////////
+		        if (nav.className === "open") {
+		        	nav.className = "";
+		        } else {
+		        	nav.className = "open";
+		        }
+
+		        e.preventDefault();
+		    }, false);
+	    }
+	})();
+
+	///////////////////////////////////////////////////////////////
+
+})(jQuery);
 
