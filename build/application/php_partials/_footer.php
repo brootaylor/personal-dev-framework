@@ -23,21 +23,14 @@
 
         -->
 
-        <!-- /// JavaScript \\\ -->
-
-        <!--
-            Vendor JS calls
-            ===============
-            These are calls to the development (uncompressed) version. Change to compressed versions for production.
-        -->
         <!-- Processhtml Grunt task changes jquery cdn call to the .min version on build -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.2.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1461788153807.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1461791160420.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1461788153807.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1461791160421.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
