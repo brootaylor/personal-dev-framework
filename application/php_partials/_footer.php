@@ -23,13 +23,6 @@
 
         -->
 
-        <!-- /// JavaScript \\\ -->
-
-        <!--
-            Vendor JS calls
-            ===============
-            These are calls to the development (uncompressed) version. Change to compressed versions for production.
-        -->
         <!-- Processhtml Grunt task changes jquery cdn call to the .min version on build -->
         <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
