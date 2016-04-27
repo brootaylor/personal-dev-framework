@@ -31,13 +31,13 @@
             These are calls to the development (uncompressed) version. Change to compressed versions for production.
         -->
         <!-- Processhtml Grunt task changes jquery cdn call to the .min version on build -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.3.min.js"><\/script>')</script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.2.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1460737285079.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1461788153807.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1460737285079.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1461788153807.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -49,49 +49,6 @@
             ga('create','UA-XXXXX-X','auto');
             ga('send','pageview');
             ga('require', 'displayfeatures');
-
-
-            // Some more Google Analytics options...
-            ////////////////////////////////////////
-
-            // Track JavaScript errors in Google Analytics:
-            (function(window){
-                var undefined,
-                    link = function (href) {
-                        var a = window.document.createElement('a');
-                        a.href = href;
-                        return a;
-                    };
-                window.onerror = function (message, file, line, column) {
-                    var host = link(file).hostname;
-                    ga('send', {
-                      'hitType': 'event',
-                      'eventCategory': (host == window.location.hostname || host == undefined || host == '' ? '' : 'external ') + 'error',
-                      'eventAction': message,
-                      'eventLabel': (file + ' LINE: ' + line + (column ? ' COLUMN: ' + column : '')).trim(),
-                      'nonInteraction': 1
-                    });
-                };
-            }(window));
-
-            // Track page scroll:
-            $(function(){
-                var isDuplicateScrollEvent,
-                    scrollTimeStart = new Date,
-                    $window = $(window),
-                    $document = $(document),
-                    scrollPercent;
-
-                $window.scroll(function() {
-                    scrollPercent = Math.round(100 * ($window.height() + $window.scrollTop())/$document.height());
-                    if (scrollPercent > 90 && !isDuplicateScrollEvent) { //page scrolled to 90%
-                        isDuplicateScrollEvent = 1;
-                        ga('send', 'event', 'scroll',
-                            'Window: ' + $window.height() + 'px; Document: ' + $document.height() + 'px; Time: ' + Math.round((new Date - scrollTimeStart )/1000,1) + 's'
-                        );
-                    }
-                });
-            });
         </script>
         <!-- / JavaScript -->
 

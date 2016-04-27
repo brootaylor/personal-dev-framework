@@ -193,9 +193,8 @@ module.exports = function (grunt) {
 		        	'<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
 
 		        	// Javascript library files...
-		        	'<%= dirs.jsBuild %>/vendor/jquery-1.12.3.min.js': '<%= dirs.js %>/vendor/jquery-1.12.3.min.js',
+		        	'<%= dirs.jsBuild %>/vendor/jquery-1.12.2.min.js': '<%= dirs.js %>/vendor/jquery-1.12.2.min.js',
                     '<%= dirs.jsBuild %>/vendor/html5shiv.js': '<%= dirs.js %>/vendor/html5shiv.js',
-		        	'<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
 		        	// PHP partial files...
 		        	'<%= dirs.appBuild %>/php_partials/_variables.php': '<%= dirs.app %>/php_partials/_variables.php',
