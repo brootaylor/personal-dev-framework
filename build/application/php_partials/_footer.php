@@ -28,9 +28,9 @@
         <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.2.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1461791160420.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1466610364456.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1461791160421.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1466610364456.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
