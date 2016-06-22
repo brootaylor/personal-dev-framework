@@ -2,3 +2,210 @@
 /* ==========================================================================
    Forms (Global)
    ========================================================================== */
+
+
+/* FORMS VARIABLE CONFIG
+============================================= */
+
+// ie. The container that contains each <label>, <input>, <textarea> and <select> element eg. <li>
+$form-item-margin: pxToEm(0 0 15px 0, $font-size-base);
+
+// <input>, <textarea> and <select> elements
+$form-field-width: 100%;
+$form-field-border: 1px solid $grey;
+$form-field-border-error: $message-error;
+$form-field-radius: 4px;
+$form-field-padding: pxToEm(10px , $font-size-base);
+$form-field-background: lighten($grey, 13%);
+$form-field-background-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1), 0 0 #fff;
+$form-field-background-focus: $white;
+$form-field-background-error: lighten($message-error, 40%);
+
+// <legend> element
+$form-legend-margin: pxToEm(0 0 10px 0, $font-size-base);
+$form-legend-font-size: 18px;
+$form-legend-font-weight: $font-weight-semi-bold;
+$form-legend-font-color: $font-color-base;
+
+// <label> element
+$form-label-margin: pxToEm(0 0 5px 0, $font-size-base);
+$form-label-font-size: $font-size-base;
+$form-label-font-weight: $font-weight-normal;
+$form-label-font-color: $font-color-base;
+
+
+
+/* FORM FIELD PLACEHOLDER - (Global rules)
+============================================= */
+
+%field-global {
+	display: block;
+	width: $form-field-width;
+	border: $form-field-border;
+	border-radius: $form-field-radius;
+	padding: $form-field-padding;
+	box-sizing: border-box;
+	background-color: $form-field-background;
+	box-shadow: $form-field-background-shadow;
+
+	// Required to properly style form elements on more modern browsers
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+		// IE11 ms-expand rule to remove things like arrows - IE equivalent to "appearance:none;"
+		&::-ms-expand {
+			display:none;
+		}
+
+		&:focus {
+			background-color: $form-field-background-focus; // Fallback if linear-gradient (below) used
+			//background-image: linear-gradient(lighten($grey, 10%), $white); // No angle declared so gradient runs top to bottom
+		}
+}
+
+
+/* GLOBAL FORM STYLES
+============================================= */
+
+// Set these input types - (radio and checkboxes not included here)
+input {
+	&[type="text"],
+	&[type="number"],
+	&[type="email"],
+	&[type="tel"],
+	&[type="password"],
+	&[type="url"],
+	&[type="search"] {
+
+		// Pulls in global placeholder rules.
+		@extend %field-global;
+	}
+
+	// Specific Radio and Checkbox styles can go here
+	&[type="radio"],
+	&[type="checkbox"] {
+		// Awaiting styles
+		// Things like size and colouring more than likely
+	}
+}
+
+// Set the textarea and select elements
+textarea,
+select {
+	// Pulls in global placeholder rules.
+	@extend %field-global;
+}
+///////////////////////////////////////////////
+
+
+// Generic class added to the <form> element
+.form {
+	// Awaiting styles
+}
+
+// Class added to the form elements wrapper eg. <ul> if an unordered list is used
+.form__wrap {
+	// Awaiting styles
+}
+
+// Class added to each individual container that contains the <label> and <input> elements eg. <li> if an unordered list is used
+.form__item {
+	margin: $form-item-margin;
+}
+
+// Class added to each form <legend> element
+.form__legend {
+	@include fontSize($form-legend-font-size);
+	font-weight: $form-legend-font-weight;
+	color: $form-legend-font-color;
+	display: block;
+	margin: $form-legend-margin;
+}
+
+// Class added to each form <label> element
+.form__label {
+	@include fontSize($form-label-font-size);
+	font-weight: $form-label-font-weight;
+	color: $form-label-font-color;
+	display: block;
+	margin: $form-label-margin;
+
+		// When Radio and Checkbox inputs are wrapped in a <label> element...
+		.form__field {
+			&[type="radio"],
+			&[type="checkbox"] {
+				margin-right: pxToEm(5px, $font-size-base);
+			}
+		}
+}
+
+// Class added to each <input> and <textarea> field element - (NOT buttons)
+.form__field {
+
+	//////////////////////////////////////////////
+	// Disable Input Number Field Arrows from CSS
+	// Covers Webkit browsers like Chrome, Safari and the latest Opera. Also covers Firefox.
+	&[type=number] {
+		-moz-appearance:textfield;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+	&[type="search"] {
+		box-sizing: border-box; // Just making sure. This, or change it in the _normalise.scss partial.
+
+			// This just ensures the search box's adjacent sibling (ie. tooltip) is revealed on focus. Screenreader benefit.
+			&:focus + [role="tooltip"] {
+				display: block;
+				position: absolute;
+				top: 100%;
+			}
+	}
+
+	/////////////////////////////////
+	// Field highlighting if invalid
+	// &:invalid {
+	// 	border-color: $form-field-border-error;
+	// 	background-color: $form-field-background-error;
+	// }
+	&:focus:invalid {
+	  outline: none;
+	}
+}
+
+// If an extra wrapper is needed for a 'form__field' eg. the <select> example on the components page.
+.field__wrap {
+	position: relative;
+
+	// Creates the arrow effect for the <select> dropdown
+	&.field--select:after {
+		top: 50%;
+		right: pxToEm(15px, $font-size-base);
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(0, 0, 0, 0);
+		border-top-color: $black;
+		border-width: 5px;
+		margin-right: pxToEm(-5px, $font-size-base);
+	}
+}
+
+// Class added to the <abbr> element (wrapped in a <label> element) when a field is mandatory
+.field--mandatory {
+
+	&[title] {
+		border: none;
+		color: $message-error;
+	}
+	
+}
+
+//////////////////////////////////////////////////////////

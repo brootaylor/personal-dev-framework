@@ -18,10 +18,10 @@
 hr {
     display: block;
     //height: 0.063em;
-    height: pxToEm(1px, $base-font-size);
+    height: pxToEm(1px, $font-size-base);
     border: 0;
-    border-top: pxToEm(1px, $base-font-size) solid darken($white, 70%);
-    margin: pxToEm(1px 0, $base-font-size);
+    border-top: pxToEm(1px, $font-size-base) solid darken($white, 70%);
+    margin: pxToEm(1px 0, $font-size-base);
     padding: 0;
 }
 
@@ -62,16 +62,16 @@ textarea {
    ========================================================================== */
 
 .tech-missing {
-    margin: pxToEm(3px 15px, $base-font-size);
-    padding: pxToEm(3px 8px, $base-font-size);
+    margin: pxToEm(3px 15px, $font-size-base);
+    padding: pxToEm(3px 8px, $font-size-base);
     background: $grey;
 
       h2, p {
         color: $black;
       }
       h2 {
-        margin: pxToEm(10px 0, $base-font-size);
-        font-weight: $fw-primary-normal;
+        margin: pxToEm(10px 0, $font-size-base);
+        font-weight: $font-weight-normal;
       }
 }
 
@@ -89,8 +89,8 @@ img {
 }
 
 #masthead, #main, #footer {
-    margin-left: pxToEm(15px, $base-font-size);
-    margin-right: pxToEm(15px, $base-font-size);
+    margin-left: pxToEm(15px, $font-size-base);
+    margin-right: pxToEm(15px, $font-size-base);
 }
 
 

@@ -16,13 +16,13 @@
 	overflow: hidden;
 	width: auto;
 	padding: 1em;
-	@include fontSize($base-font-size);
+	@include fontSize($font-size-base);
 	text-align: center;
 	text-decoration: none;
 	zoom: 1\9;
 	overflow: visible\9;
 	color: $white;
-	font-weight: $fw-primary-normal;
+	font-weight: $font-weight-normal;
 }
  
 /* BUTTON MIXIN 

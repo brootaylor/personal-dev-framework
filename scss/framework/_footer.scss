@@ -4,8 +4,8 @@
    ========================================================================== */
 
 #footer {
-	margin-top: pxToEm(15px, $base-font-size);
-	padding-top: pxToEm(15px, $base-font-size);
+	margin-top: pxToEm(15px, $font-size-base);
+	padding-top: pxToEm(15px, $font-size-base);
 	border-top: 1px solid $black;
 
 	ul {
@@ -15,6 +15,6 @@
 	}
 	li {
 		display: inline-block;
-		margin-right: pxToEm(15px, $base-font-size);
+		margin-right: pxToEm(15px, $font-size-base);
 	}
 }
