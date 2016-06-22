@@ -247,7 +247,7 @@
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
 			            	<a href="" class="media__image">
-			            		<img src="static/img/posts/Gary-Powell-650-80.jpg" alt="">
+			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
@@ -283,7 +283,7 @@
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
 			            	<a href="" class="media__image">
-			            		<img src="static/img/posts/Gary-Powell-650-80.jpg" alt="">
+			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
@@ -323,7 +323,7 @@
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
 			            	<a href="" class="media__image">
-			            		<img src="static/img/posts/Gary-Powell-650-80.jpg" alt="">
+			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
@@ -361,7 +361,7 @@
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
 			            	<a href="" class="media__image">
-			            		<img src="static/img/posts/Gary-Powell-650-80.jpg" alt="">
+			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
@@ -397,7 +397,7 @@
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
 			            	<a href="" class="media__image">
-			            		<img src="static/img/posts/Gary-Powell-650-80.jpg" alt="">
+			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">

@@ -7,3 +7,7 @@ styles.css.map
 errors
 node_modules
 maps
+
+# Ignore icomoon demo files etc. except 'fonts' directory
+/icomoon/*
+!/icomoon/fonts

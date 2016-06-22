@@ -47,10 +47,10 @@
                          reads "button collapsed navigation menu". When you press the button, "expand" is announced as aria-expanded is switched to "true".
                 -->
                 <a href="#menu" class="menu-button" id="menuButton" aria-controls="menu">
-                    <span class="burger-icon"></span>
-                    <span class="burger-text">
+                    <span class="menu-button--icon"></span>
+                    <span class="menu-button--text">
                         <!-- Swap out "Open" and "Close" text depending on state. Benefits assistive technologies - especially screenreaders -->
-                        <span class="screen-reader-text">Open </span>Menu
+                        <span class="screenreader">Open </span>Menu
                     </span>
                 </a>
 

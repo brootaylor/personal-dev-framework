@@ -55,30 +55,30 @@ html {
  */
 
 // Function for converting a px based font-size to rem.
-@function calculateRem($size) {
-  $remSize: $size / $font-size-base; // = 16px
-    // Default font size on html element is 100%, equivalent to 16px;
-  @return #{$remSize}rem;
-}
+// @function calculateRem($size) {
+//   $remSize: $size / $font-size-base; // = 16px
+//     // Default font size on html element is 100%, equivalent to 16px;
+//   @return #{$remSize}rem;
+// }
 
-// Mixin that will include the fall back px declaration as well as the calculated rem value.
-@mixin fontSize($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
-}
+// // Mixin that will include the fall back px declaration as well as the calculated rem value.
+// @mixin fontSize($size) {
+//   font-size: $size;
+//   font-size: calculateRem($size);
+// }
 
 // ===============================================
 // Alternative option ==> could be more refined...
 // ===============================================
 
-// @function countRem($value) {
-//  $remValue: $value / $base-font-size;
-//  @return $remValue * 1rem;
-// }
-// @mixin fontSize($value) {
-//  font-size: $value;
-//  font-size: calculateRem($value);
-// }
+@function calculateRem($value) {
+ $remValue: $value / $font-size-base;
+ @return $remValue * 1rem;
+}
+@mixin fontSize($value) {
+ font-size: $value;
+ font-size: calculateRem($value);
+}
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -97,94 +97,303 @@ html {
 
 */
 
-// Titles
-//////////
+// Titles (Global)
+///////////////////
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: $font-weight-normal;
 }
 h1 {
-    @include fontSize(24px);
-    @include break-point-min(640px) {
-        @include fontSize(28px);
-    }
+    @include fontSize(26px);
+    transition: font-size 0.2s linear;
+    margin: pxToEm(0 0 15px 0, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(30px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(34px);
+        }
+         
 }
 h2 {
     @include fontSize(22px);
+    transition: font-size 0.2s linear;
+    margin: pxToEm(10px 0 15px 0, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(26px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(30px);
+        }
 }
 h3 {
     @include fontSize(18px);
+    transition: font-size 0.2s linear;
+    margin: pxToEm(10px 0 15px 0, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(22px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(26px);
+        }
+}
+h4 {
+    @include fontSize(16px);
+    transition: font-size 0.2s linear;
+    margin: pxToEm(10px 0 15px 0, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(20px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(24px);
+        }
+}
+h5 {
+    @include fontSize(16px);
+    transition: font-size 0.2s linear;
+    margin: pxToEm(10px 0 15px 0, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(20px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(24px);
+        }
+}
+h6 {
+    @include fontSize(16px);
+    transition: font-size 0.2s linear;
+    margin: pxToEm(10px 0 15px 0, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(20px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(24px);
+        }
 }
 
-// <p> tag snuck in here...
+// Paragraphs
+///////////////////////////
+
 p {
-    margin: pxToEm(10px 0, $font-size-base);
+    margin: pxToEm(0 0 15px 0, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(18px);
+            transition: font-size 0.2s linear;
+        }
 }
 
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
+// Block quote
+///////////////////////////
 
-::-moz-selection {
-    //background: #b3d4fc;
-    text-shadow: none;
+blockquote {
+    margin: pxToEm(20px, $font-size-base);
+    padding: pxToEm(0 15px, $font-size-base);
+    position: relative;
+
+        @include break-point-min($bp-m) {
+            margin: pxToEm(20px 40px, $font-size-base);
+            padding: pxToEm(0 30px, $font-size-base);
+        }
+        @include break-point-min($bp-l) {
+            margin: pxToEm(20px 40px, $font-size-base);
+        }
+
+    &:before,
+    &:after {
+        @include fontSize(60px);
+        transition: font-size 0.2s linear;
+        display: block;
+        position: absolute;
+        color: #7a7a7a;
+        line-height: 0;
+
+            @include break-point-min($bp-m) {
+                @include fontSize(70px);
+            }
+            @include break-point-min($bp-l) {
+                @include fontSize(80px);
+            }
+    }
+    &:before {
+        content: "\201C";
+        left: pxToEm(-2px, $font-size-base);
+        top: pxToEm(5px, $font-size-base);
+    }
+    &:after {
+        content: "\201D";
+        right: pxToEm(-2px, $font-size-base);
+        bottom: pxToEm(5px, $font-size-base);
+    }
+    p {
+        @include fontSize(16px);
+        transition: font-size 0.2s linear;
+        font-style: italic;
+        color: #4c7f01;
+
+            @include break-point-min($bp-m) {
+                @include fontSize(20px);
+            }
+            @include break-point-min($bp-l) {
+                @include fontSize(24px);
+            }
+    }
+    footer {
+        margin: pxToEm(10px, $font-size-base);
+        border: none;
+        text-align: right;
+
+            cite {
+                @include fontSize(14px);
+                transition: font-size 0.2s linear;
+                display: inline;
+                margin: 0;
+                color: darken($grey, 30%);
+
+                    @include break-point-min($bp-m) {
+                        @include fontSize(16px);
+                    }
+
+            }
+    }
 }
 
-::selection {
-    //background: #b3d4fc;
-    text-shadow: none;
+// Article styles (Summary and full article / post)
+////////////////////////////////////////////////////
+
+.post,
+.post-sum {
+    // Awaiting styles
+}
+
+.post__header,
+.post-sum__header  {
+    margin-bottom: pxToEm(20px, $font-size-base);
+}
+
+.post__title,
+.post-sum__title {
+    margin-bottom: 0;
+}
+
+.post-sum__title {
+    a,
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.post__title-sub,
+.post-sum__title-sub {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.post__meta,
+.post-sum__meta {
+    @include fontSize(14px);
+    transition: font-size 0.2s linear;
+    color: darken($grey, 30%);
+
+        @include break-point-min($bp-l) {
+            @include fontSize(16px);
+        }
+}
+
+.post__time,
+.post__extra,
+.post-sum__time,
+.post-sum__extra {
+    padding-left: pxToEm(20px, $font-size-base);
+    position: relative;
+
+        &:before {
+            content:'\007C';
+            position: absolute;
+            left: pxToEm(7px, $font-size-base);
+            color: $grey;
+        }
+}
+
+.post__location,
+.post-sum__location {
+    display: block;
+}
+
+// Article Introduction / Lead paragraph
+.post__lead {
+    @include fontSize(18px);
+    transition: font-size 0.2s linear;
+    font-weight: $font-weight-normal;
+
+        @include break-point-min($bp-m) {
+            @include fontSize(20px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(22px);
+        }
+}
+
+.post__related {
+    background-color: lighten($grey, 10%);
+    padding: pxToEm(15px, $font-size-base);
+    margin-bottom: pxToEm(15px, $font-size-base);
+}
+
+.post__related-title {
+    @include fontSize(22px);
+    transition: font-size 0.2s linear;
+    margin-bottom: pxToEm(10px, $font-size-base);
+
+        @include break-point-min($bp-m) {
+            @include fontSize(24px);
+        }
+        @include break-point-min($bp-l) {
+            @include fontSize(26px);
+        }
+}
+
+.post__footer {
+    background-color: $grey;
+    padding: pxToEm(15px, $font-size-base);
+    margin-bottom: pxToEm(15px, $font-size-base);
+
+    p {
+        margin: 0;
+        font-size: 95%;
+    }
+}
+
+// Horizontal rule
+///////////////////////////
+
+hr {
+    display: block;
+    height: pxToEm(1px, $font-size-base);
+    border: 0;
+    border-top: pxToEm(1px, $font-size-base) solid darken($white, 70%);
+    margin: pxToEm(15px 0, $font-size-base);
+    padding: 0;
+}
+
+.hr__big {
+    height: pxToEm(5px, $font-size-base);
+    border-top-width: pxToEm(5px, $font-size-base);
+    margin: pxToEm(40px 0, $font-size-base);
 }
 
 ///////////////////////////////////////////////////
-
-// Icon Fonts
-//////////////
-
-@font-face {
-    font-family: 'icomoon';
-    src:url('../fonts/icomoon.eot?y4m61d');
-    src:url('../fonts/icomoon.eot?#iefixy4m61d') format('embedded-opentype'),
-        url('../fonts/icomoon.woff?y4m61d') format('woff'),
-        url('../fonts/icomoon.ttf?y4m61d') format('truetype'),
-        url('../fonts/icomoon.svg?y4m61d#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-    font-family: 'icomoon';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-// Usage examples...
-////////////////////
-
-.icon-home:before {
-    content: "\e600";
-}
-.icon-basket:before {
-    content: "\e601";
-}
-.icon-menu:before {
-    content: "\e602";
-}
-.icon-eject:before {
-    content: "\e603";
-}
-
-/////////////////////////////////////////////////////
 
 
 

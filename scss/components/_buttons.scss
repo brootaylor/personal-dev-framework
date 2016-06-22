@@ -7,62 +7,166 @@
 
 
 
-/* BUTTON PLACEHOLDER 
+/* BUTTON PLACEHOLDER - (Global rules)
 ============================================= */
  
 %btn {
+	@include fontSize($font-size-base);
     cursor: pointer;
     display: inline-block;
 	overflow: hidden;
 	width: auto;
-	padding: 1em;
-	@include fontSize($font-size-base);
+	padding: pxToEm(10px, $font-size-base);
+	margin: pxToEm(0 15px 15px 0, $font-size-base);
+	border: 0;
 	text-align: center;
 	text-decoration: none;
+	vertical-align: middle;
+	line-height: 1.4;
 	zoom: 1\9;
 	overflow: visible\9;
 	color: $white;
+	transition-duration: 0s;
 	font-weight: $font-weight-normal;
 }
  
-/* BUTTON MIXIN 
+/* BUTTON COLOURS MIXIN
 ============================================= */
  
-@mixin btn-background($btn-background) {
-    @extend %btn;
-    background-color: $btn-background;
+@mixin btn-colors($color-back, $color-text, $color-text-active) {
+    background-color: $color-back;
+    color: $color-text;
 
-    // Hover state
-    &:hover {
-        background-color: darken($btn-background, 5%);
+    // Hover & focus state
+    &:hover,
+    &:focus {
+    	outline: 0;
+        background-color: lighten($color-back, 5%);
+    }
+    // Active state
+    &:active {
+    	outline: 0;
+    	background-color: darken($color-back, 5%);
+    	color: $color-text-active;
+    	box-shadow: inset 0 1px 2px rgba(0,0,0,0.3),0 0 #fff;
+    	text-shadow: 0 1px 0 rgba(255,255,255,0.4);
     }
 }
 
-
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 
  
 /* BUTTONS
 ============================================= */
 
+
+/////////////////////////////
+// HOW IT WORKS
+// =========================
+// Only a single class is ever needed. It's just a case of adding extensions to the 'base' class - rather than it being seperate classes daisy chained together.
+// eg...
+// class="button__primary"									(Standard 'button__primary' button)
+// class="button__primary--jumbo"							('--jumbo' added)
+// class="button__primary--jumbo--rounded"					('--rounded' added)
+// class="button__primary--jumbo--rounded--full-width"		('--full-width' added)
+////////////////////////////////////////////////////////////////////////////////////////////
+
 a,
 button,
-input {
+input,
+span {
+
+	////////////////////////////////////////////////////////////////////
+	// Base button styles (Class begins with or contains 'button__'...)
+	&[class^="button__"],
+	&[class*=" button__"] {
+		@extend %btn;
+		@include btn-colors($black, $white, lighten($black, 20%)); 
+	}
+	////////////////////////////////////////////////////////////////////
+
+
 	// Primary button
-	&.button-primary {
-		@include btn-background($button-primary); 
+	&[class^="button__primary"],
+	&[class*=" button__primary"] {
+		@include btn-colors($button-primary, $white, darken($button-primary, 30%));
 	}
 
 	// Secondary button
-	&.button-secondary {
-		@include btn-background($button-secondary); 
+	&[class^="button__secondary"],
+	&[class*=" button__secondary"] {
+		@include btn-colors($button-secondary, $white, darken($button-secondary, 30%));
 	}
 
 	// Tertiary button
-	&.button-tertiary {
-		@include btn-background($button-tertiary); 
+	&[class^="button__tertiary"],
+	&[class*=" button__tertiary"] {
+		@include btn-colors($button-tertiary, $white, darken($button-tertiary, 40%));
+	}
+
+	// Disabled button
+	&[class^="button__disabled"],
+	&[class*=" button__disabled"] {
+		@include btn-colors($button-disabled, $font-color-base, $font-color-base);
+		cursor: not-allowed;
+
+			// Disabled hover state
+			&:hover {
+				background-color: $button-disabled;
+			}
+	}
+	////////////////////////////////////
+
+	// Button sizes
+	// =============
+
+	&[class*="--jumbo"] {
+		@include fontSize(20px);
+		padding: pxToEm(15px, $font-size-base);
+	}
+
+	&[class*="--large"] {
+		@include fontSize(18px);
+		padding: pxToEm(15px, $font-size-base);
+	}
+
+	&[class*="--small"] {
+		@include fontSize(14px);
+	}
+
+	&[class*="--tiny"] {
+		@include fontSize(12px);
+	}
+	////////////////////////////////////
+
+	// Button rounded corners
+	// =======================
+	&[class*="--rounded"] {
+		border-radius: 8px;
+	}
+	////////////////////////////////////
+
+	// Button that needs to fill entire width of given space
+	// ======================================================
+	&[class*="--full-width"] {
+		width: 100%;
+	}
+	////////////////////////////////////
+}
+
+// Wrapper <span> if you need to add an icon to an <input> element
+span {
+	&[class^="button__"],
+	&[class*=" button__"] {
+		input {
+			background-color: transparent;
+		    cursor: pointer;
+		    border: 0;
+		    outline: 0;
+			padding: 0;
+			margin: 0;
+		}
 	}
 }
 

@@ -122,22 +122,12 @@
     }
 }
 
-
-// Implementation Example:
-// =======================
-.menu-button {
-  display: inline-block;
-  padding: .5em;
-  text-align: center;
-  //background-color: #fafafa;
-  //border: 1px solid #ccc;
-}
-
-.burger-icon {
+// Generic values. Site-specific values are in the _navigation partial
+.menu-button--icon {
   @include burger(35px, 3px, 5px, #444);
 }
 
-.menu-button.is-active .burger-icon {
+.menu-button.is-active .menu-button--icon {
   @include burger-to-cross;
 }
 

@@ -4,32 +4,61 @@
    ========================================================================== */
 
 
+//////////////////////////////////////////////////////////////////
+// MEDIA 'OBJECTS' - TYPICALLY CONTAINS A LINKABLE IMAGE AND TEXT
+//////////////////////////////////////////////////////////////////
+
+
+// Standard media object. Typically horizontal layout with image to the left or right. It will 'stack' at smaller screen sizes
 .media {
   @include clearfix-me(micro);
+  margin-bottom: pxToEm(30px, $font-size-base);
 
-  > .mediaImg {
+  // Class asigned to the wrapper element around
+  > .media__image {
+    display: block;
+    margin-bottom: pxToEm(15px, $font-size-base);
 
-    @include break-point-min(480px) {
-      float: left;
-      margin-right: 10px;
-    }
+      @include break-point-min($bp-s) {
+        float: left;
+        margin-right: pxToEm(20px, $font-size-base);
+      }
 
     > img {
       display: block;
     }
   }
   
-  > .mediaImgExt {
+  // When you need the image on the right - extend with this modifier class
+  > .media__image--right {
 
-    @include break-point-min(480px) {
+    @include break-point-min($bp-s) {
         float: right;
-        margin-left: 10px;
+        margin-left: pxToEm(20px, $font-size-base);
         margin-right: 0;
     }
   }
-  > .mediaBody {
+  > .media__body {
     @include clearfix-me(facebook);
   }
 }
+
+// Stacked media object. This object / component is always vertically stacked
+.media__stacked {
+  margin-bottom: pxToEm(30px, $font-size-base);
+
+  > .media__image {
+    display: block;
+    margin-bottom: pxToEm(15px, $font-size-base);
+
+      > img {
+        display: block;
+      }
+  }
+  > .media__body {
+    // Awaiting styles
+  }
+}
+
 
 ////////////////////////////////////////////////////////////////
