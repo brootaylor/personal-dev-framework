@@ -55,9 +55,6 @@
                         <a href="#lightbox">Lightbox</a>
                     </li>
                     <li>
-                        <a href="#partners">Partner logo lock-up</a>
-                    </li>
-                    <li>
                         <a href="#grids">Grids</a>
                     </li>
                 </ul>
@@ -111,11 +108,6 @@
 
                 <!-- lightbox component -->
                 <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_lightbox.php"); ?>
-
-                <hr class="hr__big">
-
-                <!-- Partner logo (lock-up) component -->
-                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_partners.php"); ?>
 
                 <hr class="hr__big">
 
