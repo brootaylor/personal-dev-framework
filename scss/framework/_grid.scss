@@ -4,63 +4,215 @@
    ========================================================================== */
 
 
-// A simple grid that isn't class dependent
-.grid {
+/* GRID COLUMN CALCULATION
+============================================= */
+
+@function calculate-width ($col-span) {
+
+    // Get the correct gutter calculation first ie...
+    // -----------------------------------------------
+    // 2 column = 1 gutter
+    // 3 column = 2 gutters
+    // etc...
+
+    // Always one less gutter than the number of columns...
+    $gutter-calc: ($col-span * $col-gutter) - $col-gutter; 
+
+        // Now return the correctly calculated column width...
+        @return (100% - $gutter-calc) / $col-span;
+}
+
+
+/* GRID VARIABLES
+============================================= */
+
+$col-gutter: 1.6%; // If you increase the gutter size, the column widths will adjust accordingly.
+
+$col-width-2: calculate-width(2);
+$col-width-3: calculate-width(3);
+$col-width-4: calculate-width(4);
+$col-width-5: calculate-width(5);
+$col-width-6: calculate-width(6);
+
+
+/* GRID MIXINS
+============================================= */
+
+// Using a mixin instead, as a placeholder @extend call can't be used within a @media call
+
+// Set / reset the columns
+@mixin col-reset ($col-clear: none, $col-gutter-set: $col-gutter) {
+    clear: $col-clear;
+    margin-left: $col-gutter-set;
+}
+
+// Clear the first column (in each row) for each grid layout
+@mixin col-clear ($col-clear: left, $col-gutter-remove: 0) {
+    clear: $col-clear;
+    margin-left: $col-gutter-remove;
+}
+
+
+/* GRID IMPLEMENTATION
+============================================= */
+
+// Base styles
+/////////////////////////////////
+[class^="grid__"],
+[class*=" grid__"] {
   @include clearfix-me(micro);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   .col {
+    float: left;
+    margin: 0 0 pxToEm(15px, $font-size-base) $col-gutter;
 
-    &:last-of-type { // Last column in grid...
-      padding-right: 0;
+        // Makes sure no gutter on single column layout (linear)
+        @include break-point-max($bp-xs) {
+            margin-left: 0;
+        }
+
+    // Remove margin-bottom from nested grid column
+    .col {
+        margin-bottom: 0;
     }
 
-    @include break-point-min(560px) {
-      float: left;
-      width: calculate-width(2);
-      padding-right: pxToEm(20px, $font-size-base);
-
-      &:nth-child(2n+1) {
-        clear: left;
-      }
-    }
-
-    @include break-point-min(768px) {
-      width: calculate-width(3);
-
-      &:nth-child(n) {
-        clear: none;
-      }
-      &:nth-child(3n+1) {
-        clear: left;
-      }
-    }
-
-    @include break-point-min(1024px) {
-      width: calculate-width(4);
-
-      &:nth-child(n) {
-        clear: none;
-      }
-      &:nth-child(4n+1) {
-        clear: left;
-      }
-    }
   }
 }
+/////////////////////////////////
 
-/* Opt-in outside padding */
-.grid-pad {
 
-  @include break-point-min(560px) {
-    padding: pxToEm(20px 0 20px 20px, $font-size-base);
-  }
+// Grids with 2-6 columns share these rules
+// More can be added eg. ".grid__col--7" etc.
+.grid__col--2,
+.grid__col--3,
+.grid__col--4,
+.grid__col--5,
+.grid__col--6 {
+    > .col {
+        @include break-point-min($bp-xs) {
 
-  .col {
-    &:last-of-type {
-      padding-right: pxToEm(20px, $font-size-base);
+            width: $col-width-2;
+
+            &:nth-child(2n+1) {
+                @include col-clear;
+            }
+        }
     }
-  }
-
 }
+
+// Grids with 3-6 columns share these rules
+.grid__col--3,
+.grid__col--4,
+.grid__col--5,
+.grid__col--6 {
+    > .col {
+        @include break-point-min($bp-s) {
+
+            width: $col-width-3;
+
+            &:nth-child(n) {
+                @include col-reset;
+            }
+            &:nth-child(3n+1), {
+                @include col-clear;
+            }
+        }
+    }
+}
+
+// Grids with 4-6 columns share these rules
+.grid__col--4,
+.grid__col--5,
+.grid__col--6 {
+    > .col {
+        @include break-point-min($bp-m) {
+
+            width: $col-width-4;
+
+            &:nth-child(n) {
+                @include col-reset;
+            }
+            &:nth-child(4n+1) {
+                @include col-clear;
+            }
+        }
+    }
+}
+
+// Grids with 5-6 columns share these rules
+.grid__col--5,
+.grid__col--6 {
+    > .col {
+        @include break-point-min($bp-l) {
+
+            width: $col-width-5;
+
+            &:nth-child(n) {
+                @include col-reset;
+            }
+            &:nth-child(5n+1) {
+                @include col-clear;
+            }
+        }
+    }
+}
+
+// Grids with 6 columns
+.grid__col--6 {
+    > .col {
+        @include break-point-min($bp-xl) {
+
+            width: $col-width-6;
+
+            &:nth-child(n) {
+                @include col-reset;
+            }
+            &:nth-child(6n+1) {
+                @include col-clear;
+            }
+        }
+    }
+}
+
+// And so on......
+
+
 ///////////////////////////////////////////////////////////////////
+
+// EQUAL HEIGHT COLUMNS
+////////////////////////
+
+// These are extension classes (below) that are added to a grid layout. If the Flexbox rules don't work / aren't supported - or if the 'equalHeights' JS function doesn't work - then it falls back to the normal grid (ie. not equal heights) but still a grid layout
+
+// 'col__equal-wrap' is added to the parent grid element
+// eg. <ul class="grid__col--3 col__equal-wrap">
+.col__equal-wrap {
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+ 
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+// 'col__equal-item' is added to the grid's child 'col' element
+// eg. <li class="col col__equal-item">
+.col__equal-item {
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; // Repeating display: flex for the child items. This makes sure the elements have the same heights in their rows.
+
+    background-color: $grey; // As a placeholder to check if equal heights is working
+}
+
+
+////////////////////////////////////////////////////////////////
+
+
 
