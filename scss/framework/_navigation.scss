@@ -1,0 +1,647 @@
+/* ==========================================================================
+   Primary, secondary & tertiary navigation styles
+   ========================================================================== */
+
+
+////////////////////////////////////////////////////
+// Navigation variable & placeholder config:
+////////////////////////////////////////////////////
+
+
+//////////////////////////
+// MENU TOGGLE
+//////////////////////////
+
+$menu-toggle-background-colour: lighten($grey, 10%);
+$menu-toggle-border: 1px solid $grey;
+$menu-toggle-padding: pxToEm(12px 10px 7px 10px, $font-size-base);
+
+$menu-toggle-text-font-size: $font-size-base;
+$menu-toggle-text-font-weight: $font-weight-normal;
+$menu-toggle-text-font-colour: $link-primary;
+$menu-toggle-text-padding: pxToEm(5px, $font-size-base);
+
+%menu-toggle-position {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+%menu-toggle-icon {
+	@include burger(
+		41px, // Width
+		3px, // Height
+		5px, // Gutter
+		$black, // Colour
+		0, // Border-radius
+		0.3s // Transition-length
+	);
+}
+
+
+/////////////////////////////////
+// MENU ITEM CONTAINER ie. <li>
+/////////////////////////////////
+
+%menu-item-border {
+	border-bottom: 1px solid lighten($black, 30%);
+}
+
+
+/////////////////////////////////
+// MENU LINKS
+/////////////////////////////////
+
+$menu-link-background-colour: $black;
+$menu-link-background-colour-hover: $black;
+$menu-link-padding: pxToEm(15px, $font-size-base);
+$menu-link-font-colour: $white;
+
+%menu-link-border {
+	border-bottom: 1px solid rgba(255,255,255, 0.15);
+}
+
+
+/////////////////////////////////
+// SUB MENUS
+/////////////////////////////////
+
+$sub-menu-link-padding: pxToEm(15px 12px, $font-size-base);
+
+%sub-menu-border {
+	border-top: 1px solid $white;
+}
+
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////
+// These styles are not reliant on JS being enabled.
+// Default state is for everything to show
+
+
+////////////////////////////////
+// Navigation wrapper
+.nav {
+	@include break-point-min($bp-l) {
+		width: 82%;
+		float: right;
+	}
+	@include break-point-min($bp-xl) {
+		width: 78%;
+	}
+}
+
+////////////////////////////////
+// Menu button on small screens
+.menu__toggle {
+
+	@extend %menu-toggle-position;
+	padding: $menu-toggle-padding;
+  	text-align: center;
+  	background-color: $menu-toggle-background-colour;
+  	border: $menu-toggle-border;
+
+	// For benefit of assistive technologies 
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+
+		&:link,
+		&:hover,
+		&:active,
+		&:focus {
+			text-decoration: none;
+		}
+
+		// Menu button 'graphic'
+		.menu__toggle--icon {
+			@extend %menu-toggle-icon;
+		}
+
+		// Menu button label
+		.menu__toggle--text{
+			@include fontSize($menu-toggle-text-font-size);
+			font-weight: $menu-toggle-text-font-weight;
+			color: $menu-toggle-text-font-colour;
+			display: block;
+			padding-top: $menu-toggle-text-padding;
+		}
+
+			// Hide the menu button now that space allows for the navigation to be visible
+			@include break-point-min($bp-l) {
+				display: none;
+			}
+
+}
+
+
+////////////////////
+// Menu container
+.menu {
+	@extend %clearfix-micro;
+	position: relative;
+	margin-bottom: pxToEm(15px, $font-size-base);
+
+	// For benefit of assistive technologies
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+
+			@include break-point-min($bp-l) {
+				width: auto;
+				position: relative;
+				padding-top: 0;
+				margin-bottom: 0;
+			}
+
+		&.opened {
+			max-height: 9999px;
+		}
+
+		// Menu list settings
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+}
+
+
+// Menu list parent (aka <ul>)
+// ==========================
+// >>> IST TIER OF MENU <<<
+// ==========================
+.menu__list {
+	@extend %clearfix-micro;
+}
+
+//////////////////////////////////////////////
+// 1st tier menu list item (wraps the link) - aka <li>
+.menu__item {
+	@extend %menu-item-border;
+	position: relative;
+	width: 100%;
+	display: block;
+
+		@include break-point-min($bp-l) {
+			width: auto;
+			border: 0;
+		    float: left;
+		    margin: pxToEm(15px 5px 0 0, $font-size-base);
+		    position: relative;
+
+		    	&:last-child {
+		    		margin-right: 0;
+		    	}
+		}
+}
+
+/////////////////
+// Menu link
+.menu__link {
+	@extend %menu-link-border;
+	display: block;
+	padding: $menu-link-padding;
+	width: 100%;
+	background-color: $menu-link-background-colour;
+    color: $menu-link-font-colour;
+
+    	@include break-point-min($bp-l) {
+			border-bottom: 0;
+			margin: 0;
+			text-align: center;
+			display: inline-block;
+		}
+
+	&:link,
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:hover {
+		background-color: $menu-link-background-colour-hover;
+	}
+}
+
+
+// Menu-sub list parent (aka <ul>)
+// ==========================
+// >>> 2ND TIER OF MENU <<<
+// ==========================
+.menu__sub {
+	@extend %sub-menu-border;
+
+		@include break-point-min($bp-l) {
+			border-top: none;
+			margin: 0;
+			position: absolute;
+			top: pxToEm(85px, $font-size-base);
+			left: -999em;
+			z-index: 99999;
+			text-align: center;
+			width: 100%;
+
+				.menu__link {
+					padding: $sub-menu-link-padding;
+					white-space: normal;
+					width: 100%;
+				}
+
+		}
+}
+
+// Menu-sub list parent (aka <ul>)
+// ==========================
+// >>> 3RD TIER OF MENU <<<
+// ==========================
+.menu__sub-sub {
+	@extend %sub-menu-border;
+
+		@include break-point-min($bp-l) {
+			border-top: none;
+		}
+}
+
+/////////////////////////////////////////////////
+// 2nd & 3rd tier menu-sub list items (wraps the link) - aka <li>
+.menu__sub--item {
+	position: relative;
+
+		@include break-point-min($bp-l) {
+			border: 0;
+			display: block;
+			height: auto;
+
+				&:hover > .menu__sub,
+				&.focus > .menu__sub {
+					top: 0;
+					left: 0;
+				}
+		}
+
+	.menu__link {
+		padding-left: pxToEm(30px, $font-size-base);
+		background: #282e34;
+
+			@include break-point-min($bp-l) {
+				padding-left: pxToEm(15px, $font-size-base);
+			}
+	}
+
+		// ==============================
+		// >>> 3RD TIER OF MENU ONLY <<<
+		// ==============================
+		.menu__sub {
+			// Awaiting styles
+		}
+
+		.menu__sub--item {
+			.menu__link {
+				padding-left: pxToEm(40px, $font-size-base);
+
+					@include break-point-min($bp-l) {
+						padding-left: pxToEm(15px, $font-size-base);
+					}
+			}
+		}
+		// ==============================
+}
+
+///////////////////////////////////////////////////////////////////
+// Class added to parent menu__item if it contains a dropdown menu
+.dropdown {
+	@include break-point-min($bp-l) {
+		position: relative;
+
+			.menu__sub--item {
+				width: 100%;
+			}
+			.menu__link {
+				text-align: left;
+				border: 0;
+			}
+	}
+}
+
+/////////////////////////////////////////////////////////////////
+// Creates the dropdown arrow (pseudo element) for larger screens
+.has-dropdown {
+	@include break-point-min($bp-l) {
+		&:after {
+			@include fontSize(18px);
+			float: right;
+			content: "";
+			width: 0;
+			height: 0;
+			margin: pxToEm(10px 0 0 15px, $font-size-base);
+			border-top: 6px solid $white;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+		}
+	}
+}
+
+
+///////////////////////////////////
+// Site search override / modifier
+.form__search {
+	@extend %clearfix-micro;
+	width: auto;
+	max-width: pxToEm(480px, $font-size-base);
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: auto;
+	right: 0;
+
+		@include break-point-min($bp-l) {
+			width: pxToEm(400px, $font-size-base);
+			left: auto;
+			
+		}
+		@include break-point-min(1270px) {
+			position: relative;
+			float: right;
+		}
+
+	// Search button
+	// Purely layout rules here. Button styles are in the buttons partial
+	.button--search {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+	}
+}
+
+// Search input box
+.search--box {
+	// Awaiting styles
+}
+
+////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////
+// Primary menu section - (overrides)
+.menu__primary {
+
+		@include break-point-min($bp-l) {
+			position: absolute;
+			top: pxToEm(90px, $font-size-base);
+			right: 0;
+		}
+
+	.menu__list {
+
+		padding-top: pxToEm(60px, $font-size-base);
+
+			@include break-point-min($bp-l) {
+				padding-top: 0;
+				float: right;
+			}
+	}
+
+	.menu__item {
+
+			@include break-point-min($bp-l) {
+
+				margin-top: 0;
+
+					&:hover > .menu__sub,
+					&.focus > .menu__sub {
+						top: 100%;
+						left: 0;
+					}
+			}
+
+		&.focus {
+			> .menu__link {
+				background-color: $black;
+			}
+		}
+	}
+
+	// IST TIER LINK
+	.menu__link {
+		@include fontSize(18px);
+		font-weight: $font-weight-normal;
+
+			@include break-point-min($bp-l) {
+				@include fontSize(16px);
+				padding: pxToEm(5px, $font-size-base);
+			}
+			@include break-point-min($bp-xl) {
+				padding: pxToEm(5px 10px, $font-size-base);
+			}
+	}
+
+	.menu__sub--item {
+		// 2ND TIER LINK
+		.menu__link {
+			@include fontSize(16px);
+			font-weight: $font-weight-light;
+		}
+	}
+}
+
+////////////////////////////////////////
+// Secondary menu section - (overrides)
+.menu__secondary {
+	@extend %clearfix-micro;
+
+		@include break-point-min($bp-l) {
+			float: right;
+
+				.form__search {
+					position: relative;
+					float: left;
+					max-width: pxToEm(250px, $font-size-base);
+				}
+				.menu__list {
+					float: left;
+					width: auto;
+				}
+				.menu__item {
+					border-bottom-color: $grey;
+				}
+				.menu__link {
+					background-color: transparent;
+					color: $font-color-base;
+					padding: pxToEm(0 15px, $font-size-base);
+				}
+		}
+}
+
+////////////////////////////////////////////////
+// Social / tertiary menu section - (overrides)
+.menu__social {
+	@extend %clearfix-micro;
+
+		@include break-point-min($bp-l) {
+			position: absolute;
+			top: pxToEm(50px, $font-size-base);
+			right: 0;
+		}
+
+	.menu__list {
+		border-bottom: 1px solid  $black;
+
+			@include break-point-min($bp-l) {
+				border-bottom: 0;
+			}
+	}
+	.menu__item {
+		float: left;
+		width: auto;
+		border-bottom: none;
+
+			@include break-point-min($bp-l) {
+				margin-top: 0;
+				margin-right: 20px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+	}
+	.menu__link {
+		@include fontSize(28px);
+		padding: pxToEm(5px 10px, $font-size-base);
+		background-color: transparent;
+		color: $black;
+
+			@include break-point-min($bp-l) {
+				padding: 0;
+			}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+// Using 'js' class as the parent selector for devices that have JS enabled
+// Otherwise just falls back to rendering entire navigation in a linear layout on smaller screens - (see styles above).
+
+.js {
+
+	// Menu container
+	.menu {
+	  clip: rect(0 0 0 0);
+	  max-height: 0;
+	  position: absolute;
+	  display: block;
+	  overflow: hidden;
+	  zoom: 1;
+
+	  	@include break-point-max(959px) {
+
+	  		visibility: hidden;
+
+		  		&.opened {
+		  			visibility: visible;
+		  		}
+
+		  		/* Enable active class to let the navigation expand over the calculated max height. */
+				&.multiple-level-nav.opened.dropdown-active { // Strong compound selector to ensure max-height rule is enforced.
+					max-height: pxToEm(9999px, $font-size-base)!important;
+				}
+
+				&.multiple-level-nav .menu__sub {
+					clip: rect(0 0 0 0);
+					max-height: 0;
+					position: absolute;
+					display: none; /* This way you don't have focus on sub menu items unless you open the sub menu. */
+					overflow: hidden;
+					zoom: 1;
+				}
+
+				&.multiple-level-nav .menu__sub.toggled {
+					display: block;
+					max-height: pxToEm(9999px, $font-size-base);
+					position: relative;
+				}
+
+	  	}
+
+
+		@include break-point-min($bp-l) {
+
+			position: relative;
+			max-height: none;
+			overflow: visible;
+
+				&.closed {
+					max-height: none;
+				}
+				.dropdown .menu__sub {
+					max-height: none;
+					overflow: visible;
+				}
+		}
+	}
+
+	.menu__item {
+		position: relative;
+	}
+
+	///////////////////////////////////////////////////////////////////
+	// Drop down button (Added to DOM for smaller screens linear menu)
+	.dropdown-toggle {
+
+		// "+" and "-" toggle button only shows up until large screen dropdown menu kicks in
+		@include break-point-max(959px) {
+			background-color: $black;
+			border: 1px solid #fff;
+			border-radius: 3px;
+			color: $white;
+			content: "";
+			height: pxToEm(34px, $font-size-base);
+			width: pxToEm(34px, $font-size-base);
+			padding: 0;
+			position: absolute;
+			margin: 0;
+			text-transform: lowercase;
+			top: pxToEm(13px, $font-size-base);
+			right: pxToEm(15px, $font-size-base);
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: $white;
+				color: $black; 
+			}
+
+			&:after {
+				content: "+";
+				@include fontSize(20px);
+			}
+			&.toggled:after {
+				content: "-";
+			}
+
+		}
+		@include break-point-min($bp-l) {
+			display: none;
+		}
+	}
+
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+
