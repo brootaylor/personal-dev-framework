@@ -59,7 +59,7 @@
                                 <label for="fieldH" class="form__label">Textarea input &#8594; (<code>&lt;textarea&gt;</code>)</label>
 
                                 <!-- An example of a <textarea> element -->
-                                <textarea id="fieldH" name="message" maxlength="140" rows="5" placeholder="eg. Tell us what your favourite instrument is" class="form__field"></textarea>
+                                <textarea id="fieldH" name="message" maxlength="140" rows="5" placeholder="eg. Some blurb of text can be typed in here..." class="form__field"></textarea>
                             </li>
                             <li class="form__item">
                                 <fieldset>
@@ -87,21 +87,21 @@
                                         <input type="checkbox" id="fieldM" name="instrument" value="Piano" class="form__field">Piano
                                     </label>
                                     <label for="fieldN" class="form__label">
-                                        <input type="checkbox" id="fieldN" name="instrument" value="Violin" class="form__field">Violin
+                                        <input type="checkbox" id="fieldN" name="instrument" value="Bass" class="form__field">Bass
                                     </label>
                                 </fieldset>
                             </li>
                             <li>
-                                <label for="fieldO" class="form__label">What's your favourite genre?</label>
+                                <label for="fieldO" class="form__label">Which is your favourite country?</label>
 
                                 <!-- This wrapper <div> for the <select> element enables a pseudo element (arrow) to be added to the dropdown -->
                                 <div class="field__wrap field--select">
                                     <select id="fieldO" name="genre" class="form__field">
-                                        <option value="genre-all" selected>Genre (all)</option>
-                                        <option value="genre-brass">Brass Band</option>
-                                        <option value="genre-classical">Classical</option>
-                                        <option value="genre-urban">Urban / Electronic</option>
-                                        <option value="genre-world">World Music</option>
+                                        <option value="country-all" selected>Country (all)</option>
+                                        <option value="country-uk">United Kingdom</option>
+                                        <option value="country-italy">Italy</option>
+                                        <option value="country-alaska">Alaska</option>
+                                        <option value="country-australia">Australia</option>
                                     </select>
                                 </div>
                             </li>       

@@ -215,37 +215,34 @@ Tying in with mixins, placeholders can be used alongside mixins to reduce duplic
 /** Burger */
 /** Select parts of the burger */
 /** Burger animations */
-/* line 128, ../../scss/base/_mixins.scss */
-.menu-button { display: inline-block; padding: .5em; text-align: center; }
-
-/* line 136, ../../scss/base/_mixins.scss */
-.burger-icon { position: relative; margin-top: 8px; margin-bottom: 8px; }
+/* line 126, ../../scss/base/_mixins.scss */
+.menu-button--icon { position: relative; margin-top: 8px; margin-bottom: 8px; }
 /* line 37, ../../scss/base/_mixins.scss */
-.burger-icon, .burger-icon:before, .burger-icon:after { display: block; width: 35px; height: 3px; background-color: #444; -webkit-transition-property: background-color, -webkit-transform; -moz-transition-property: background-color, -moz-transform; -o-transition-property: background-color, -o-transform; transition-property: background-color, transform; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; }
+.menu-button--icon, .menu-button--icon:before, .menu-button--icon:after { display: block; width: 35px; height: 3px; background-color: #444; -webkit-transition-property: background-color, -webkit-transform; -moz-transition-property: background-color, -moz-transform; -o-transition-property: background-color, -o-transform; transition-property: background-color, transform; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; }
 /* line 57, ../../scss/base/_mixins.scss */
-.burger-icon:before, .burger-icon:after { position: absolute; content: ""; }
+.menu-button--icon:before, .menu-button--icon:after { position: absolute; content: ""; }
 /* line 62, ../../scss/base/_mixins.scss */
-.burger-icon:before { top: -8px; }
+.menu-button--icon:before { top: -8px; }
 /* line 66, ../../scss/base/_mixins.scss */
-.burger-icon:after { top: 8px; }
+.menu-button--icon:after { top: 8px; }
 
 /* line 106, ../../scss/base/_mixins.scss */
-.menu-button.is-active .burger-icon { background-color: transparent; }
+.menu-button.is-active .menu-button--icon { background-color: transparent; }
 /* line 109, ../../scss/base/_mixins.scss */
-.menu-button.is-active .burger-icon:before { -webkit-transform: translateY(8px) rotate(45deg); -moz-transform: translateY(8px) rotate(45deg); -ms-transform: translateY(8px) rotate(45deg); -o-transform: translateY(8px) rotate(45deg); transform: translateY(8px) rotate(45deg); }
+.menu-button.is-active .menu-button--icon:before { -webkit-transform: translateY(8px) rotate(45deg); -moz-transform: translateY(8px) rotate(45deg); -ms-transform: translateY(8px) rotate(45deg); -o-transform: translateY(8px) rotate(45deg); transform: translateY(8px) rotate(45deg); }
 /* line 116, ../../scss/base/_mixins.scss */
-.menu-button.is-active .burger-icon:after { -webkit-transform: translateY(-8px) rotate(-45deg); -moz-transform: translateY(-8px) rotate(-45deg); -ms-transform: translateY(-8px) rotate(-45deg); -o-transform: translateY(-8px) rotate(-45deg); transform: translateY(-8px) rotate(-45deg); }
+.menu-button.is-active .menu-button--icon:after { -webkit-transform: translateY(-8px) rotate(-45deg); -moz-transform: translateY(-8px) rotate(-45deg); -ms-transform: translateY(-8px) rotate(-45deg); -o-transform: translateY(-8px) rotate(-45deg); transform: translateY(-8px) rotate(-45deg); }
 
 /* ====================================================================================== clearfix     used project wide to clear floats and create a new formatting context usage      @include clearfix-me(<empty|overflow|facebook|micro|stubborn>) $clearfix-method sets default method ====================================================================================== */
 /* line 24, ../../scss/base/_clearfix-me.scss */
 .media > .media__body { display: table-cell; vertical-align: top; width: 10000px !important; *display: block; *zoom: 1; *width: auto !important; }
 
 /* line 38, ../../scss/base/_clearfix-me.scss */
-[class^="grid__"], [class*=" grid__"], .menu, .menu__list, .form__search, .menu__secondary, .menu__social, .mod, .mod .modHead, .mod .modFoot, .media { zoom: 1; }
+[class^="grid__"], [class*=" grid__"], .menu, .mod, .mod .modHead, .mod .modFoot, .media { zoom: 1; }
 /* line 40, ../../scss/base/_clearfix-me.scss */
-[class^="grid__"]:before, [class*=" grid__"]:before, .menu:before, .menu__list:before, .form__search:before, .menu__secondary:before, .menu__social:before, .mod:before, .mod .modHead:before, .mod .modFoot:before, .media:before, [class^="grid__"]:after, [class*=" grid__"]:after, .menu:after, .menu__list:after, .form__search:after, .menu__secondary:after, .menu__social:after, .mod:after, .mod .modHead:after, .mod .modFoot:after, .media:after { content: " "; display: table; }
+[class^="grid__"]:before, [class*=" grid__"]:before, .menu:before, .mod:before, .mod .modHead:before, .mod .modFoot:before, .media:before, [class^="grid__"]:after, [class*=" grid__"]:after, .menu:after, .mod:after, .mod .modHead:after, .mod .modFoot:after, .media:after { content: " "; display: table; }
 /* line 45, ../../scss/base/_clearfix-me.scss */
-[class^="grid__"]:after, [class*=" grid__"]:after, .menu:after, .menu__list:after, .form__search:after, .menu__secondary:after, .menu__social:after, .mod:after, .mod .modHead:after, .mod .modFoot:after, .media:after { clear: both; }
+[class^="grid__"]:after, [class*=" grid__"]:after, .menu:after, .mod:after, .mod .modHead:after, .mod .modFoot:after, .media:after { clear: both; }
 
 /* ========================================================================== Typography styles (Global). ========================================================================== */
 /* line 16, ../../scss/base/_typography.scss */
@@ -409,38 +406,34 @@ h1 { font-family: "PT Serif", serif; }
 /* line 8, ../../scss/framework/_base-template.scss */
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-/* A better looking default horizontal rule */
-/* line 18, ../../scss/framework/_base-template.scss */
-hr { display: block; height: 0.0625em; border: 0; border-top: 0.0625em solid #4d4d4d; margin: 0.0625em 0; padding: 0; }
-
 /* Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440 */
-/* line 33, ../../scss/framework/_base-template.scss */
+/* line 20, ../../scss/framework/_base-template.scss */
 audio, canvas, img, svg, video, picture { vertical-align: middle; }
 
 /* Remove default fieldset styles. */
-/* line 46, ../../scss/framework/_base-template.scss */
+/* line 33, ../../scss/framework/_base-template.scss */
 fieldset { border: 0; margin: 0; padding: 0; }
 
 /* Allow only vertical resizing of textareas. */
-/* line 56, ../../scss/framework/_base-template.scss */
+/* line 43, ../../scss/framework/_base-template.scss */
 textarea { resize: vertical; }
 
 /* ========================================================================== Prompts for when JS isn't enabled or the browser is outdated ========================================================================== */
-/* line 64, ../../scss/framework/_base-template.scss */
+/* line 51, ../../scss/framework/_base-template.scss */
 .tech-missing { margin: 0.1875em 0.9375em; padding: 0.1875em 0.5em; background: #ccc; }
-/* line 69, ../../scss/framework/_base-template.scss */
+/* line 56, ../../scss/framework/_base-template.scss */
 .tech-missing h2, .tech-missing p { color: #000; }
-/* line 72, ../../scss/framework/_base-template.scss */
+/* line 59, ../../scss/framework/_base-template.scss */
 .tech-missing h2 { margin: 0.625em 0; font-weight: 400; }
 
 /* ========================================================================== Base template (eg. overall website width) ========================================================================== */
-/* line 82, ../../scss/framework/_base-template.scss */
+/* line 69, ../../scss/framework/_base-template.scss */
 body { max-width: 80em; margin: 0 auto; }
 
-/* line 87, ../../scss/framework/_base-template.scss */
+/* line 74, ../../scss/framework/_base-template.scss */
 img { max-width: 100%; }
 
-/* line 91, ../../scss/framework/_base-template.scss */
+/* line 78, ../../scss/framework/_base-template.scss */
 #masthead, #main, #footer { margin-left: 0.9375em; margin-right: 0.9375em; }
 
 /* ========================================================================== Grid ========================================================================== */
@@ -502,226 +495,76 @@ img { max-width: 100%; }
 
 /* ========================================================================== Masthead styles (eg. Logo, strapline & main navigation / menu). ========================================================================== */
 /* line 6, ../../scss/framework/_masthead.scss */
-#masthead { position: relative; margin-top: 0.9375em; }
+#masthead { position: relative; margin-top: 0.9375em; margin-bottom: 1.875em; }
 
-/* line 11, ../../scss/framework/_masthead.scss */
+/* line 12, ../../scss/framework/_masthead.scss */
 .logo { display: inline-block; }
-/* line 14, ../../scss/framework/_masthead.scss */
+/* line 15, ../../scss/framework/_masthead.scss */
 .logo img { display: block; }
-
-/* line 21, ../../scss/framework/_masthead.scss */
-.nav ul { list-style: none; padding: 0; margin: 0; }
-@media (min-width: 35em) { /* line 19, ../../scss/framework/_masthead.scss */
-  .nav { display: inline-block; }
-  /* line 30, ../../scss/framework/_masthead.scss */
-  .nav ul { margin-left: 1.25em; }
-  /* line 34, ../../scss/framework/_masthead.scss */
-  .nav li { display: inline-block; margin-right: 0.9375em; } }
-
-/* line 44, ../../scss/framework/_masthead.scss */
-.js .nav .menu-button { position: absolute; right: 0; top: 0; }
-/* line 49, ../../scss/framework/_masthead.scss */
-.js .nav .menu-button .burger-text { font-size: 14px; font-size: 0.875rem; }
-@media (min-width: 35em) { /* line 44, ../../scss/framework/_masthead.scss */
-  .js .nav .menu-button { display: none; } }
-/* line 59, ../../scss/framework/_masthead.scss */
-.js .nav ul { max-height: 0; overflow: hidden; }
-@media (min-width: 35em) { /* line 59, ../../scss/framework/_masthead.scss */
-  .js .nav ul { overflow: auto; max-height: inherit; } }
-/* line 69, ../../scss/framework/_masthead.scss */
-.js .nav ul.open { max-height: 12.5em; transition: max-height 0.25s ease-out; }
 
 /* ========================================================================== Primary, secondary & tertiary navigation styles ========================================================================== */
 /* line 24, ../../scss/framework/_navigation.scss */
-.menu__toggle { display: inline-block; position: absolute; top: 0; right: 0; }
+.menu-button { display: inline-block; position: absolute; top: 0; right: 0; }
 
 /* line 30, ../../scss/framework/_navigation.scss */
-.menu__toggle .menu__toggle--icon { position: relative; margin-top: 8px; margin-bottom: 8px; }
+.menu-button .menu-button--icon { position: relative; margin-top: 8px; margin-bottom: 8px; }
 /* line 37, ../../scss/base/_mixins.scss */
-.menu__toggle .menu__toggle--icon, .menu__toggle .menu__toggle--icon:before, .menu__toggle .menu__toggle--icon:after { display: block; width: 41px; height: 3px; background-color: #000; -webkit-transition-property: background-color, -webkit-transform; -moz-transition-property: background-color, -moz-transform; -o-transition-property: background-color, -o-transform; transition-property: background-color, transform; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; }
+.menu-button .menu-button--icon, .menu-button .menu-button--icon:before, .menu-button .menu-button--icon:after { display: block; width: 41px; height: 3px; background-color: #000; -webkit-transition-property: background-color, -webkit-transform; -moz-transition-property: background-color, -moz-transform; -o-transition-property: background-color, -o-transform; transition-property: background-color, transform; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; }
 /* line 57, ../../scss/base/_mixins.scss */
-.menu__toggle .menu__toggle--icon:before, .menu__toggle .menu__toggle--icon:after { position: absolute; content: ""; }
+.menu-button .menu-button--icon:before, .menu-button .menu-button--icon:after { position: absolute; content: ""; }
 /* line 62, ../../scss/base/_mixins.scss */
-.menu__toggle .menu__toggle--icon:before { top: -8px; }
+.menu-button .menu-button--icon:before { top: -8px; }
 /* line 66, ../../scss/base/_mixins.scss */
-.menu__toggle .menu__toggle--icon:after { top: 8px; }
+.menu-button .menu-button--icon:after { top: 8px; }
 
-/* line 46, ../../scss/framework/_navigation.scss */
-.menu__item { border-bottom: 1px solid #4d4d4d; }
+@media (min-width: 35em) { /* line 87, ../../scss/framework/_navigation.scss */
+  .nav { display: inline-block; } }
+/* line 93, ../../scss/framework/_navigation.scss */
+.nav ul { list-style: none; padding: 0; margin: 0; }
+@media (min-width: 35em) { /* line 93, ../../scss/framework/_navigation.scss */
+  .nav ul { margin-left: 1.25em; } }
+@media (min-width: 35em) { /* line 102, ../../scss/framework/_navigation.scss */
+  .nav li { display: inline-block; margin-right: 0.9375em; } }
+/* line 108, ../../scss/framework/_navigation.scss */
+.nav a { text-decoration: none; }
 
-/* line 60, ../../scss/framework/_navigation.scss */
-.menu__link { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+/* line 115, ../../scss/framework/_navigation.scss */
+.menu-button { display: inline-block; padding: 0.75em 0.625em 0.4375em 0.625em; text-align: center; background-color: #e6e6e6; border: 1px solid #ccc; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
+/* line 133, ../../scss/framework/_navigation.scss */
+.menu-button:link, .menu-button:hover, .menu-button:active, .menu-button:focus { text-decoration: none; }
+/* line 146, ../../scss/framework/_navigation.scss */
+.menu-button .menu-button--text { font-size: 16px; font-size: 1rem; font-weight: 400; color: #996300; display: block; padding-top: 0.3125em; }
+@media (min-width: 60em) { /* line 115, ../../scss/framework/_navigation.scss */
+  .menu-button { display: none; } }
 
-/* line 71, ../../scss/framework/_navigation.scss */
-.menu__sub, .menu__sub-sub { border-top: 1px solid #fff; }
-
-@media (min-width: 60em) { /* line 87, ../../scss/framework/_navigation.scss */
-  .nav { width: 82%; float: right; } }
-@media (min-width: 75em) { /* line 87, ../../scss/framework/_navigation.scss */
-  .nav { width: 78%; } }
-
-/* line 99, ../../scss/framework/_navigation.scss */
-.menu__toggle { padding: 0.75em 0.625em 0.4375em 0.625em; text-align: center; background-color: #e6e6e6; border: 1px solid #ccc; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
-/* line 116, ../../scss/framework/_navigation.scss */
-.menu__toggle:link, .menu__toggle:hover, .menu__toggle:active, .menu__toggle:focus { text-decoration: none; }
-/* line 129, ../../scss/framework/_navigation.scss */
-.menu__toggle .menu__toggle--text { font-size: 16px; font-size: 1rem; font-weight: 400; color: #996300; display: block; padding-top: 0.3125em; }
-@media (min-width: 60em) { /* line 99, ../../scss/framework/_navigation.scss */
-  .menu__toggle { display: none; } }
-
-/* line 147, ../../scss/framework/_navigation.scss */
+/* line 164, ../../scss/framework/_navigation.scss */
 .menu { position: relative; margin-bottom: 0.9375em; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -o-user-select: none; user-select: none; }
-@media (min-width: 60em) { /* line 147, ../../scss/framework/_navigation.scss */
+@media (min-width: 60em) { /* line 164, ../../scss/framework/_navigation.scss */
   .menu { width: auto; position: relative; padding-top: 0; margin-bottom: 0; } }
-/* line 166, ../../scss/framework/_navigation.scss */
+/* line 183, ../../scss/framework/_navigation.scss */
 .menu.opened { max-height: 9999px; }
-/* line 171, ../../scss/framework/_navigation.scss */
+/* line 188, ../../scss/framework/_navigation.scss */
 .menu ul { margin: 0; padding: 0; list-style: none; }
 
-/* line 189, ../../scss/framework/_navigation.scss */
-.menu__item { position: relative; width: 100%; display: block; }
-@media (min-width: 60em) { /* line 189, ../../scss/framework/_navigation.scss */
-  .menu__item { width: auto; border: 0; float: left; margin: 0.9375em 0.3125em 0 0; position: relative; }
-  /* line 202, ../../scss/framework/_navigation.scss */
-  .menu__item:last-child { margin-right: 0; } }
-
-/* line 210, ../../scss/framework/_navigation.scss */
-.menu__link { display: block; padding: 0.9375em; width: 100%; background-color: #000; color: #fff; }
-@media (min-width: 60em) { /* line 210, ../../scss/framework/_navigation.scss */
-  .menu__link { border-bottom: 0; margin: 0; text-align: center; display: inline-block; } }
-/* line 225, ../../scss/framework/_navigation.scss */
-.menu__link:link, .menu__link:hover, .menu__link:active, .menu__link:focus { text-decoration: none; }
-/* line 232, ../../scss/framework/_navigation.scss */
-.menu__link:hover { background-color: #000; }
-
-@media (min-width: 60em) { /* line 242, ../../scss/framework/_navigation.scss */
-  .menu__sub { border-top: none; margin: 0; position: absolute; top: 5.3125em; left: -999em; z-index: 99999; text-align: center; width: 100%; }
-  /* line 255, ../../scss/framework/_navigation.scss */
-  .menu__sub .menu__link { padding: 0.9375em 0.75em; white-space: normal; width: 100%; } }
-
-@media (min-width: 60em) { /* line 268, ../../scss/framework/_navigation.scss */
-  .menu__sub-sub { border-top: none; } }
-
-/* line 278, ../../scss/framework/_navigation.scss */
-.menu__sub--item { position: relative; }
-@media (min-width: 60em) { /* line 278, ../../scss/framework/_navigation.scss */
-  .menu__sub--item { border: 0; display: block; height: auto; }
-  /* line 286, ../../scss/framework/_navigation.scss */
-  .menu__sub--item:hover > .menu__sub, .menu__sub--item.focus > .menu__sub { top: 0; left: 0; } }
-/* line 293, ../../scss/framework/_navigation.scss */
-.menu__sub--item .menu__link { padding-left: 1.875em; background: #282e34; }
-@media (min-width: 60em) { /* line 293, ../../scss/framework/_navigation.scss */
-  .menu__sub--item .menu__link { padding-left: 0.9375em; } }
-/* line 310, ../../scss/framework/_navigation.scss */
-.menu__sub--item .menu__sub--item .menu__link { padding-left: 2.5em; }
-@media (min-width: 60em) { /* line 310, ../../scss/framework/_navigation.scss */
-  .menu__sub--item .menu__sub--item .menu__link { padding-left: 0.9375em; } }
-
-@media (min-width: 60em) { /* line 323, ../../scss/framework/_navigation.scss */
-  .dropdown { position: relative; }
-  /* line 327, ../../scss/framework/_navigation.scss */
-  .dropdown .menu__sub--item { width: 100%; }
-  /* line 330, ../../scss/framework/_navigation.scss */
-  .dropdown .menu__link { text-align: left; border: 0; } }
-
-@media (min-width: 60em) { /* line 341, ../../scss/framework/_navigation.scss */
-  .has-dropdown:after { font-size: 18px; font-size: 1.125rem; float: right; content: ""; width: 0; height: 0; margin: 0.625em 0 0 0.9375em; border-top: 6px solid #fff; border-left: 6px solid transparent; border-right: 6px solid transparent; } }
-
-/* line 358, ../../scss/framework/_navigation.scss */
-.form__search { width: auto; max-width: 30em; margin: auto; position: absolute; top: 0; left: 0; bottom: auto; right: 0; }
-@media (min-width: 60em) { /* line 358, ../../scss/framework/_navigation.scss */
-  .form__search { width: 25em; left: auto; } }
-@media (min-width: 79.375em) { /* line 358, ../../scss/framework/_navigation.scss */
-  .form__search { position: relative; float: right; } }
-/* line 381, ../../scss/framework/_navigation.scss */
-.form__search .button--search { position: absolute; top: 0; right: 0; margin: 0; }
-
-@media (min-width: 60em) { /* line 399, ../../scss/framework/_navigation.scss */
-  .menu__primary { position: absolute; top: 5.625em; right: 0; } }
-/* line 407, ../../scss/framework/_navigation.scss */
-.menu__primary .menu__list { padding-top: 3.75em; }
-@media (min-width: 60em) { /* line 407, ../../scss/framework/_navigation.scss */
-  .menu__primary .menu__list { padding-top: 0; float: right; } }
-@media (min-width: 60em) { /* line 417, ../../scss/framework/_navigation.scss */
-  .menu__primary .menu__item { margin-top: 0; }
-  /* line 423, ../../scss/framework/_navigation.scss */
-  .menu__primary .menu__item:hover > .menu__sub, .menu__primary .menu__item.focus > .menu__sub { top: 100%; left: 0; } }
-/* line 431, ../../scss/framework/_navigation.scss */
-.menu__primary .menu__item.focus > .menu__link { background-color: #000; }
-/* line 438, ../../scss/framework/_navigation.scss */
-.menu__primary .menu__link { font-size: 18px; font-size: 1.125rem; font-weight: 400; }
-@media (min-width: 60em) { /* line 438, ../../scss/framework/_navigation.scss */
-  .menu__primary .menu__link { font-size: 16px; font-size: 1rem; padding: 0.3125em; } }
-@media (min-width: 75em) { /* line 438, ../../scss/framework/_navigation.scss */
-  .menu__primary .menu__link { padding: 0.3125em 0.625em; } }
-/* line 453, ../../scss/framework/_navigation.scss */
-.menu__primary .menu__sub--item .menu__link { font-size: 16px; font-size: 1rem; font-weight: 300; }
-
-@media (min-width: 60em) { /* line 462, ../../scss/framework/_navigation.scss */
-  .menu__secondary { float: right; }
-  /* line 468, ../../scss/framework/_navigation.scss */
-  .menu__secondary .form__search { position: relative; float: left; max-width: 15.625em; }
-  /* line 473, ../../scss/framework/_navigation.scss */
-  .menu__secondary .menu__list { float: left; width: auto; }
-  /* line 477, ../../scss/framework/_navigation.scss */
-  .menu__secondary .menu__item { border-bottom-color: #ccc; }
-  /* line 480, ../../scss/framework/_navigation.scss */
-  .menu__secondary .menu__link { background-color: transparent; color: #1a1a1a; padding: 0 0.9375em; } }
-
-@media (min-width: 60em) { /* line 490, ../../scss/framework/_navigation.scss */
-  .menu__social { position: absolute; top: 3.125em; right: 0; } }
-/* line 499, ../../scss/framework/_navigation.scss */
-.menu__social .menu__list { border-bottom: 1px solid #000; }
-@media (min-width: 60em) { /* line 499, ../../scss/framework/_navigation.scss */
-  .menu__social .menu__list { border-bottom: 0; } }
-/* line 506, ../../scss/framework/_navigation.scss */
-.menu__social .menu__item { float: left; width: auto; border-bottom: none; }
-@media (min-width: 60em) { /* line 506, ../../scss/framework/_navigation.scss */
-  .menu__social .menu__item { margin-top: 0; margin-right: 20px; }
-  /* line 515, ../../scss/framework/_navigation.scss */
-  .menu__social .menu__item:last-child { margin-right: 0; } }
-/* line 520, ../../scss/framework/_navigation.scss */
-.menu__social .menu__link { font-size: 28px; font-size: 1.75rem; padding: 0.3125em 0.625em; background-color: transparent; color: #000; }
-@media (min-width: 60em) { /* line 520, ../../scss/framework/_navigation.scss */
-  .menu__social .menu__link { padding: 0; } }
-
-/* line 542, ../../scss/framework/_navigation.scss */
-.js .menu { clip: rect(0 0 0 0); max-height: 0; position: absolute; display: block; overflow: hidden; zoom: 1; }
-@media (max-width: 59.9375em) { /* line 542, ../../scss/framework/_navigation.scss */
-  .js .menu { visibility: hidden; /* Enable active class to let the navigation expand over the calculated max height. */ }
-  /* line 554, ../../scss/framework/_navigation.scss */
-  .js .menu.opened { visibility: visible; }
-  /* line 559, ../../scss/framework/_navigation.scss */
-  .js .menu.multiple-level-nav.opened.dropdown-active { max-height: 624.9375em !important; }
-  /* line 563, ../../scss/framework/_navigation.scss */
-  .js .menu.multiple-level-nav .menu__sub { clip: rect(0 0 0 0); max-height: 0; position: absolute; display: none; /* This way you don't have focus on sub menu items unless you open the sub menu. */ overflow: hidden; zoom: 1; }
-  /* line 572, ../../scss/framework/_navigation.scss */
-  .js .menu.multiple-level-nav .menu__sub.toggled { display: block; max-height: 624.9375em; position: relative; } }
-@media (min-width: 60em) { /* line 542, ../../scss/framework/_navigation.scss */
-  .js .menu { position: relative; max-height: none; overflow: visible; }
-  /* line 587, ../../scss/framework/_navigation.scss */
-  .js .menu.closed { max-height: none; }
-  /* line 590, ../../scss/framework/_navigation.scss */
-  .js .menu .dropdown .menu__sub { max-height: none; overflow: visible; } }
-/* line 597, ../../scss/framework/_navigation.scss */
-.js .menu__item { position: relative; }
-@media (max-width: 59.9375em) { /* line 603, ../../scss/framework/_navigation.scss */
-  .js .dropdown-toggle { background-color: #000; border: 1px solid #fff; border-radius: 3px; color: #fff; content: ""; height: 2.125em; width: 2.125em; padding: 0; position: absolute; margin: 0; text-transform: lowercase; top: 0.8125em; right: 0.9375em; }
-  /* line 621, ../../scss/framework/_navigation.scss */
-  .js .dropdown-toggle:hover, .js .dropdown-toggle:focus, .js .dropdown-toggle:active { background-color: #fff; color: #000; }
-  /* line 628, ../../scss/framework/_navigation.scss */
-  .js .dropdown-toggle:after { content: "+"; font-size: 20px; font-size: 1.25rem; }
-  /* line 632, ../../scss/framework/_navigation.scss */
-  .js .dropdown-toggle.toggled:after { content: "-"; } }
-@media (min-width: 60em) { /* line 603, ../../scss/framework/_navigation.scss */
-  .js .dropdown-toggle { display: none; } }
+/* line 201, ../../scss/framework/_navigation.scss */
+.js .nav .menu-button { position: absolute; right: 0; top: 0; }
+/* line 206, ../../scss/framework/_navigation.scss */
+.js .nav .menu-button .menu-icon--text { font-size: 14px; font-size: 0.875rem; }
+@media (min-width: 35em) { /* line 201, ../../scss/framework/_navigation.scss */
+  .js .nav .menu-button { display: none; } }
+/* line 216, ../../scss/framework/_navigation.scss */
+.js .nav ul { max-height: 0; overflow: hidden; }
+@media (min-width: 35em) { /* line 216, ../../scss/framework/_navigation.scss */
+  .js .nav ul { overflow: auto; max-height: inherit; } }
+/* line 226, ../../scss/framework/_navigation.scss */
+.js .nav ul.open { max-height: 12.5em; transition: max-height 0.25s ease-out; }
 
 /* ========================================================================== Main Footer ========================================================================== */
 /* line 6, ../../scss/framework/_footer.scss */
-#footer { margin-top: 0.9375em; padding-top: 0.9375em; border-top: 1px solid #000; }
-/* line 11, ../../scss/framework/_footer.scss */
+#footer { margin-top: 0.9375em; margin-bottom: 0.9375em; padding-top: 0.9375em; border-top: 1px solid #000; }
+/* line 12, ../../scss/framework/_footer.scss */
 #footer ul { list-style: none; padding: 0; margin: 0; }
-/* line 16, ../../scss/framework/_footer.scss */
+/* line 17, ../../scss/framework/_footer.scss */
 #footer li { display: inline-block; margin-right: 0.9375em; }
 
 /* ========================================================================== Print styles. Inlined to avoid the additional HTTP request: h5bp.com/r ========================================================================== */

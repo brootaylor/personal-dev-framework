@@ -20,9 +20,9 @@
 
                 <!-- Blockquote -->
                 <blockquote>
-                    <p>Musical School has given my staff the confidence and the resources to deliver exciting music lessons. The sessions are quick and easy to organise and can successfully be taught by non-music specialists. The children clearly enjoy the dynamic, fun and stimulating sessions and our teachers are learning valuable new skills.</p>
+                    <p>The human ego prefers anything, just about anything, to falling, or changing, or dying. The ego is that part of you that loves the status quo – even when it's not working. It attaches to past and present and fears the future.</p>
                     <footer>
-                        <cite>&ndash; Julie Brown, Headteacher</cite>
+                        <cite>&ndash; Richard Rohr, Falling Upward: A Spirituality for the Two Halves of Life</cite>
                     </footer>
                 </blockquote>
 
@@ -60,9 +60,9 @@
 
                     <!-- Blockquote -->
                     <blockquote>
-                        <p>New Charanga – it’s fabulous!! The kids have really enjoyed the units and the staff are delighted.</p>
+                        <p>The key to a happy life is to accept you are never actually in control.</p>
                         <footer>
-                            <cite>&ndash; Julie Dorr, Primary Music Curriculum Support Consultant</cite>
+                            <cite>&ndash; Masrani, Jurassic World</cite>
                         </footer>
                     </blockquote>
 
@@ -72,7 +72,7 @@
                     <aside class="post__related">
                         <!-- Since this aside is contained within an article, a parser should understand that the content of this aside is directly related to the article itself. -->
                         <h1 class="post__related-title">Article-related content</h1>
-                        <p>Just wanted to give you a heads up on some of the musical terms we're using.</p>
+                        <p>This is some content directly related to this article itself.</p>
                     </aside>
 
                     <!-- Article / post footer content -->
@@ -103,8 +103,8 @@
                     contains twitter messages from this blog's author -->
                     <h1>Page-related content [B]</h1>
                     <ul>
-                        <li><a href="">@MoreMusic1</a> Fantastic time jamming with the fine folk at Charanga last night</li>
-                        <li>RT <a href="">@MoreMusic1</a> Ditto here from <a href="">@RockStarDave</a>. How about next week we jam again?</li>
+                        <li><a href="">@zildjianuk</a> These Zildjian cymbals are just the biz!</li>
+                        <li>RT <a href="">@zildjianuk</a> I agree <a href="">@RonniBassDrum</a>. Why not buy another one.</li>
                     </ul>
                 </aside>
 
@@ -128,7 +128,7 @@
                             <!-- Extra info -->
                             <span class="post-sum__extra">Free</span>
                             <!-- Location -->
-                            <span class="post-sum__location">Woodlands Conference Centre</span>
+                            <span class="post-sum__location">Crazy Drummer Centre</span>
                         </small>
                     </header><!-- /header -->
 
