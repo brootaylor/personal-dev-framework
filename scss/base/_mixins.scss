@@ -144,24 +144,56 @@
 // ===================================================================================================
 
 
-/////////////////
-// Media queries
-/////////////////
+//////////////////////////
+// Media queries (Global)
+//////////////////////////
 
 // Resource => http://sassbreak.com/flexible-media-query-mixins/
+// >> The reason for going with ems, (slight edge on rems cause of Safari support issues), rather than pixels for media queries => http://zellwk.com/blog/media-query-units/
 
-@mixin break-point($bp, $min-max: min-width) {
-  $em: $bp/$base-font-size;
+
+// Global breakpoint variables (customisable)
+// ==========================================
+$bp-xl: 1200px;
+$bp-l: 960px;
+$bp-m: 840px;
+$bp-s: 640px;
+$bp-xs: 480px;
+
+// Min-width breakpoint
+@mixin break-point-min($bp, $min-max: min-width) {
+  $em: $bp/$font-size-base;
+  @media(#{$min-max}: #{$em}em) { @content; }
+}
+// Max-width breakkpoint
+@mixin break-point-max($bp, $min-max: max-width) {
+  $em: $bp/$font-size-base;
   @media(#{$min-max}: #{$em}em) { @content; }
 }
 
-// Implementation Example:
-// =======================
-.element {
-  @include break-point(480px) {
-    /* Blah blah... */
-  }
-}
+// Implementation Examples - (converts to em value):
+// ================================================
+
+// Using a min-width global breakpoint variable
+// .element {
+//   @include break-point-min($bp-xl) {
+//     /* Blah blah... */
+//   }
+// }
+
+// // Using a max-width global breakpoint variable
+// .elementB {
+//   @include break-point-max($bp-l) {
+//     /* Blah blah... */
+//   }
+// }
+
+// // Using a specific value
+// .elementC {
+//   @include break-point-min(560px) {
+//     /* Blah blah... */
+//   }
+// }
 
 // ===================================================================================================
 
@@ -196,12 +228,12 @@
 
 // Implementation Example:
 // =======================
-a {
- color: #333;
- @include transition(color .25s ease-in-out);
- &:hover {color: #000;}
- &:active {color: #555;}
-}
+// a {
+//  color: #333;
+//  @include transition(color .25s ease-in-out);
+//  &:hover {color: #000;}
+//  &:active {color: #555;}
+// }
 
 // ===================================================================================================
 
@@ -216,11 +248,11 @@ a {
 
 // Implementation Example:
 // =======================
-.thumbnail {
- width: 48px;
- height: 48px;
- @include opacity(.5);
-}
+// .thumbnail {
+//  width: 48px;
+//  height: 48px;
+//  @include opacity(.5);
+// }
 
 // ===================================================================================================
 
@@ -248,11 +280,11 @@ a {
 
 // Implementation Example:
 // =======================
-.img {
- width: 760px;
- height: 400px;
- @include background-image-retina(monkey, png, 760px, 400px);
-}
+// .img {
+//  width: 760px;
+//  height: 400px;
+//  @include background-image-retina(monkey, png, 760px, 400px);
+// }
 
 // ===================================================================================================
 
