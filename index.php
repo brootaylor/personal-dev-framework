@@ -1,7 +1,7 @@
 <?php
 
     // Generates the content for the page title, meta title & description
-    $page_title = "This is the page title";
+    $page_title = "Personal front end framework";
     $page_title_extra = "| The title's context eg. | Bruce Taylor's Personal Website";
     $page_description = "This will render in the meta description tag";
     $page_canonical = "/";
@@ -22,28 +22,105 @@
 
                 <hr>
 
-                <h2>Grid example</h2>
+                <!-- Pattern / component page navigation -->
+                <ul class="link__list" id="componentNav">
+                    <li>
+                        <a href="#typography">Typography</a>
+                    </li>
+                    <li>
+                        <a href="#lists">Lists</a>
+                    </li>
+                    <li>
+                        <a href="#links">Links</a>
+                    </li>
+                    <li>
+                        <a href="#buttons">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="#forms">Forms</a>
+                    </li>
+                    <li>
+                        <a href="#images">Images</a>
+                    </li>
+                    <li>
+                        <a href="#media">Media</a>
+                    </li>
+                    <li>
+                        <a href="#videos">Videos</a>
+                    </li>
+                    <li>
+                        <a href="#twitter">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="#lightbox">Lightbox</a>
+                    </li>
+                    <li>
+                        <a href="#partners">Partner logo lock-up</a>
+                    </li>
+                    <li>
+                        <a href="#grids">Grids</a>
+                    </li>
+                </ul>
 
-                <div class="grid grid-pad">
-                    <div class="col">
-                        <p>In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
-                    </div>
-                    <div class="col">
-                        <p>In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
-                    </div>
-                    <div class="col">
-                        <p>In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
-                    </div>
-                    <div class="col">
-                        <p>In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
-                    </div>
-                    <div class="col">
-                        <p>In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
-                    </div>
-                    <div class="col">
-                        <p>In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
-                    </div>
-                </div>
+                <hr class="hr__big">
+
+                <!-- Typography components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_typography.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- List components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_lists.php"); ?>
+
+                <hr class="hr__big">
+                
+                <!-- Link components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_links.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Button components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_buttons.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Form components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_forms.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Image components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_images.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Media components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_media.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Video components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_videos.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Twitter feed component -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_twitter.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- lightbox component -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_lightbox.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Partner logo (lock-up) component -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_partners.php"); ?>
+
+                <hr class="hr__big">
+
+                <!-- Grid components -->
+                <?php require($_SERVER["DOCUMENT_ROOT"]. "/application/". "php_partials/components/_grids.php"); ?>
 
             </article>
             

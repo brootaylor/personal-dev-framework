@@ -14,17 +14,17 @@
       padding-right: 0;
     }
 
-    @include break-point(560px) {
+    @include break-point-min(560px) {
       float: left;
       width: calculate-width(2);
-      padding-right: pxToEm(20px, $base-font-size);
+      padding-right: pxToEm(20px, $font-size-base);
 
       &:nth-child(2n+1) {
         clear: left;
       }
     }
 
-    @include break-point(768px) {
+    @include break-point-min(768px) {
       width: calculate-width(3);
 
       &:nth-child(n) {
@@ -35,7 +35,7 @@
       }
     }
 
-    @include break-point(1024px) {
+    @include break-point-min(1024px) {
       width: calculate-width(4);
 
       &:nth-child(n) {
@@ -51,13 +51,13 @@
 /* Opt-in outside padding */
 .grid-pad {
 
-  @include break-point(560px) {
-    padding: pxToEm(20px 0 20px 20px, $base-font-size);
+  @include break-point-min(560px) {
+    padding: pxToEm(20px 0 20px 20px, $font-size-base);
   }
 
   .col {
     &:last-of-type {
-      padding-right: pxToEm(20px, $base-font-size);
+      padding-right: pxToEm(20px, $font-size-base);
     }
   }
 

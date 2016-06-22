@@ -9,7 +9,7 @@
 
   > .mediaImg {
 
-    @include break-point(480px) {
+    @include break-point-min(480px) {
       float: left;
       margin-right: 10px;
     }
@@ -21,7 +21,7 @@
   
   > .mediaImgExt {
 
-    @include break-point(480px) {
+    @include break-point-min(480px) {
         float: right;
         margin-left: 10px;
         margin-right: 0;

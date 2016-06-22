@@ -3,7 +3,7 @@
             'use strict';
 
             var originPart = window.location.origin,
-                cssupdate_value = "14032016";
+                cssupdate_value = "22062016";
 
             function loadCSS(href) {
                 var ss = doc.createElement('link'),

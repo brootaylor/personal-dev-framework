@@ -5,7 +5,7 @@
 
 #masthead {
 	position: relative;
-	margin-top: pxToEm(15px, $base-font-size);
+	margin-top: pxToEm(15px, $font-size-base);
 }
 
 .logo {
@@ -24,22 +24,22 @@
 		margin: 0;
 	}
 
-	@include break-point(560px) {
+	@include break-point-min(560px) {
 		display: inline-block;
 
 		ul {
-			margin-left: pxToEm(20px, $base-font-size)
+			margin-left: pxToEm(20px, $font-size-base)
 		}
 
 		li {
 			display: inline-block;
-			margin-right: pxToEm(15px, $base-font-size);
+			margin-right: pxToEm(15px, $font-size-base);
 		}
 	}
 }
 
-// Using 'enhanced' class as the selector for devices that cut the mustard
-.enhanced {
+// Using 'js' class as the selector for devices that cut the mustard
+.js {
 	.nav {
 		.menu-button {
 			position: absolute;
@@ -51,7 +51,7 @@
 			}
 
 				// Hide the menu button now that space allows for the navigation to be visible
-				@include break-point(560px) {
+				@include break-point-min(560px) {
 					display: none;
 				}
 		}
@@ -61,13 +61,13 @@
 			overflow: hidden;
 
 				// Show the full menu now that space allows
-				@include break-point(560px) {
+				@include break-point-min(560px) {
 					overflow: auto;
 					max-height: inherit;
 				}
 
 			&.open {
-				max-height: pxToEm(200px, $base-font-size);
+				max-height: pxToEm(200px, $font-size-base);
 				transition: max-height 0.25s ease-out;
 			}
 		}
