@@ -3,7 +3,7 @@
     setcookie($cookie_cssupdate, $cssupdate_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="no-js">
     <head>
         <meta charset="utf-8">
         <title><?php echo $page_title; ?> <?php echo $page_title_extra; ?></title>
@@ -26,25 +26,97 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <script>
-            // Check whether browser 'cuts the mustard'
+            // Check whether browser has JavaScript enabled
+            // This script is in the <head> to ensure that users with modern browsers don’t see any weird style changes after the page loads.
             (function (win, doc) {
 
+                'use strict';
+
+                // Check for class function
+                var hasClass = function (doc, className) {
+                    return new RegExp(' ' + className + ' ').test(' ' + doc.documentElement.className + ' ');
+                }
+
+                // Remove class function
+                var removeClass = function (doc, className) {
+                    var newClass = ' ' + doc.documentElement.className.replace( /[\t\r\n]/g, ' ') + ' ';
+                    if (hasClass(doc, className)) {
+                        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+                            newClass = newClass.replace(' ' + className + ' ', ' ');
+                        }
+                        doc.documentElement.className = newClass.replace(/^\s+|\s+$/g, '');
+                    }
+                }
+
+                // 'Cuts The Mustard' function
                 var cutsTheMustard = function() {
                     if (doc.querySelector && win.addEventListener && win.localStorage) {
                         return true;
                     } else {
                         return false;
                     }
-                };
+                }
 
-                var enhanceclass = 'enhanced';
+                var enhanceclass = 'js', // Enhanced / js-enabled class
+                    legacyclass = 'no-js'; // Legacy / js not enabled class
+
 
                 if (cutsTheMustard() === true) {
-                    // Browser cuts the mustard...
+                    // Browser has JavaScript enabled
+
+                    // So first remove the 'no-js' class...
+                    removeClass(doc, legacyclass);
+
+                    // and then add the 'js' class...
                     doc.documentElement.className += '' + enhanceclass;
                 }
 
             }(this, this.document));
+
+
+            // An 'enhanced' cuts-the-mustard option from Scott Jehl - (Possibly use this instead)
+            // Ref => https://www.filamentgroup.com/lab/enhancing-optimistically.html
+            // (function() {
+            //     if( "querySelector" in window.document && "addEventListener" in window ){
+            //       // This is a capable browser, let's improve the UI further!
+            //       var docElem = window.document.documentElement;
+
+            //       // the class we'll use to enhance the UI
+            //       var enhancedClass = "enhanced";
+            //       var enhancedScriptPath = "/path/to/enhancements.js";
+
+            //       // add enhanced class
+            //       function addClass(){
+            //         docElem.className += " " + enhancedClass;
+            //       }
+
+            //       // remove enhanced class
+            //       function removeClass(){
+            //         docElem.className = docElem.className.replace( enhancedClass, " " );
+            //       }
+
+            //       // Let's enhance optimistically...
+            //       addClass();
+
+            //       // load enhanced JS file
+            //       var script = loadJS( enhancedScriptPath );
+
+            //       // if script hasn't loaded after 8 seconds, remove the enhanced class
+            //       var fallback = setTimeout( removeClass, 8000 );
+
+            //       // when the script loads, clear the timer out and add the class again just in case
+            //       script.onload = function(){
+            //         // clear the fallback timer
+            //         clearTimeout( fallback ); 
+            //         // add this class, just in case it was removed already (we can't cancel this request so it might arrive any time)
+            //         addClass();
+            //       };
+            //     }
+            // })();
+
+
+
+
 
             // Google font call
             WebFontConfig = {
@@ -102,55 +174,4 @@
         <!-- Helps assistive technologies -->
         <a class="visuallyhidden" href="#nav">Skip to the site navigation</a>
         <a class="visuallyhidden" href="#main">Skip to the content</a>
-
-        <!--
-        
-            Website content starts here...
-            
-        -->
-
-        <!-- The page header typically contains items such as your site heading, logo and possibly the main site navigation -->
-        <!-- ARIA: the landmark role "banner" is set as it is the prime heading or internal title of the page -->
-        <header role="banner" id="masthead">
-
-            <!-- Logo -->
-            <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>" class="logo">
-                <h1 class="visuallyhidden">Personal Dev Framework</h1>
-                <img src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/img/common/logo.png" alt="Logo">
-            </a>
-
-            <!--
-                ARIA: the landmark role "navigation" is added here as the element contains site navigation
-            --> 
-            <nav role="navigation" class="nav" id="nav">
-                <h1 class="visuallyhidden">Main navigation</h1>
-
-                <!-- 'Burger' icon for smaller screen menu (navigation) -->
-                <a href="#menu" class="menu-button" id="menuButton" aria-controls="menu">
-                    <span class="burger-icon"></span>
-                    <span class="burger-text">Menu</span>
-                </a>
-
-                <!-- This can contain your site navigation in something like an unordered list -->
-                <ul id="menu">
-                    <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>">Home</a>
-                    </li>
-                    <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/about-us">About Us</a>
-                    </li>
-                    <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/contact-us">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/accessibility">Accessibility</a>
-                    </li>
-                    <li>
-                        <a href="//<?php echo $_SERVER['SERVER_NAME']; ?>/cookies">Cookies</a>
-                    </li>
-                </ul>
-            </nav>
-            
-        </header>
-        <!-- / Masthead & Nav -->
         
