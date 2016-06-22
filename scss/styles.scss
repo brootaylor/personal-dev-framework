@@ -14,7 +14,6 @@
 @import 'base/_placeholders.scss';
 @import 'base/_functions.scss';
 @import 'base/_mixins.scss';
-@import 'base/_pxToEm.scss';
 @import 'base/_clearfix-me.scss';
 @import 'base/_typography.scss';
 
@@ -34,8 +33,11 @@
 
 @import 'components/_links.scss';
 @import 'components/_buttons.scss';
+@import 'components/_icons.scss';
 @import 'components/_tooltips.scss';
 @import 'components/_lists.scss';
+@import 'components/_images.scss';
+@import 'components/_video.scss';
 @import 'components/_forms.scss';
 @import 'components/_modules.scss';
 @import 'components/_media.scss';
