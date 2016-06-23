@@ -69,7 +69,7 @@
                     <p>Enim turpis enim vel! Parturient mus lectus <a href="">parturient nec sagittis</a> parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer <a href="" rel="external">lundium ac mauris integer</a> risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat. Adipiscing aenean es.</p>
 
                     <!-- Article / post related content -->
-                    <aside class="post__related">
+                    <aside role="complementary" class="post__related">
                         <!-- Since this aside is contained within an article, a parser should understand that the content of this aside is directly related to the article itself. -->
                         <h1 class="post__related-title">Article-related content</h1>
                         <p>This is some content directly related to this article itself.</p>
@@ -82,7 +82,7 @@
                 </article>
 
                 <!-- External / page-related <aside> content -->
-                <aside>
+                <aside role="complementary">
                     <!-- This aside is outside of the article (above). Its content is related to the page, but not as closely related to the above article eg. a Blogroll would be relevant here. -->
                     <h1>Page-related content [A]</h1>
                     <nav>
@@ -98,7 +98,7 @@
                 </aside>
 
                 <!-- 2nd external / page-related <aside> content -->
-                <aside>
+                <aside role="complementary">
                     <!-- this aside is tangentially related to the page also, it
                     contains twitter messages from this blog's author -->
                     <h1>Page-related content [B]</h1>
