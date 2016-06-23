@@ -18,7 +18,6 @@
         <link rel="copyright" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/privacy">
         <link rel="author" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/humans.txt">
         <link rel="canonical" href="http://<?php echo $_SERVER['SERVER_NAME']; ?><?php echo $page_canonical; ?>">
-
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
