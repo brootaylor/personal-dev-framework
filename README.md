@@ -1,6 +1,6 @@
 # A personal front-end template/framework
 
-This is my attempt at coming up with a reusable front-end template/framework for any future web projects I work on. Just a starting block really and is intended to be an ever-changing template/framework of the components I use on an everyday basis.
+This is my attempt at coming up with a reusable, extensible, responsive front-end framework / boilerplate for any future web projects I work on. It's intended to be an ever-changing / improving framework of the components I use on an everyday basis.
 
 This isn't meant to be massively original in terms of the technical resources & methods used here. A lot of the code contains stuff I've carefully chosen (and sometimes modified) because of their benefit to my web development projects. However, I certainly won't take sole credit for it. Like most, my thinking has been hugely influenced by other superb developers over the years - for that I'm grateful.
 
@@ -9,15 +9,14 @@ You're welcome to use it.
 ## What's in it?
 
 * Top level HTML5 elements.
-* Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers and default print CSS - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
+* A pattern type library of components such as typography, lists, links, buttons, form fields, grid etc.
+* Accessibility considerations added in ie. decent semantics, ARIA attributes and progressive enhancement techniques.
+* Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers, mixins and default print CSS
 * A [Grunt strawman](#grunt-config-tasks) for common build tasks I use.
 * The latest [jQuery](https://jquery.com/) via CDN, with a local fallback.
-* The latest [Modernizr](http://modernizr.com/) build for feature detection. Worth noting that it doesn't have every feature enabled though.
-* Protection against any stray `console` statements causing JavaScript errors
-  in older browsers - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
+* Protection against any stray `console` statements causing JavaScript errors in older browsers
 * An optimized Google Analytics snippet - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
-* Apache server caching, compression, and other configuration defaults for
-  Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
+* Apache server caching, compression, and other configuration defaults for Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A basic PHP based application framework.
 * [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)* 
 * Simple, zero-configuration command-line [http server](#http-server).
@@ -278,7 +277,6 @@ copy: {
             // Javascript library files...
             '<%= dirs.jsBuild %>/vendor/jquery-1.12.0.min.js': '<%= dirs.js %>/vendor/jquery-1.12.0.min.js',
             '<%= dirs.jsBuild %>/vendor/html5shiv.js': '<%= dirs.js %>/vendor/html5shiv.js',
-            '<%= dirs.jsBuild %>/vendor/modernizr.custom.72511.js': '<%= dirs.js %>/vendor/modernizr.custom.72511.js',
 
             // PHP partial files...
             '<%= dirs.appBuild %>/php_partials/_variables.php': '<%= dirs.app %>/php_partials/_variables.php',
@@ -397,7 +395,8 @@ browserSync: {
         },
         options: {
             watchTask: true,
-            proxy: "localhost"
+            server: 'http://localhost/'
+            // proxy: "localhost"
         }
     }
 },
@@ -424,6 +423,7 @@ watch: {
     js: {
         files: [
             'Gruntfile.js',
+            'static/**/loadCSS.js',
             'static/**/main.js',
             'static/**/plugins.js'
         ],
@@ -442,7 +442,6 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache. 
 * Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
 * Add Gulp build alternative.
-* A decent grid eg. [Foundation Grid](http://foundation.zurb.com/grid.html)
 * Set up [SVG Icons](https://icomoon.io/).
 * A more robust MV* of sorts. May stick with PHP for now.
 * Accessibility considerations and examples - eg. colour contrast, TAB, SHIFT+TAB & ENTER keys to navigate site, Zoom (make things work at 200% - Microsoft homepage does this well) and "View Document Outline" in Web Developer tool to check semantics.
