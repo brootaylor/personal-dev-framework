@@ -17,7 +17,7 @@
 	$loadCSS_JS = file_get_contents("static/js/loadCSS.js");
 
 	$cookie_cssupdate = "cssupdate";
-	$cssupdate_value = "11062016"; // Manually change this every time new version of CSS created
+	$cssupdate_value = "22062016"; // Manually change this every time new version of CSS created
 	/////////////////////////////////////////////////////////////////////////////////////////////
 
 ?>
