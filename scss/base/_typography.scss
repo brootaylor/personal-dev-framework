@@ -2,29 +2,45 @@
    Typography styles (Global).
    ========================================================================== */
 
+
+/* FONTS VARIABLE CONFIG
+============================================= */
+
+// Base font size
+$font-size-base: 16px;
+
+// Base font colour
+$font-color-base: lighten($black, 10%);
+
+// Font families
+$font-family-primary: "Open Sans", sans-serif, Arial, "Helvetica Neue", Helvetica; // 300,300i,400,400i,700,700i (Google Fonts used)
+$font-family-secondary: Georgia, Times, "Times New Roman", serif;
+
+// Font styles
+$font-style-normal: normal;
+$font-style-italic: italic;
+
+// Font weights (primary custom font)
+$font-weight-light: 300; // Light
+$font-weight-regular: 400; // Regular
+$font-weight-semi-bold: 600; // Semi bold
+$font-weight-bold: 700; // Bold
+
+
 // Global typography settings
 //////////////////////////////
 
-
-////////////////////////////////////////////////
-// ======== CHECK THIS SOLUTION OUT ========
-// http://www.gridlover.net/
-////////////////////////////////////////////////
-
-
+// https://bugsnag.com/blog/responsive-typography-with-rems
+// http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
 
 html {
     color: light($black, 10%);
     background-color: $white;
-    font-family: $font-primary;
+    font-family: $font-family-primary;
     font-weight: $font-weight-light;
+    font-style: $font-style-normal;
     font-size: $font-size-base;
     line-height: 1.4;
-
-
-    // https://bugsnag.com/blog/responsive-typography-with-rems
-
-    // http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
 }
 
 /*
@@ -55,26 +71,11 @@ html {
  */
 
 // Function for converting a px based font-size to rem.
-// @function calculateRem($size) {
-//   $remSize: $size / $font-size-base; // = 16px
-//     // Default font size on html element is 100%, equivalent to 16px;
-//   @return #{$remSize}rem;
-// }
-
-// // Mixin that will include the fall back px declaration as well as the calculated rem value.
-// @mixin fontSize($size) {
-//   font-size: $size;
-//   font-size: calculateRem($size);
-// }
-
-// ===============================================
-// Alternative option ==> could be more refined...
-// ===============================================
-
 @function calculateRem($value) {
  $remValue: $value / $font-size-base;
  @return $remValue * 1rem;
 }
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
 @mixin fontSize($value) {
  font-size: $value;
  font-size: calculateRem($value);
@@ -106,7 +107,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-regular;
 }
 h1 {
     @include fontSize(26px);
@@ -335,7 +336,7 @@ blockquote {
 .post__lead {
     @include fontSize(18px);
     transition: font-size 0.2s linear;
-    font-weight: $font-weight-normal;
+    font-weight: $font-weight-regular;
 
         @include break-point-min($bp-m) {
             @include fontSize(20px);
@@ -394,48 +395,5 @@ hr {
 }
 
 ///////////////////////////////////////////////////
-
-
-
-//////////////////////////////////////////////////////
-// Importing Web Fonts
-// =====================
-// Importing Web Fonts with variable-exists()
-//////////////////////////////////////////////////////
-
-// >>> This is from an example found here http://sassbreak.com/web-fonts-variable-exists/ <<<
-
-
-// Web font URLs...
-$font-google-prim : 'http://fonts.googleapis.com/css?family=Lato:100,300,400';
-$font-google-sec  : 'http://fonts.googleapis.com/css?family=PT+Serif:400,700';
-
-
-// With variable-exists(), we can tell Sass to import a font into our style sheet if $font-google-prim or $font-google-sec exist in our project...
-@if variable-exists(font-google-prim) {
-  @import url($font-google-prim);
-}
-@if variable-exists(font-google-sec) {
-  @import url($font-google-sec);
-}
-
-////////////////////////////////////////////////////
-// Now you can add this function to your Sass starter template to handle all web font imports. Define the web font variables you need in a _config or _variables partial and Sass will take care of the rest!
-////////////////////////////////////////////////////
-
-// Font Stacks...
-$stack-lato     : 'Lato', sans-serif;
-$stack-pt-serif : 'PT Serif', serif;
-
-// Main Styles...
-body {
-  font-family: $stack-lato;
-}
-h1 {
-  font-family: $stack-pt-serif;
-}
-
-
-/////////////////////////////////////////////////////
 
 

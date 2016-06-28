@@ -18,7 +18,11 @@
 
                 <h1><?php echo $page_title; ?></h1>
 
-                <p>Enim turpis enim vel! Parturient mus lectus parturient nec sagittis parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat. Adipiscing aenean es.</p>
+                <p>This is my attempt at coming up with a reusable, extensible, responsive and accessible front-end framework / boilerplate for any future web projects I work on. It's intended to be an ever-changing / improving framework of the components I use on an everyday basis.</p>
+
+                <p>This isn't meant to be massively original in terms of the technical resources & methods used here. A lot of the code contains stuff I've carefully chosen (and sometimes modified) because of their benefit to my web development projects. However, I certainly won't take sole credit for it. Like most, my thinking has been hugely influenced by other superb developers over the years - for that I'm grateful.</p>
+
+                <p>You're welcome to use it.</p>
 
                 <hr>
 

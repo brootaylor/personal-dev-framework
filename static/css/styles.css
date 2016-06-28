@@ -3,8 +3,6 @@
 ====================================================================================================== */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
-@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400");
-@import url("http://fonts.googleapis.com/css?family=PT+Serif:400,700");
 /* line 9, ../../scss/vendors/_normalize.scss */
 html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
 
@@ -245,14 +243,16 @@ Tying in with mixins, placeholders can be used alongside mixins to reduce duplic
 [class^="grid__"]:after, [class*=" grid__"]:after, .menu:after, .mod:after, .mod .modHead:after, .mod .modFoot:after, .media:after { clear: both; }
 
 /* ========================================================================== Typography styles (Global). ========================================================================== */
-/* line 16, ../../scss/base/_typography.scss */
-html { color: light(#000, 10%); background-color: #fff; font-family: "Open Sans", sans-serif, Arial, "Helvetica Neue", Helvetica; font-weight: 300; font-size: 16px; line-height: 1.4; }
+/* FONTS VARIABLE CONFIG
+============================================= */
+/* line 36, ../../scss/base/_typography.scss */
+html { color: light(#000, 10%); background-color: #fff; font-family: "Open Sans", sans-serif, Arial, "Helvetica Neue", Helvetica; font-weight: 300; font-style: normal; font-size: 16px; line-height: 1.4; }
 
 /* Remove text-shadow in selection highlight: h5bp.com/i These selection rule sets have to be separate. Customize the background color to match your design. */
-/* line 36, ../../scss/base/_typography.scss */
+/* line 52, ../../scss/base/_typography.scss */
 ::-moz-selection { background: #ccccff; text-shadow: none; }
 
-/* line 41, ../../scss/base/_typography.scss */
+/* line 57, ../../scss/base/_typography.scss */
 ::selection { background: #ccccff; text-shadow: none; }
 
 /** Convert font-size from px to rem with px fallback  @param $size - the value in pixel you want to convert  e.g. p {@include fontSize(12px);}  */
@@ -261,143 +261,137 @@ html { color: light(#000, 10%); background-color: #fff; font-family: "Open Sans"
  etc......
 
 */
-/* line 103, ../../scss/base/_typography.scss */
+/* line 104, ../../scss/base/_typography.scss */
 h1, h2, h3, h4, h5, h6 { font-weight: 400; }
 
-/* line 111, ../../scss/base/_typography.scss */
+/* line 112, ../../scss/base/_typography.scss */
 h1 { font-size: 26px; font-size: 1.625rem; transition: font-size 0.2s linear; margin: 0 0 0.9375em 0; }
-@media (min-width: 52.5em) { /* line 111, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 112, ../../scss/base/_typography.scss */
   h1 { font-size: 30px; font-size: 1.875rem; } }
-@media (min-width: 60em) { /* line 111, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 112, ../../scss/base/_typography.scss */
   h1 { font-size: 34px; font-size: 2.125rem; } }
 
-/* line 124, ../../scss/base/_typography.scss */
+/* line 125, ../../scss/base/_typography.scss */
 h2 { font-size: 22px; font-size: 1.375rem; transition: font-size 0.2s linear; margin: 0.625em 0 0.9375em 0; }
-@media (min-width: 52.5em) { /* line 124, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 125, ../../scss/base/_typography.scss */
   h2 { font-size: 26px; font-size: 1.625rem; } }
-@media (min-width: 60em) { /* line 124, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 125, ../../scss/base/_typography.scss */
   h2 { font-size: 30px; font-size: 1.875rem; } }
 
-/* line 136, ../../scss/base/_typography.scss */
+/* line 137, ../../scss/base/_typography.scss */
 h3 { font-size: 18px; font-size: 1.125rem; transition: font-size 0.2s linear; margin: 0.625em 0 0.9375em 0; }
-@media (min-width: 52.5em) { /* line 136, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 137, ../../scss/base/_typography.scss */
   h3 { font-size: 22px; font-size: 1.375rem; } }
-@media (min-width: 60em) { /* line 136, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 137, ../../scss/base/_typography.scss */
   h3 { font-size: 26px; font-size: 1.625rem; } }
 
-/* line 148, ../../scss/base/_typography.scss */
+/* line 149, ../../scss/base/_typography.scss */
 h4 { font-size: 16px; font-size: 1rem; transition: font-size 0.2s linear; margin: 0.625em 0 0.9375em 0; }
-@media (min-width: 52.5em) { /* line 148, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 149, ../../scss/base/_typography.scss */
   h4 { font-size: 20px; font-size: 1.25rem; } }
-@media (min-width: 60em) { /* line 148, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 149, ../../scss/base/_typography.scss */
   h4 { font-size: 24px; font-size: 1.5rem; } }
 
-/* line 160, ../../scss/base/_typography.scss */
+/* line 161, ../../scss/base/_typography.scss */
 h5 { font-size: 16px; font-size: 1rem; transition: font-size 0.2s linear; margin: 0.625em 0 0.9375em 0; }
-@media (min-width: 52.5em) { /* line 160, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 161, ../../scss/base/_typography.scss */
   h5 { font-size: 20px; font-size: 1.25rem; } }
-@media (min-width: 60em) { /* line 160, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 161, ../../scss/base/_typography.scss */
   h5 { font-size: 24px; font-size: 1.5rem; } }
 
-/* line 172, ../../scss/base/_typography.scss */
+/* line 173, ../../scss/base/_typography.scss */
 h6 { font-size: 16px; font-size: 1rem; transition: font-size 0.2s linear; margin: 0.625em 0 0.9375em 0; }
-@media (min-width: 52.5em) { /* line 172, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 173, ../../scss/base/_typography.scss */
   h6 { font-size: 20px; font-size: 1.25rem; } }
-@media (min-width: 60em) { /* line 172, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 173, ../../scss/base/_typography.scss */
   h6 { font-size: 24px; font-size: 1.5rem; } }
 
-/* line 188, ../../scss/base/_typography.scss */
+/* line 189, ../../scss/base/_typography.scss */
 p { margin: 0 0 0.9375em 0; }
-@media (min-width: 52.5em) { /* line 188, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 189, ../../scss/base/_typography.scss */
   p { font-size: 18px; font-size: 1.125rem; transition: font-size 0.2s linear; } }
 
-/* line 200, ../../scss/base/_typography.scss */
+/* line 201, ../../scss/base/_typography.scss */
 blockquote { margin: 1.25em; padding: 0 0.9375em; position: relative; }
-@media (min-width: 52.5em) { /* line 200, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 201, ../../scss/base/_typography.scss */
   blockquote { margin: 1.25em 2.5em; padding: 0 1.875em; } }
-@media (min-width: 60em) { /* line 200, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 201, ../../scss/base/_typography.scss */
   blockquote { margin: 1.25em 2.5em; } }
-/* line 213, ../../scss/base/_typography.scss */
+/* line 214, ../../scss/base/_typography.scss */
 blockquote:before, blockquote:after { font-size: 60px; font-size: 3.75rem; transition: font-size 0.2s linear; display: block; position: absolute; color: #7a7a7a; line-height: 0; }
-@media (min-width: 52.5em) { /* line 213, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 214, ../../scss/base/_typography.scss */
   blockquote:before, blockquote:after { font-size: 70px; font-size: 4.375rem; } }
-@media (min-width: 60em) { /* line 213, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 214, ../../scss/base/_typography.scss */
   blockquote:before, blockquote:after { font-size: 80px; font-size: 5rem; } }
-/* line 229, ../../scss/base/_typography.scss */
+/* line 230, ../../scss/base/_typography.scss */
 blockquote:before { content: "\201C"; left: -0.125em; top: 0.3125em; }
-/* line 234, ../../scss/base/_typography.scss */
+/* line 235, ../../scss/base/_typography.scss */
 blockquote:after { content: "\201D"; right: -0.125em; bottom: 0.3125em; }
-/* line 239, ../../scss/base/_typography.scss */
+/* line 240, ../../scss/base/_typography.scss */
 blockquote p { font-size: 16px; font-size: 1rem; transition: font-size 0.2s linear; font-style: italic; color: #4c7f01; }
-@media (min-width: 52.5em) { /* line 239, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 240, ../../scss/base/_typography.scss */
   blockquote p { font-size: 20px; font-size: 1.25rem; } }
-@media (min-width: 60em) { /* line 239, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 240, ../../scss/base/_typography.scss */
   blockquote p { font-size: 24px; font-size: 1.5rem; } }
-/* line 252, ../../scss/base/_typography.scss */
+/* line 253, ../../scss/base/_typography.scss */
 blockquote footer { margin: 0.625em; border: none; text-align: right; }
-/* line 257, ../../scss/base/_typography.scss */
+/* line 258, ../../scss/base/_typography.scss */
 blockquote footer cite { font-size: 14px; font-size: 0.875rem; transition: font-size 0.2s linear; display: inline; margin: 0; color: gray; }
-@media (min-width: 52.5em) { /* line 257, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 258, ../../scss/base/_typography.scss */
   blockquote footer cite { font-size: 16px; font-size: 1rem; } }
 
-/* line 280, ../../scss/base/_typography.scss */
+/* line 281, ../../scss/base/_typography.scss */
 .post__header, .post-sum__header { margin-bottom: 1.25em; }
 
-/* line 285, ../../scss/base/_typography.scss */
+/* line 286, ../../scss/base/_typography.scss */
 .post__title, .post-sum__title { margin-bottom: 0; }
 
-/* line 291, ../../scss/base/_typography.scss */
+/* line 292, ../../scss/base/_typography.scss */
 .post-sum__title a, .post-sum__title a:hover { text-decoration: none; }
 
-/* line 297, ../../scss/base/_typography.scss */
+/* line 298, ../../scss/base/_typography.scss */
 .post__title-sub, .post-sum__title-sub { margin-top: 0; margin-bottom: 0; }
 
-/* line 303, ../../scss/base/_typography.scss */
+/* line 304, ../../scss/base/_typography.scss */
 .post__meta, .post-sum__meta { font-size: 14px; font-size: 0.875rem; transition: font-size 0.2s linear; color: gray; }
-@media (min-width: 60em) { /* line 303, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 304, ../../scss/base/_typography.scss */
   .post__meta, .post-sum__meta { font-size: 16px; font-size: 1rem; } }
 
-/* line 314, ../../scss/base/_typography.scss */
+/* line 315, ../../scss/base/_typography.scss */
 .post__time, .post__extra, .post-sum__time, .post-sum__extra { padding-left: 1.25em; position: relative; }
-/* line 321, ../../scss/base/_typography.scss */
+/* line 322, ../../scss/base/_typography.scss */
 .post__time:before, .post__extra:before, .post-sum__time:before, .post-sum__extra:before { content: '\007C'; position: absolute; left: 0.4375em; color: #ccc; }
 
-/* line 329, ../../scss/base/_typography.scss */
+/* line 330, ../../scss/base/_typography.scss */
 .post__location, .post-sum__location { display: block; }
 
-/* line 335, ../../scss/base/_typography.scss */
+/* line 336, ../../scss/base/_typography.scss */
 .post__lead { font-size: 18px; font-size: 1.125rem; transition: font-size 0.2s linear; font-weight: 400; }
-@media (min-width: 52.5em) { /* line 335, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 336, ../../scss/base/_typography.scss */
   .post__lead { font-size: 20px; font-size: 1.25rem; } }
-@media (min-width: 60em) { /* line 335, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 336, ../../scss/base/_typography.scss */
   .post__lead { font-size: 22px; font-size: 1.375rem; } }
 
-/* line 348, ../../scss/base/_typography.scss */
+/* line 349, ../../scss/base/_typography.scss */
 .post__related { background-color: #e6e6e6; padding: 0.9375em; margin-bottom: 0.9375em; }
 
-/* line 354, ../../scss/base/_typography.scss */
+/* line 355, ../../scss/base/_typography.scss */
 .post__related-title { font-size: 22px; font-size: 1.375rem; transition: font-size 0.2s linear; margin-bottom: 0.625em; }
-@media (min-width: 52.5em) { /* line 354, ../../scss/base/_typography.scss */
+@media (min-width: 52.5em) { /* line 355, ../../scss/base/_typography.scss */
   .post__related-title { font-size: 24px; font-size: 1.5rem; } }
-@media (min-width: 60em) { /* line 354, ../../scss/base/_typography.scss */
+@media (min-width: 60em) { /* line 355, ../../scss/base/_typography.scss */
   .post__related-title { font-size: 26px; font-size: 1.625rem; } }
 
-/* line 367, ../../scss/base/_typography.scss */
+/* line 368, ../../scss/base/_typography.scss */
 .post__footer { background-color: #ccc; padding: 0.9375em; margin-bottom: 0.9375em; }
-/* line 372, ../../scss/base/_typography.scss */
+/* line 373, ../../scss/base/_typography.scss */
 .post__footer p { margin: 0; font-size: 95%; }
 
-/* line 381, ../../scss/base/_typography.scss */
+/* line 382, ../../scss/base/_typography.scss */
 hr { display: block; height: 0.0625em; border: 0; border-top: 0.0625em solid #4d4d4d; margin: 0.9375em 0; padding: 0; }
 
-/* line 390, ../../scss/base/_typography.scss */
+/* line 391, ../../scss/base/_typography.scss */
 .hr__big { height: 0.3125em; border-top-width: 0.3125em; margin: 2.5em 0; }
-
-/* line 431, ../../scss/base/_typography.scss */
-body { font-family: "Lato", sans-serif; }
-
-/* line 434, ../../scss/base/_typography.scss */
-h1 { font-family: "PT Serif", serif; }
 
 /* FRAMEWORK - Structure and layout files.
 ========================================================================== */
@@ -445,52 +439,52 @@ img { max-width: 100%; }
 ============================================= */
 /* GRID IMPLEMENTATION
 ============================================= */
-/* line 61, ../../scss/framework/_grid.scss */
+/* line 66, ../../scss/framework/_grid.scss */
 [class^="grid__"], [class*=" grid__"] { list-style: none; padding: 0; margin: 0; }
-/* line 68, ../../scss/framework/_grid.scss */
+/* line 73, ../../scss/framework/_grid.scss */
 [class^="grid__"] .col, [class*=" grid__"] .col { float: left; margin: 0 0 0.9375em 1.6%; }
-@media (max-width: 30em) { /* line 68, ../../scss/framework/_grid.scss */
+@media (max-width: 30em) { /* line 73, ../../scss/framework/_grid.scss */
   [class^="grid__"] .col, [class*=" grid__"] .col { margin-left: 0; } }
-/* line 78, ../../scss/framework/_grid.scss */
+/* line 83, ../../scss/framework/_grid.scss */
 [class^="grid__"] .col .col, [class*=" grid__"] .col .col { margin-bottom: 0; }
 
-@media (min-width: 30em) { /* line 94, ../../scss/framework/_grid.scss */
+@media (min-width: 30em) { /* line 99, ../../scss/framework/_grid.scss */
   .grid__col--2 > .col, .grid__col--3 > .col, .grid__col--4 > .col, .grid__col--5 > .col, .grid__col--6 > .col { width: 49.2%; }
-  /* line 99, ../../scss/framework/_grid.scss */
+  /* line 104, ../../scss/framework/_grid.scss */
   .grid__col--2 > .col:nth-child(2n+1), .grid__col--3 > .col:nth-child(2n+1), .grid__col--4 > .col:nth-child(2n+1), .grid__col--5 > .col:nth-child(2n+1), .grid__col--6 > .col:nth-child(2n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 40em) { /* line 111, ../../scss/framework/_grid.scss */
+@media (min-width: 40em) { /* line 116, ../../scss/framework/_grid.scss */
   .grid__col--3 > .col, .grid__col--4 > .col, .grid__col--5 > .col, .grid__col--6 > .col { width: 32.26667%; }
-  /* line 116, ../../scss/framework/_grid.scss */
+  /* line 121, ../../scss/framework/_grid.scss */
   .grid__col--3 > .col:nth-child(n), .grid__col--4 > .col:nth-child(n), .grid__col--5 > .col:nth-child(n), .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 119, ../../scss/framework/_grid.scss */
+  /* line 124, ../../scss/framework/_grid.scss */
   .grid__col--3 > .col:nth-child(3n+1), .grid__col--4 > .col:nth-child(3n+1), .grid__col--5 > .col:nth-child(3n+1), .grid__col--6 > .col:nth-child(3n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 52.5em) { /* line 130, ../../scss/framework/_grid.scss */
+@media (min-width: 52.5em) { /* line 135, ../../scss/framework/_grid.scss */
   .grid__col--4 > .col, .grid__col--5 > .col, .grid__col--6 > .col { width: 23.8%; }
-  /* line 135, ../../scss/framework/_grid.scss */
+  /* line 140, ../../scss/framework/_grid.scss */
   .grid__col--4 > .col:nth-child(n), .grid__col--5 > .col:nth-child(n), .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 138, ../../scss/framework/_grid.scss */
+  /* line 143, ../../scss/framework/_grid.scss */
   .grid__col--4 > .col:nth-child(4n+1), .grid__col--5 > .col:nth-child(4n+1), .grid__col--6 > .col:nth-child(4n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 60em) { /* line 148, ../../scss/framework/_grid.scss */
+@media (min-width: 60em) { /* line 153, ../../scss/framework/_grid.scss */
   .grid__col--5 > .col, .grid__col--6 > .col { width: 18.72%; }
-  /* line 153, ../../scss/framework/_grid.scss */
+  /* line 158, ../../scss/framework/_grid.scss */
   .grid__col--5 > .col:nth-child(n), .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 156, ../../scss/framework/_grid.scss */
+  /* line 161, ../../scss/framework/_grid.scss */
   .grid__col--5 > .col:nth-child(5n+1), .grid__col--6 > .col:nth-child(5n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 75em) { /* line 165, ../../scss/framework/_grid.scss */
+@media (min-width: 75em) { /* line 170, ../../scss/framework/_grid.scss */
   .grid__col--6 > .col { width: 15.33333%; }
-  /* line 170, ../../scss/framework/_grid.scss */
+  /* line 175, ../../scss/framework/_grid.scss */
   .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 173, ../../scss/framework/_grid.scss */
+  /* line 178, ../../scss/framework/_grid.scss */
   .grid__col--6 > .col:nth-child(6n+1) { clear: left; margin-left: 0; } }
 
-/* line 192, ../../scss/framework/_grid.scss */
+/* line 197, ../../scss/framework/_grid.scss */
 .col__equal-wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-/* line 205, ../../scss/framework/_grid.scss */
+/* line 210, ../../scss/framework/_grid.scss */
 .col__equal-item { display: -webkit-flex; display: -ms-flexbox; display: flex; background-color: #ccc; }
 
 /* ========================================================================== Masthead styles (eg. Logo, strapline & main navigation / menu). ========================================================================== */
@@ -533,7 +527,7 @@ img { max-width: 100%; }
 /* line 133, ../../scss/framework/_navigation.scss */
 .menu-button:link, .menu-button:hover, .menu-button:active, .menu-button:focus { text-decoration: none; }
 /* line 146, ../../scss/framework/_navigation.scss */
-.menu-button .menu-button--text { font-size: 16px; font-size: 1rem; font-weight: 400; color: #996300; display: block; padding-top: 0.3125em; }
+.menu-button .menu-button--text { font-size: 14px; font-size: 0.875rem; font-weight: 400; color: #996300; display: block; padding-top: 0.3125em; }
 @media (min-width: 60em) { /* line 115, ../../scss/framework/_navigation.scss */
   .menu-button { display: none; } }
 
@@ -547,17 +541,17 @@ img { max-width: 100%; }
 .menu ul { margin: 0; padding: 0; list-style: none; }
 
 /* line 201, ../../scss/framework/_navigation.scss */
-.js .nav .menu-button { position: absolute; right: 0; top: 0; }
+.enhanced .nav .menu-button { position: absolute; right: 0; top: 0; }
 /* line 206, ../../scss/framework/_navigation.scss */
-.js .nav .menu-button .menu-icon--text { font-size: 14px; font-size: 0.875rem; }
+.enhanced .nav .menu-button .menu-icon--text { font-size: 14px; font-size: 0.875rem; }
 @media (min-width: 35em) { /* line 201, ../../scss/framework/_navigation.scss */
-  .js .nav .menu-button { display: none; } }
+  .enhanced .nav .menu-button { display: none; } }
 /* line 216, ../../scss/framework/_navigation.scss */
-.js .nav ul { max-height: 0; overflow: hidden; }
+.enhanced .nav ul { max-height: 0; overflow: hidden; }
 @media (min-width: 35em) { /* line 216, ../../scss/framework/_navigation.scss */
-  .js .nav ul { overflow: auto; max-height: inherit; } }
+  .enhanced .nav ul { overflow: auto; max-height: inherit; } }
 /* line 226, ../../scss/framework/_navigation.scss */
-.js .nav ul.open { max-height: 12.5em; transition: max-height 0.25s ease-out; }
+.enhanced .nav ul.open { max-height: 12.5em; transition: max-height 0.25s ease-out; }
 
 /* ========================================================================== Main Footer ========================================================================== */
 /* line 6, ../../scss/framework/_footer.scss */
