@@ -37,28 +37,6 @@ $color-tertiary: $grey;
 
 /////////////////////////////////////////////////////
 
-// Fonts
-// ==============
-
-// Base font size
-$font-size-base: 16px;
-
-// Base font colour
-$font-color-base: lighten($black, 10%);
-
-// Font families
-$font-primary: 'Open Sans', sans-serif, Arial, "Helvetica Neue", Helvetica; 
-$font-secondary: "Times New Roman", Georgia, Serif;
-
-// Font weights (primary custom font)
-$font-weight-light: 300; // Light
-$font-weight-normal: 400; // Normal
-$font-weight-semi-bold: 600; // Semi-bold
-$font-weight-bold: 700; // Bold
-
-
-/////////////////////////////////////////////////////
-
 // Links
 // ==============
 $link-primary: darken($color-primary, 20%);
