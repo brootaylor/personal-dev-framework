@@ -63,20 +63,38 @@
                 }
             })();
 
-            // Google font call
+            // Web Font Loader
+            // -------------------------------------------------
+            // =>> See https://github.com/typekit/webfontloader
+
+            // Asynchronous font loading method...
+            // ====================================
+            // NOTE: The rest of the page might render before the Web Font Loader is loaded and executed, which can cause a Flash of Unstyled Text (FOUT).
+            
             WebFontConfig = {
-                google: { families: [ 'Open+Sans:400,700,300,600:latin' ] }
+              google: { families: [ 'Open+Sans:300,300i,400,400i,700,700i' ] }
             };
-            (function() {
-                var wf = document.createElement('script');
-                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                wf.type = 'text/javascript';
-                wf.async = 'true';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(wf, s);
-            })();
+            (function(d) {
+              var wf = d.createElement('script'), s = d.scripts[0];
+              wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+              s.parentNode.insertBefore(wf, s);
+            })(document);
         </script>
+
+        <!--
+          Synchronous font loading method:
+          ================================
+          NOTE: This method will block the rest of your page loading while this JS is loading
+        -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script> -->
+        <!-- <script>
+          // Synchronous method...
+          WebFont.load({
+            google: {
+              families: ['Open+Sans:300,300i,400,400i,700,700i']
+            }
+          });
+        </script> -->
 
         <?php
             // If cookie exists/matches then load the normal external stylesheet...
