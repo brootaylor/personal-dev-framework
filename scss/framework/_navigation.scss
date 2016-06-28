@@ -16,8 +16,8 @@ $menu-toggle-background-colour: lighten($grey, 10%);
 $menu-toggle-border: 1px solid $grey;
 $menu-toggle-padding: pxToEm(12px 10px 7px 10px, $font-size-base);
 
-$menu-toggle-text-font-size: $font-size-base;
-$menu-toggle-text-font-weight: $font-weight-normal;
+$menu-toggle-text-font-size: 14px;
+$menu-toggle-text-font-weight: $font-weight-regular;
 $menu-toggle-text-font-colour: $link-primary;
 $menu-toggle-text-padding: pxToEm(5px, $font-size-base);
 
@@ -196,7 +196,7 @@ $sub-menu-link-padding: pxToEm(15px 12px, $font-size-base);
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Using 'js' class as the parent selector for devices that have JS enabled
 // Otherwise just falls back to rendering entire navigation in a linear layout on smaller screens - (see styles above).
-.js {
+.enhanced {
 	.nav {
 		.menu-button {
 			position: absolute;
@@ -495,7 +495,7 @@ $sub-menu-link-padding: pxToEm(15px 12px, $font-size-base);
 // 	// IST TIER LINK
 // 	.menu__link {
 // 		@include fontSize(18px);
-// 		font-weight: $font-weight-normal;
+// 		font-weight: $font-weight-regular;
 
 // 			@include break-point-min($bp-l) {
 // 				@include fontSize(16px);
@@ -594,7 +594,7 @@ $sub-menu-link-padding: pxToEm(15px 12px, $font-size-base);
 // // Using 'js' class as the parent selector for devices that have JS enabled
 // // Otherwise just falls back to rendering entire navigation in a linear layout on smaller screens - (see styles above).
 
-// .js {
+// .enhanced {
 
 // 	// Menu container
 // 	.menu {
