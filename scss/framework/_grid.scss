@@ -73,6 +73,7 @@ $col-width-6: calculate-width(6);
   .col {
     float: left;
     margin: 0 0 pxToEm(15px, $font-size-base) $col-gutter;
+    transition: all 0.2s linear;
 
         // Makes sure no gutter on single column layout (linear)
         @include break-point-max($bp-xs) {
@@ -101,6 +102,9 @@ $col-width-6: calculate-width(6);
 
             width: $col-width-2;
 
+            &:nth-child(n) {
+                @include col-reset;
+            }
             &:nth-child(2n+1) {
                 @include col-clear;
             }
