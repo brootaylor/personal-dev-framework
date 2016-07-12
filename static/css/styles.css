@@ -442,49 +442,51 @@ img { max-width: 100%; }
 /* line 66, ../../scss/framework/_grid.scss */
 [class^="grid__"], [class*=" grid__"] { list-style: none; padding: 0; margin: 0; }
 /* line 73, ../../scss/framework/_grid.scss */
-[class^="grid__"] .col, [class*=" grid__"] .col { float: left; margin: 0 0 0.9375em 1.6%; }
+[class^="grid__"] .col, [class*=" grid__"] .col { float: left; margin: 0 0 0.9375em 1.6%; transition: all 0.2s linear; }
 @media (max-width: 30em) { /* line 73, ../../scss/framework/_grid.scss */
   [class^="grid__"] .col, [class*=" grid__"] .col { margin-left: 0; } }
-/* line 83, ../../scss/framework/_grid.scss */
+/* line 84, ../../scss/framework/_grid.scss */
 [class^="grid__"] .col .col, [class*=" grid__"] .col .col { margin-bottom: 0; }
 
-@media (min-width: 30em) { /* line 99, ../../scss/framework/_grid.scss */
+@media (min-width: 30em) { /* line 100, ../../scss/framework/_grid.scss */
   .grid__col--2 > .col, .grid__col--3 > .col, .grid__col--4 > .col, .grid__col--5 > .col, .grid__col--6 > .col { width: 49.2%; }
-  /* line 104, ../../scss/framework/_grid.scss */
+  /* line 105, ../../scss/framework/_grid.scss */
+  .grid__col--2 > .col:nth-child(n), .grid__col--3 > .col:nth-child(n), .grid__col--4 > .col:nth-child(n), .grid__col--5 > .col:nth-child(n), .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
+  /* line 108, ../../scss/framework/_grid.scss */
   .grid__col--2 > .col:nth-child(2n+1), .grid__col--3 > .col:nth-child(2n+1), .grid__col--4 > .col:nth-child(2n+1), .grid__col--5 > .col:nth-child(2n+1), .grid__col--6 > .col:nth-child(2n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 40em) { /* line 116, ../../scss/framework/_grid.scss */
+@media (min-width: 40em) { /* line 120, ../../scss/framework/_grid.scss */
   .grid__col--3 > .col, .grid__col--4 > .col, .grid__col--5 > .col, .grid__col--6 > .col { width: 32.26667%; }
-  /* line 121, ../../scss/framework/_grid.scss */
+  /* line 125, ../../scss/framework/_grid.scss */
   .grid__col--3 > .col:nth-child(n), .grid__col--4 > .col:nth-child(n), .grid__col--5 > .col:nth-child(n), .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 124, ../../scss/framework/_grid.scss */
+  /* line 128, ../../scss/framework/_grid.scss */
   .grid__col--3 > .col:nth-child(3n+1), .grid__col--4 > .col:nth-child(3n+1), .grid__col--5 > .col:nth-child(3n+1), .grid__col--6 > .col:nth-child(3n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 52.5em) { /* line 135, ../../scss/framework/_grid.scss */
+@media (min-width: 52.5em) { /* line 139, ../../scss/framework/_grid.scss */
   .grid__col--4 > .col, .grid__col--5 > .col, .grid__col--6 > .col { width: 23.8%; }
-  /* line 140, ../../scss/framework/_grid.scss */
+  /* line 144, ../../scss/framework/_grid.scss */
   .grid__col--4 > .col:nth-child(n), .grid__col--5 > .col:nth-child(n), .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 143, ../../scss/framework/_grid.scss */
+  /* line 147, ../../scss/framework/_grid.scss */
   .grid__col--4 > .col:nth-child(4n+1), .grid__col--5 > .col:nth-child(4n+1), .grid__col--6 > .col:nth-child(4n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 60em) { /* line 153, ../../scss/framework/_grid.scss */
+@media (min-width: 60em) { /* line 157, ../../scss/framework/_grid.scss */
   .grid__col--5 > .col, .grid__col--6 > .col { width: 18.72%; }
-  /* line 158, ../../scss/framework/_grid.scss */
+  /* line 162, ../../scss/framework/_grid.scss */
   .grid__col--5 > .col:nth-child(n), .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 161, ../../scss/framework/_grid.scss */
+  /* line 165, ../../scss/framework/_grid.scss */
   .grid__col--5 > .col:nth-child(5n+1), .grid__col--6 > .col:nth-child(5n+1) { clear: left; margin-left: 0; } }
 
-@media (min-width: 75em) { /* line 170, ../../scss/framework/_grid.scss */
+@media (min-width: 75em) { /* line 174, ../../scss/framework/_grid.scss */
   .grid__col--6 > .col { width: 15.33333%; }
-  /* line 175, ../../scss/framework/_grid.scss */
+  /* line 179, ../../scss/framework/_grid.scss */
   .grid__col--6 > .col:nth-child(n) { clear: none; margin-left: 1.6%; }
-  /* line 178, ../../scss/framework/_grid.scss */
+  /* line 182, ../../scss/framework/_grid.scss */
   .grid__col--6 > .col:nth-child(6n+1) { clear: left; margin-left: 0; } }
 
-/* line 197, ../../scss/framework/_grid.scss */
+/* line 201, ../../scss/framework/_grid.scss */
 .col__equal-wrap { display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
-/* line 210, ../../scss/framework/_grid.scss */
+/* line 214, ../../scss/framework/_grid.scss */
 .col__equal-item { display: -webkit-flex; display: -ms-flexbox; display: flex; background-color: #ccc; }
 
 /* ========================================================================== Masthead styles (eg. Logo, strapline & main navigation / menu). ========================================================================== */
