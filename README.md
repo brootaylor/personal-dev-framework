@@ -1,4 +1,4 @@
-# A personal front-end template/framework
+# A personal front-end template / framework
 
 This is my attempt at coming up with a reusable, extensible, responsive and accessible front-end framework / boilerplate for any future web projects I work on. It's intended to be an ever-changing / improving framework of the components I use on an everyday basis.
 
