@@ -442,6 +442,7 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache. 
 * Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
 * Add Gulp build alternative.
+* Add print CSS styles
 * Set up [SVG Icons](https://icomoon.io/).
 * A more robust MV* of sorts. May stick with PHP for now.
 * Accessibility considerations and examples - eg. colour contrast, TAB, SHIFT+TAB & ENTER keys to navigate site, Zoom (make things work at 200% - Microsoft homepage does this well) and "View Document Outline" in Web Developer tool to check semantics.
