@@ -466,6 +466,8 @@ Suggestions welcome.
 ### Accessibility
 
 * [WebAIM](http://webaim.org/)
+* [WCAG](https://www.w3.org/WAI/intro/wcag.php)
+* [The A11Y Project](http://a11yproject.com/)
 * [Colour Contrast Checker](http://webaim.org/resources/contrastchecker/)
 * [The web accessibility basics](https://www.marcozehe.de/2015/12/14/the-web-accessibility-basics/) - *(Marco)*
 
