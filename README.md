@@ -12,7 +12,7 @@ You're welcome to use it.
 * A pattern type library of components such as typography, lists, links, buttons, form fields, grid etc.
 * Accessibility considerations added in ie. decent semantics, ARIA attributes and progressive enhancement techniques.
 * Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers, mixins and default print CSS
-* A [Grunt strawman](#grunt-config-tasks) for common build tasks I use.
+* A [Grunt build config](#grunt-config-tasks) for common build tasks I use.
 * The latest [jQuery](https://jquery.com/) via CDN, with a local fallback.
 * Protection against any stray `console` statements causing JavaScript errors in older browsers
 * An optimized Google Analytics snippet - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
@@ -441,8 +441,9 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 
 * Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache. 
 * Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
-* Add Gulp build alternative.
-* Add print CSS styles
+* Gulp build alternative.
+* Print CSS styles.
+* [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
 * Set up [SVG Icons](https://icomoon.io/).
 * A more robust MV* of sorts. May stick with PHP for now.
 * Accessibility considerations and examples - eg. colour contrast, TAB, SHIFT+TAB & ENTER keys to navigate site, Zoom (make things work at 200% - Microsoft homepage does this well) and "View Document Outline" in Web Developer tool to check semantics.
