@@ -24,16 +24,16 @@
                 <h2>Custom ordered list</h2>
                 <ol class="list__ordered">
                     <li>
-                        <h4>A new Music Scheme for the new Music Curriculum</h4>
-                        <p>The Charanga Musical School Scheme provides teachers with week-by-week lesson support for each year group in the school. It is ideal for specialist and non-specialist teachers and provides lesson plans, assessment, clear progression, and engaging and exciting whiteboard resources to support every lesson.</p>
+                        <h4>Custom ordered list title</h4>
+                        <p>Nascetur odio amet. Vel ultrices turpis natoque tempor dis magna montes lectus, vel sed, penatibus in? Facilisis porta? Magnis tristique integer tincidunt rhoncus mid, phasellus, pid magna a urna, et.</p>
                     </li>
                     <li>
-                        <h4>A new Music Scheme for the new Music Curriculum</h4>
-                        <p>The Charanga Musical School Scheme provides teachers with week-by-week lesson support for each year group in the school. It is ideal for specialist and non-specialist teachers and provides lesson plans, assessment, clear progression, and engaging and exciting whiteboard resources to support every lesson.</p>
+                        <h4>Custom ordered list title</h4>
+                        <p>Nascetur odio amet. Vel ultrices turpis natoque tempor dis magna montes lectus, vel sed, penatibus in? Facilisis porta? Magnis tristique integer tincidunt rhoncus mid, phasellus, pid magna a urna, et.</p>
                     </li>
                     <li>
-                        <h4>A new Music Scheme for the new Music Curriculum</h4>
-                        <p>The Charanga Musical School Scheme provides teachers with week-by-week lesson support for each year group in the school. It is ideal for specialist and non-specialist teachers and provides lesson plans, assessment, clear progression, and engaging and exciting whiteboard resources to support every lesson.</p>
+                        <h4>Custom ordered list title</h4>
+                        <p>Nascetur odio amet. Vel ultrices turpis natoque tempor dis magna montes lectus, vel sed, penatibus in? Facilisis porta? Magnis tristique integer tincidunt rhoncus mid, phasellus, pid magna a urna, et.</p>
                     </li>
                 </ol>
 

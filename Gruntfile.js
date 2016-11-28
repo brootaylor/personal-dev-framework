@@ -208,6 +208,29 @@ module.exports = function (grunt) {
 		    }
 		},
 
+        // TRY THIS FORMAT OUT
+        // ====================
+        // copy: {
+        //   main: {
+        //     files: [
+        //       // includes files within path
+        //       {expand: true, src: ['static/css/*'], dest: 'build/', filter: 'isFile'},
+        //       {expand: true, src: ['application/php_partials/*'], dest: 'build/', filter: 'isFile'},
+        //       {expand: true, src: ['application/php_templates/*'], dest: 'build/', filter: 'isFile'},
+
+        //       // includes files within path and its sub-directories
+        //       {expand: true, src: ['static/img/**'], dest: 'build/'},
+        //       {expand: true, src: ['static/fonts/**'], dest: 'build/'},
+
+        //       // makes all src relative to cwd
+        //       // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
+
+        //       // // flattens results to a single level
+        //       // {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'},
+        //     ],
+        //   },
+        // },
+
         //
         // Process html files at build time to modify them depending on the release environment eg. jQuery file change to min version for production.
         //

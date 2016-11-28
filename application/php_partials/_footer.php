@@ -17,7 +17,7 @@
                     </li>
                 </ul>
                 <em>Made by <a href="http://brootaylor.com" rel="external">Bruce Taylor</a> in Horley, England. </em>
-                &copy; 2003&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor. All rights reserved.
+                &copy; 1972&ndash;<time datetime="<?php echo date("Y") ?>"><?php echo date("Y") ?></time> Bruce Taylor. All rights reserved.
             </small>
         </footer>
         <!-- / Footer content -->
