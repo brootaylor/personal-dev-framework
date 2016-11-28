@@ -22,44 +22,66 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <script>
+            /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+            (function( w ){
+                var loadJS = function( src, cb ){
+                  "use strict";
+                  var ref = w.document.getElementsByTagName( "script" )[ 0 ];
+                  var script = w.document.createElement( "script" );
+                  script.src = src;
+                  script.async = true;
+                  ref.parentNode.insertBefore( script, ref );
+                  if (cb && typeof(cb) === "function") {
+                    script.onload = cb;
+                  }
+                  return script;
+                };
+                // commonjs
+                if( typeof module !== "undefined" ){
+                  module.exports = loadJS;
+                }
+                else {
+                  w.loadJS = loadJS;
+                }
+            }( typeof global !== "undefined" ? global : this ));
             
-            // An 'enhanced' cuts-the-mustard option from Scott Jehl
-            // Ref: =>> https://www.filamentgroup.com/lab/enhancing-optimistically.html
+            /* An 'enhanced' cuts-the-mustard option from Scott Jehl
+               Ref: =>> https://www.filamentgroup.com/lab/enhancing-optimistically.html */
             (function() {
                 if( "querySelector" in window.document && "addEventListener" in window ){
                   // This is a capable browser, let's improve the UI further!
                   var docElem = window.document.documentElement;
 
-                  // the class we'll use to enhance the UI
+                  // the class we'll use to enhance the UI with the additional CSS class and possibly an additional specific JS file
                   var enhancedClass = "enhanced",
                       enhancedScriptPath = "/static/js/enhancements.js";
 
                   // add enhanced class
-                  function addClass(){
+                  function addEnhancedClass(){
                     docElem.className += " " + enhancedClass;
                   }
 
                   // remove enhanced class
-                  // function removeClass(){
-                  //   docElem.className = docElem.className.replace( enhancedClass, " " );
-                  // }
+                  function removeEnhancedClass(){
+                    docElem.className = docElem.className.replace( enhancedClass, " " );
+                  }
 
                   // Let's enhance optimistically...
-                  addClass();
+                  addEnhancedClass();
 
                   // load enhanced JS file
-                  // var script = loadJS( enhancedScriptPath );
+                  var script = loadJS( enhancedScriptPath );
 
                   // if script hasn't loaded after 8 seconds, remove the enhanced class
-                  // var fallback = setTimeout( removeClass, 8000 );
+                  var fallback = setTimeout( removeEnhancedClass, 8000 );
 
                   // when the script loads, clear the timer out and add the class again just in case
-                  // script.onload = function(){
-                  //   // clear the fallback timer
-                  //   clearTimeout( fallback ); 
-                  //   // add this class, just in case it was removed already (we can't cancel this request so it might arrive any time)
-                  //   addClass();
-                  // };
+                  script.onload = function(){
+                    // clear the fallback timer
+                    clearTimeout( fallback ); 
+                    // add this class, just in case it was removed already (we can't cancel this request so it might arrive any time)
+                    addEnhancedClass();
+                  };
                 }
             })();
 
@@ -80,21 +102,6 @@
               s.parentNode.insertBefore(wf, s);
             })(document);
         </script>
-
-        <!--
-          Synchronous font loading method:
-          ================================
-          NOTE: This method will block the rest of your page loading while this JS is loading
-        -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script> -->
-        <!-- <script>
-          // Synchronous method...
-          WebFont.load({
-            google: {
-              families: ['Open+Sans:300,300i,400,400i,700,700i']
-            }
-          });
-        </script> -->
 
         <?php
             // If cookie exists/matches then load the normal external stylesheet...
@@ -136,5 +143,5 @@
 
         <!-- "Skip-to" links. Helps assistive technologies -->
         <a class="visuallyhidden" href="#nav">Skip to the site navigation</a>
-        <a class="visuallyhidden" href="#main">Skip to the content</a>
+        <a class="visuallyhidden" href="#main">Skip to the main content</a>
         
