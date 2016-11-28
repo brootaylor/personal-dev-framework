@@ -23,10 +23,10 @@
         <!-- / Footer content -->
 
         <!-- Processhtml Grunt task changes jquery cdn call to the .min version on build -->
-        <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+        <!-- build:js //ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
         <!-- /build -->
-        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-1.12.2.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
         <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.js"></script>

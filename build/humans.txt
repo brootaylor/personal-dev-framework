@@ -1,0 +1,12 @@
+
+/* UI DESIGNER & DEVELOPER */
+	Bruce Taylor
+	http://brootaylor.com/  |  @brootaylor  |  https://github.com/brootaylor  |  https://codepen.io/brootaylor  |  http://www.linkedin.com/in/brootaylor
+
+/* TECHNOLOGY */
+	HTML5, SCSS, CSS2 & 3
+	PHP, Apache Server Configs, JavaScript, jQuery, Modernizr, HTML5Shiv
+	Photoshop, Sketch, Sublime Text, Github, Mampserver, Grunt, Terminal, Filezilla, Coffee
+
+/* TESTING */
+	Any desktop, tablet & mobile devices I can get my hands on.

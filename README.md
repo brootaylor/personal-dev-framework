@@ -263,30 +263,24 @@ image: {
 
 ### "copy"
 
-Copies specified files to the `build` directory.
+Copies relevant (specified) files to the `build` directory.
 
 ```js
 copy: {
-    dist: {
-        // Specifying multiple dest/src pairs...
-        files: {
-            // CSS files...
-            '<%= dirs.cssBuild %>/critical.css': '<%= dirs.css %>/critical.css',
-            '<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
-
-            // Javascript library files...
-            '<%= dirs.jsBuild %>/vendor/jquery-1.12.0.min.js': '<%= dirs.js %>/vendor/jquery-1.12.0.min.js',
-            '<%= dirs.jsBuild %>/vendor/html5shiv.js': '<%= dirs.js %>/vendor/html5shiv.js',
-
-            // PHP partial files...
-            '<%= dirs.appBuild %>/php_partials/_variables.php': '<%= dirs.app %>/php_partials/_variables.php',
-            '<%= dirs.appBuild %>/php_partials/_config.php': '<%= dirs.app %>/php_partials/_config.php',
-            '<%= dirs.appBuild %>/php_partials/_head.php': '<%= dirs.app %>/php_partials/_head.php',
-            '<%= dirs.appBuild %>/php_partials/_footer.php': '<%= dirs.app %>/php_partials/_footer.php',
-
-            // PHP template files...
-            '<%= dirs.appBuild %>/php_templates/template.php': '<%= dirs.app %>/php_templates/template.php'
-        }
+    main: {
+        // Includes files within path and its sub-directories
+        files: [
+            // CSS
+            {expand: true, src: ['static/css/**'], dest: 'build/', filter: 'isFile'},
+            // JS libraries
+            {expand: true, src: ['static/js/vendor/**', '!static/js/vendor/jquery-3.1.1.js'], dest: 'build/', filter: 'isFile'},
+            // PHP partials, templates & application directory .htaccess (permissions) file
+            {expand: true, src: ['application/**'], dest: 'build/', filter: 'isFile'},
+            {expand: true, src: ['application/.htaccess'], dest: 'build/', filter: 'isFile'},
+            // Root files
+            {expand: true, src: ['*', '!Gruntfile.js', '!package.json', '!README.md'], dest: 'build/', filter: 'isFile'},
+            {expand: true, src: ['.htaccess'], dest: 'build/', filter: 'isFile'},
+        ]
     }
 },
 ```

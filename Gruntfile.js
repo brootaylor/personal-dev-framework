@@ -101,7 +101,7 @@ module.exports = function (grunt) {
         criticalcss: {
             custom: {
                 options: {
-                    url: "http://local.personal-dev-framework",
+                    url: "http://local.personal-dev-framework", // The URL criticalcss is running the process for
                     width: 1024, // Screen width
                     height: 768, // Screen height
                     outputfile: "<%= dirs.css %>/critical.css",
@@ -182,54 +182,25 @@ module.exports = function (grunt) {
 	    },
 
         //
-        // Copy various files to the 'build' directory...
+        // Copy all relevant files to the 'build' directory...
         //
-		copy: {
-		    dist: {
-		    	// Specifying multiple dest/src pairs...
-		        files: {
-		        	// CSS files...
-                    '<%= dirs.cssBuild %>/critical.css': '<%= dirs.css %>/critical.css',
-		        	'<%= dirs.cssBuild %>/styles.css': '<%= dirs.css %>/styles.css',
-
-		        	// Javascript library files...
-		        	'<%= dirs.jsBuild %>/vendor/jquery-1.12.2.min.js': '<%= dirs.js %>/vendor/jquery-1.12.2.min.js',
-                    '<%= dirs.jsBuild %>/vendor/html5shiv.js': '<%= dirs.js %>/vendor/html5shiv.js',
-
-		        	// PHP partial files...
-		        	'<%= dirs.appBuild %>/php_partials/_variables.php': '<%= dirs.app %>/php_partials/_variables.php',
-		        	'<%= dirs.appBuild %>/php_partials/_config.php': '<%= dirs.app %>/php_partials/_config.php',
-		        	'<%= dirs.appBuild %>/php_partials/_head.php': '<%= dirs.app %>/php_partials/_head.php',
-		        	'<%= dirs.appBuild %>/php_partials/_footer.php': '<%= dirs.app %>/php_partials/_footer.php',
-
-		        	// PHP template files...
-		        	'<%= dirs.appBuild %>/php_templates/template.php': '<%= dirs.app %>/php_templates/template.php'
-		        }
-		    }
-		},
-
-        // TRY THIS FORMAT OUT
-        // ====================
-        // copy: {
-        //   main: {
-        //     files: [
-        //       // includes files within path
-        //       {expand: true, src: ['static/css/*'], dest: 'build/', filter: 'isFile'},
-        //       {expand: true, src: ['application/php_partials/*'], dest: 'build/', filter: 'isFile'},
-        //       {expand: true, src: ['application/php_templates/*'], dest: 'build/', filter: 'isFile'},
-
-        //       // includes files within path and its sub-directories
-        //       {expand: true, src: ['static/img/**'], dest: 'build/'},
-        //       {expand: true, src: ['static/fonts/**'], dest: 'build/'},
-
-        //       // makes all src relative to cwd
-        //       // {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
-
-        //       // // flattens results to a single level
-        //       // {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'},
-        //     ],
-        //   },
-        // },
+        copy: {
+          main: {
+            // Includes files within path and its sub-directories
+            files: [
+              // CSS
+              {expand: true, src: ['static/css/**'], dest: 'build/', filter: 'isFile'},
+              // JS libraries
+              {expand: true, src: ['static/js/vendor/**', '!static/js/vendor/jquery-3.1.1.js'], dest: 'build/', filter: 'isFile'},
+              // PHP partials, templates & application directory .htaccess (permissions) file
+              {expand: true, src: ['application/**'], dest: 'build/', filter: 'isFile'},
+              {expand: true, src: ['application/.htaccess'], dest: 'build/', filter: 'isFile'},
+              // Root files
+              {expand: true, src: ['*', '!Gruntfile.js', '!package.json', '!README.md'], dest: 'build/', filter: 'isFile'},
+              {expand: true, src: ['.htaccess'], dest: 'build/', filter: 'isFile'},
+            ]
+          }
+        },
 
         //
         // Process html files at build time to modify them depending on the release environment eg. jQuery file change to min version for production.
