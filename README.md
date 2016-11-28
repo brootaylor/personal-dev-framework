@@ -10,7 +10,7 @@ You're welcome to use it.
 
 * Top level HTML5 elements.
 * A pattern type library of components such as typography, lists, links, buttons, form fields, grid etc.
-* Accessibility considerations added in ie. decent semantics, ARIA attributes and progressive enhancement techniques.
+* WCAG Accessibility considerations added in eg. decent semantics, ARIA roles & attributes and progressive enhancement techniques.
 * Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers, mixins and default print CSS
 * A [Grunt build config](#grunt-config-tasks) for common build tasks I use.
 * The latest [jQuery](https://jquery.com/) via CDN, with a local fallback.
