@@ -24,15 +24,15 @@
                 <h2>Custom ordered list</h2>
                 <ol class="list__ordered">
                     <li>
-                        <h4>Custom ordered list title</h4>
+                        <h3>Custom ordered list title</h3>
                         <p>Nascetur odio amet. Vel ultrices turpis natoque tempor dis magna montes lectus, vel sed, penatibus in? Facilisis porta? Magnis tristique integer tincidunt rhoncus mid, phasellus, pid magna a urna, et.</p>
                     </li>
                     <li>
-                        <h4>Custom ordered list title</h4>
+                        <h3>Custom ordered list title</h3>
                         <p>Nascetur odio amet. Vel ultrices turpis natoque tempor dis magna montes lectus, vel sed, penatibus in? Facilisis porta? Magnis tristique integer tincidunt rhoncus mid, phasellus, pid magna a urna, et.</p>
                     </li>
                     <li>
-                        <h4>Custom ordered list title</h4>
+                        <h3>Custom ordered list title</h3>
                         <p>Nascetur odio amet. Vel ultrices turpis natoque tempor dis magna montes lectus, vel sed, penatibus in? Facilisis porta? Magnis tristique integer tincidunt rhoncus mid, phasellus, pid magna a urna, et.</p>
                     </li>
                 </ol>
