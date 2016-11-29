@@ -437,6 +437,8 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 
 * Print CSS styles.
 * [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
+* Flexbox components (eg. equal height & ordering examples).
+* New [CSS Grid](http://gridbyexample.com/) layout examples.
 * Set up [SVG Icons](https://icomoon.io/).
 * JS unit testing task.
 * Gulp build alternative.
