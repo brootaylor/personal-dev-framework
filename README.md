@@ -23,6 +23,22 @@ You're welcome to use it.
 * Build directory output examples.
 * It's built using a [Mobile First](http://www.lukew.com/resources/mobile_first.asp) approach which can then be progressively enhanced as screen space and device features allow. I think it's always worth remembering that [websites do not need to look the same in every browser](http://dowebsitesneedtolookexactlythesameineverybrowser.com/) - so I haven't attempted to make legacy browsers (eg. IE 8 and less) behave like more modern browsers.
 
+## Future enhancements
+
+Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
+
+* Print CSS styles.
+* [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
+* Flexbox components (eg. equal height & ordering examples).
+* New [CSS Grid](http://gridbyexample.com/) layout examples.
+* Set up [SVG Icons](https://icomoon.io/).
+* JS unit testing task.
+* Gulp build alternative.
+* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
+* A more robust MV* of sorts. May stick with PHP for now.
+
+Suggestions welcome.
+
 ## Installation
 *Requirements: Node, NPM, Grunt and SASS installed globally, then...*
 
@@ -429,22 +445,6 @@ watch: {
     }
 }
 ```
-
-## Future enhancements
-
-Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
-
-* Print CSS styles.
-* [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
-* Flexbox components (eg. equal height & ordering examples).
-* New [CSS Grid](http://gridbyexample.com/) layout examples.
-* Set up [SVG Icons](https://icomoon.io/).
-* JS unit testing task.
-* Gulp build alternative.
-* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
-* A more robust MV* of sorts. May stick with PHP for now.
-
-Suggestions welcome.
 
 ## Helpful resource links & worthwhile reads
 
