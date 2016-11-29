@@ -28,7 +28,7 @@ You're welcome to use it.
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
 * Print CSS styles.
-* Load Web Fonts progressively.
+* [Load Web Fonts progressively](https://www.bramstein.com/writing/web-font-loading-patterns.html).
 * [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
 * Flexbox components (eg. equal height & ordering examples).
 * New [CSS Grid](http://gridbyexample.com/) layout examples.
