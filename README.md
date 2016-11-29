@@ -416,6 +416,59 @@ browserSync: {
 },
 ```
 
+### "insert_timestamp"
+
+Insert a timestamp into a file. CSS and JS files in this instance.
+
+```js
+insert_timestamp: {
+    // Default options
+    options: {
+        prepend: true,
+        append: false,
+        format: 'yyyy-mm-dd HH:MM:ss',
+        template: '/* {timestamp} */',
+        datetime: new Date(),
+        insertNewlines: true
+    },
+
+    // CSS files
+    css: {
+        options: {
+            template: '/*! Personal framework CSS - v0.1.0 - {timestamp}\n * http://brootaylor.com/\n * Copyright (c) 2016 Bruce Taylor */'
+        },
+        files: [{
+            // Use dynamic extend name
+            expand: true,
+            // Source dir
+            cwd: 'build/static/css',
+            // Match files
+            src: ['**/*.css'],
+            // Output files
+            dest: 'build/static/css',
+            ext: '.css'
+        }]
+    },
+
+    // JS files
+    js: {
+        options: {
+            template: '/*! Personal framework JS - v0.1.0 - {timestamp} */'
+        },
+        files: [{
+            // Use dynamic extend name
+            expand: true,
+            // Source dir
+            cwd: 'build/static/js',
+            // Match files
+            src: ['**/*.js', '!vendor/**/*.js'], // All JS files except vendor JS files
+            // Output files
+            dest: 'build/static/js',
+            ext: '.js'
+        }]
+    }
+},
+```
 
 ### "watch"
 
