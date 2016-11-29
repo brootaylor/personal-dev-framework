@@ -27,21 +27,20 @@
             (function() {
                 if( "querySelector" in window.document && "addEventListener" in window ){
                   // This is a capable browser, let's improve the UI further!
-                  var docElem = window.document.documentElement;
-
-                  // the class we'll use to enhance the UI with the additional CSS class and possibly an additional specific JS file
-                  var enhancedClass = "enhanced",
+                  // We'll use a class to enhance the UI with the additional CSS class 'hook' and possibly an additional specific JS file
+                  var docElem = window.document.documentElement,
+                      enhancedClass = "enhanced",
                       enhancedScriptPath = "/static/js/enhancements.js";
 
                   // add enhanced class
-                  function addEnhancedClass(){
+                  var addEnhancedClass = function(){
                     docElem.className += " " + enhancedClass;
-                  }
+                  };
 
                   // remove enhanced class
-                  function removeEnhancedClass(){
+                  var removeEnhancedClass = function(){
                     docElem.className = docElem.className.replace( enhancedClass, " " );
-                  }
+                  };
 
                   // Let's enhance optimistically...
                   addEnhancedClass();

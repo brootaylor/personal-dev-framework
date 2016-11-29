@@ -2,5 +2,5 @@
 // Enhancements JS file
 ///////////////////////////////////////////////////////////
 
-console.log("Enhancements file loaded")
+console.log("Enhancements file loaded");
 

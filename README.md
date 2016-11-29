@@ -358,7 +358,10 @@ jshint: {
     all: [
         'Gruntfile.js',
         '<%= dirs.js %>/main.js',
-        '<%= dirs.js %>/plugins.js'
+        '<%= dirs.js %>/plugins.js',
+        '<%= dirs.js %>/jsInline.js',
+        '<%= dirs.js %>/loadCSS.js',
+        '<%= dirs.js %>/enhancements.js'
     ]
 },
 ```
@@ -435,8 +438,10 @@ watch: {
         files: [
             'Gruntfile.js',
             'static/**/loadCSS.js',
+            'static/**/jsInline.js',
             'static/**/main.js',
-            'static/**/plugins.js'
+            'static/**/plugins.js',
+            'static/**/enhancements.js'
         ],
         tasks: [
             'jshint',
