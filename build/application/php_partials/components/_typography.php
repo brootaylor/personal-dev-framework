@@ -16,7 +16,9 @@
                 </article>
 
                 <!-- Paragraph with some <a>, <strong>, <em> and <abbr> elements in it -->
-                <p>Enim turpis enim vel! Parturient mus lectus <a href="">parturient nec sagittis</a> parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. <strong>Massa elementum habitasse</strong> eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit <em>nunc lundium</em>, quis dapibus risus et! Porta, mus etiam, lorem nascetur <abbr title="HyperText Markup Language">HTML</abbr> nec urna penatibus placerat. Adipiscing aenean es.</p>
+                <p>Enim turpis enim vel! Parturient mus lectus <a href="">this is a link</a> parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. <strong>this text is bold</strong> eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit <em>this text is emphasised</em>, quis dapibus risus et! Porta, mus etiam, lorem nascetur <abbr title="HyperText Markup Language">HTML</abbr> nec urna penatibus placerat. Adipiscing aenean es.</p>
+
+                <p>Eu, dignissim sit in amet tortor, quis habitasse augue lacus purus 28<sup>th</sup> November ultricies porttitor H<sub>2</sub>O porttitor augue cras ultrices nec, vel amet! Magna sociis. Et, dis, massa integer, porta! Porta, nec placerat.</p>
 
                 <!-- Blockquote -->
                 <blockquote>

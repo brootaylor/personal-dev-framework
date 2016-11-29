@@ -10,7 +10,9 @@ You're welcome to use it.
 
 * Top level HTML5 elements.
 * A pattern type library of components such as typography, lists, links, buttons, form fields, grid etc.
-* WCAG Accessibility considerations added in eg. decent semantics, ARIA roles & attributes and progressive enhancement techniques.
+* WCAG Accessibility considerations added in eg. decent semantics, can use TAB, SHIFT+TAB & ENTER keys to navigate site, can zoom in without compromising the layout, ARIA roles & attributes and progressive enhancement techniques.
+* Some [Progessive enhancement](https://www.filamentgroup.com/lab/enhancing-optimistically.html) measures in place to hopefully optimise the user's experience - regardless of the device they're on.
+* [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)
 * Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers, mixins and default print CSS
 * A [Grunt build config](#grunt-config-tasks) for common build tasks I use.
 * The latest [jQuery](https://jquery.com/) via CDN, with a local fallback.
@@ -18,7 +20,6 @@ You're welcome to use it.
 * An optimized Google Analytics snippet - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * Apache server caching, compression, and other configuration defaults for Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A basic PHP based application framework.
-* [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)* 
 * Simple, zero-configuration command-line [http server](#http-server).
 * Build directory output examples.
 * It's built using a [Mobile First](http://www.lukew.com/resources/mobile_first.asp) approach which can then be progressively enhanced as screen space and device features allow. I think it's always worth remembering that [websites do not need to look the same in every browser](http://dowebsitesneedtolookexactlythesameineverybrowser.com/) - so I haven't attempted to make legacy browsers (eg. IE 8 and less) behave like more modern browsers.
@@ -227,7 +228,8 @@ uglify: {
         files: {
             '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
             '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
-            '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js'
+            '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js',
+            '<%= dirs.jsBuild %>/jsInline.js': '<%= dirs.js %>/jsInline.js',
         }
     }
 },
@@ -433,14 +435,13 @@ watch: {
 
 Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
 
-* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache. 
-* Some decent script loading logic - (That doesn’t block rendering, doesn’t involve repetition, and has excellent browser support).
-* Gulp build alternative.
 * Print CSS styles.
 * [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
 * Set up [SVG Icons](https://icomoon.io/).
+* JS unit testing task.
+* Gulp build alternative.
+* Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
 * A more robust MV* of sorts. May stick with PHP for now.
-* Accessibility considerations and examples - eg. colour contrast, TAB, SHIFT+TAB & ENTER keys to navigate site, Zoom (make things work at 200% - Microsoft homepage does this well) and "View Document Outline" in Web Developer tool to check semantics.
 
 Suggestions welcome.
 

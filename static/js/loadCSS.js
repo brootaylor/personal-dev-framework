@@ -48,7 +48,7 @@
             "use strict";
 
             var originPart = window.location.origin,
-                cssupdate_value = "28112016";
+                cssupdate_value = "29112016";
 
             /* exported loadCSS */
             var loadCSS = function( href, before, media ){

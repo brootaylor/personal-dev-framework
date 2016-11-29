@@ -152,6 +152,7 @@ module.exports = function (grunt) {
 		            '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
 		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
                     '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js',
+                    '<%= dirs.jsBuild %>/jsInline.js': '<%= dirs.js %>/jsInline.js',
 		        }
 		    }
 		},
