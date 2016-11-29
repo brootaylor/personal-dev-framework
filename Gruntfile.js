@@ -153,6 +153,7 @@ module.exports = function (grunt) {
 		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
                     '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js',
                     '<%= dirs.jsBuild %>/jsInline.js': '<%= dirs.js %>/jsInline.js',
+                    '<%= dirs.jsBuild %>/enhancements.js': '<%= dirs.js %>/enhancements.js'
 		        }
 		    }
 		},
@@ -326,6 +327,58 @@ module.exports = function (grunt) {
         },
 
         //
+        // INSERT TIMESTAMP
+        //
+        insert_timestamp: {
+
+            // Default options
+            options: {
+              prepend: true,
+              append: false,
+              format: 'yyyy-mm-dd HH:MM:ss',
+              template: '/* {timestamp} */',
+              datetime: new Date(),
+              insertNewlines: true
+            },
+
+            // CSS files
+            css: {
+              options: {
+                template: '/*! Personal framework CSS - v0.1.0 - {timestamp}\n * http://brootaylor.com/\n * Copyright (c) 2016 Bruce Taylor */'
+              },
+              files: [{
+                // Use dynamic extend name
+                expand: true,
+                // Source dir
+                cwd: 'build/static/css',
+                // Match files
+                src: ['**/*.css'],
+                // Output files
+                dest: 'build/static/css',
+                ext: '.css'
+              }]
+            },
+
+            // JS files
+            js: {
+              options: {
+                template: '/*! Personal framework JS - v0.1.0 - {timestamp} */'
+              },
+              files: [{
+                // Use dynamic extend name
+                expand: true,
+                // Source dir
+                cwd: 'build/static/js',
+                // Match files
+                src: ['**/*.js', '!vendor/**/*.js'],
+                // Output files
+                dest: 'build/static/js',
+                ext: '.js'
+              }]
+            }
+        },
+
+        //
         // WATCH
         //
         watch: {
@@ -388,6 +441,7 @@ module.exports = function (grunt) {
         'image',
         'notify',
         'copy',
+        'insert_timestamp',
         'processhtml',
         'cachebreaker'
     ]);
