@@ -31,12 +31,13 @@ Here are some of the things I'm currently exploring and will (hopefully) add to 
 * [Load Web Fonts progressively](https://www.bramstein.com/writing/web-font-loading-patterns.html).
 * [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
 * Flexbox components (eg. equal height & ordering examples).
+* [Service Workers](https://github.com/w3c/ServiceWorker/blob/master/explainer.md).
 * New [CSS Grid](http://gridbyexample.com/) layout examples.
 * Set up [SVG Icons](https://icomoon.io/).
+* [Twig](http://twig.sensiolabs.org/) templating.
 * JS unit testing task.
 * Gulp build alternative.
 * Move `.htaccess` directives into [httpd main server config file](https://httpd.apache.org/docs/current/howto/htaccess.html). Better performance on Apache.
-* A more robust MV* of sorts. May stick with PHP for now.
 
 Suggestions welcome.
 
