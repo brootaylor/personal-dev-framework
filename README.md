@@ -13,7 +13,7 @@ You're welcome to use it.
 * Some [Progessive enhancement](https://www.filamentgroup.com/lab/enhancing-optimistically.html) measures in place to hopefully optimise the user's experience - regardless of the device they're on - thanks to *(Scott Jehl, Filament Group)*
 * [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)*
 * Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers, mixins and default print CSS
-* A [Grunt build config](#grunt-config-tasks) for common build tasks I use.
+* A [Grunt build config](#grunt-config-tasks) for common development & build tasks I use.
 * The latest [jQuery](https://jquery.com/) via CDN, with a local fallback.
 * Protection against any stray `console` statements causing JavaScript errors in older browsers
 * An optimized Google Analytics snippet - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
@@ -25,15 +25,16 @@ You're welcome to use it.
 
 ## Future enhancements
 
-Here are some of the things I'm currently exploring and will (hopefully) add to this repository in due course.
+Here are some of the things I'm currently exploring and will add to this repository in due course.
 
 * Print CSS styles.
 * [Load Web Fonts progressively](https://www.bramstein.com/writing/web-font-loading-patterns.html).
 * [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
-* Flexbox components (eg. equal height & ordering examples).
+* [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) with resolution switching.
+* [Flexbox components](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) (eg. equal height & ordering examples).
 * [Service Workers](https://github.com/w3c/ServiceWorker/blob/master/explainer.md).
-* New [CSS Grid](http://gridbyexample.com/) layout examples.
-* Set up [SVG Icons](https://icomoon.io/).
+* [CSS Grid](http://gridbyexample.com/) layout examples.
+* [SVG Icons](https://icomoon.io/).
 * [Twig](http://twig.sensiolabs.org/) templating.
 * JS unit testing task.
 * Gulp build alternative.
