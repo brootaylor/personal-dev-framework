@@ -28,11 +28,11 @@ $icon-file-word: "\eae1";
 // This needs to be updated if a new icomoon font package is downloaded
 @font-face {
     font-family: 'icomoon';
-    src:    url('#{$icomoon-font-path}/icomoon.eot?rz0lf4');
-    src:    url('#{$icomoon-font-path}/icomoon.eot?rz0lf4#iefix') format('embedded-opentype'),
-        url('#{$icomoon-font-path}/icomoon.ttf?rz0lf4') format('truetype'),
-        url('#{$icomoon-font-path}/icomoon.woff?rz0lf4') format('woff'),
-        url('#{$icomoon-font-path}/icomoon.svg?rz0lf4#icomoon') format('svg');
+    src: url('#{$icomoon-font-path}/icomoon.eot?rz0lf4');
+    src: url('#{$icomoon-font-path}/icomoon.eot?rz0lf4#iefix') format('embedded-opentype'),
+         url('#{$icomoon-font-path}/icomoon.ttf?rz0lf4') format('truetype'),
+         url('#{$icomoon-font-path}/icomoon.woff?rz0lf4') format('woff'),
+         url('#{$icomoon-font-path}/icomoon.svg?rz0lf4#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
