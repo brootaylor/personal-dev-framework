@@ -6,7 +6,7 @@
 <html lang="en-gb" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title><?php echo $page_title; ?> <?php echo $page_title_extra; ?></title>
+        <title><?php echo $page_title . " | " . $page_title_context; ?></title>
         <meta name="description" content="<?php echo $page_description; ?>">
         <!-- Define a viewport for mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,12 +14,25 @@
         <meta http-equiv="cleartype" content="on">
         <!-- Disable link highlighting upon tap in IE10 -->
         <meta name="msapplication-tap-highlight" content="no">
-        <!-- Link to copyright information on seperate page or anchored to a section -->
-        <link rel="copyright" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/privacy">
-        <link rel="author" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/humans.txt">
-        <link rel="canonical" href="http://<?php echo $_SERVER['SERVER_NAME']; ?><?php echo $page_canonical; ?>">
+        <?php
+            if (isset($page_noindex) && $page_noindex !== false) {
+                // If the specific page needs 'noindex' meta
+                echo '<meta name="robots" content="noindex">' . "\n";
+            }
+        ?>
+
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Link to copyright information on seperate page or anchored to a section -->
+        <link rel="copyright" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/privacy">
+        <!-- Link to Author's / Developers credentials -->
+        <link rel="author" href="//<?php echo $_SERVER['SERVER_NAME']; ?>/humans.txt">
+        <?php
+            if (isset($page_canonical) && $page_canonical !== false) {
+                // Pahe-specific canonical URI
+                echo '<link rel="canonical" href="//' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] . '">' . "\n";
+            }
+        ?>
 
         <?php
             // Add the JS inline and minified output version for the build

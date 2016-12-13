@@ -27,12 +27,19 @@
         <script>window.jQuery || document.write('<script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/vendor/jquery-3.1.1.min.js"><\/script>')</script>
 
         <!-- All plugin scripts eg. jQuery plugins and other 3rd party scripts -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1480447262437.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/plugins.1481625751740.js"></script>
         <!-- Site-specific JS -->
-        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1480447262438.js"></script>
+        <script src="//<?php echo $_SERVER['SERVER_NAME']; ?>/static/js/main.1481625751740.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
+            // Service Worker
+            if('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                    .register('static/js/sw.js')
+                    .then(function() { console.log("Service Worker Registered"); });
+            }
+
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];

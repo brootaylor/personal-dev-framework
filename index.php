@@ -2,9 +2,10 @@
 
     // Generates the content for the page title, meta title & description
     $page_title = "Personal front end framework";
-    $page_title_extra = "| The title's context eg. | Bruce Taylor's Personal Website";
+    $page_title_context = "The title's context eg. | Bruce Taylor's Personal Website";
     $page_description = "This will render in the meta description tag";
-    $page_canonical = "/";
+    $page_canonical = true;
+    $page_noindex = false;
 
     ob_start();
 ?>

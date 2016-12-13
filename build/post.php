@@ -2,9 +2,10 @@
 
     // Generates the content for the page title, meta title & description
     $page_title = "A post title";
-    $page_title_extra = "| Webby Ramblings | Bruce Taylor's Personal Website";
+    $page_title_context = "Webby Ramblings | Bruce Taylor's Personal Website";
     $page_description = "This will render in the meta description tag";
-    $page_canonical = "/post-title";
+    $page_canonical = true;
+    $page_noindex = false;
 
     ob_start();
 ?>
