@@ -246,14 +246,14 @@
                 <ul class="grid__col--5 col__equal-wrap">
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
-			            	<a href="" class="media__image">
+			            	<a href="#" class="media__image">
 			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
 			                        <!-- Article title as a link. Typically link through to full article / news post -->
 			                        <h1 class="post-sum__title">
-			                            <a href="">An article header title link</a>
+			                            <a href="#">An article header title link</a>
 			                        </h1>
 			                        <h2 class="post-sum__title-sub">Sub heading</h2>
 			                        <!-- Post meta data -->
@@ -273,7 +273,7 @@
 			                    <p>Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
 
 			                    <!-- Primary link to this article / post -->
-		                    	<a href="" class="link__standalone">Read this article</a>
+		                    	<a href="#" class="link__standalone">Read this article</a>
 
 		                    </div>
 
@@ -282,14 +282,14 @@
 				    </li>
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
-			            	<a href="" class="media__image">
+			            	<a href="#" class="media__image">
 			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
 			                        <!-- Article title as a link. Typically link through to full article / news post -->
 			                        <h1 class="post-sum__title">
-			                            <a href="">An article header title link</a>
+			                            <a href="#">An article header title link</a>
 			                        </h1>
 			                        <h2 class="post-sum__title-sub">Sub heading</h2>
 			                        <!-- Post meta data -->
@@ -313,7 +313,7 @@
 			                    <p>Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
 
 			                    <!-- Primary link to this article / post -->
-		                    	<a href="" class="link__standalone">Read this article</a>
+		                    	<a href="#" class="link__standalone">Read this article</a>
 
 		                    </div>
 
@@ -322,14 +322,14 @@
 				    </li>
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
-			            	<a href="" class="media__image">
+			            	<a href="#" class="media__image">
 			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
 			                        <!-- Article title as a link. Typically link through to full article / news post -->
 			                        <h1 class="post-sum__title">
-			                            <a href="">An article header title link</a>
+			                            <a href="#">An article header title link</a>
 			                        </h1>
 			                        <h2 class="post-sum__title-sub">Sub heading</h2>
 			                        <!-- Post meta data -->
@@ -351,7 +351,7 @@
 			                    <p>Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
 
 			                    <!-- Primary link to this article / post -->
-		                    	<a href="" class="link__standalone">Read this article</a>
+		                    	<a href="#" class="link__standalone">Read this article</a>
 
 		                    </div>
 
@@ -360,14 +360,14 @@
 				    </li>
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
-			            	<a href="" class="media__image">
+			            	<a href="#" class="media__image">
 			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
 			                        <!-- Article title as a link. Typically link through to full article / news post -->
 			                        <h1 class="post-sum__title">
-			                            <a href="">An article header title link</a>
+			                            <a href="#">An article header title link</a>
 			                        </h1>
 			                        <h2 class="post-sum__title-sub">Sub heading</h2>
 			                        <!-- Post meta data -->
@@ -387,7 +387,7 @@
 			                    <p>Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
 
 			                    <!-- Primary link to this article / post -->
-		                    	<a href="" class="link__standalone">Read this article</a>
+		                    	<a href="#" class="link__standalone">Read this article</a>
 
 		                    </div>
 
@@ -396,14 +396,14 @@
 				    </li>
 				    <li class="col col__equal-item">
 				    	<article class="media__stacked post-sum">
-			            	<a href="" class="media__image">
+			            	<a href="#" class="media__image">
 			            		<img src="static/img/posts/drums-650x365.jpg" alt="">
 			            	</a>
 			            	<div class="media__body">
 			                    <header class="post-sum__header">
 			                        <!-- Article title as a link. Typically link through to full article / news post -->
 			                        <h1 class="post-sum__title">
-			                            <a href="">An article header title link</a>
+			                            <a href="#">An article header title link</a>
 			                        </h1>
 			                        <h2 class="post-sum__title-sub">Sub heading</h2>
 			                        <!-- Post meta data -->
@@ -427,7 +427,7 @@
 			                    <p>Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat.</p>
 
 			                    <!-- Primary link to this article / post -->
-		                    	<a href="" class="link__standalone">Read this article</a>
+		                    	<a href="#" class="link__standalone">Read this article</a>
 
 		                    </div>
 
