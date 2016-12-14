@@ -103,7 +103,7 @@ module.exports = function (grunt) {
                 options: {
                     url: "http://local.personal-dev-framework", // The URL criticalcss is running the process for
                     width: 1024, // Screen width
-                    height: 768, // Screen height
+                    height: 800, // Screen height
                     outputfile: "<%= dirs.css %>/critical.css",
                     forceInclude: [], // An array of selectors that you want to guarantee will make it from the CSS file into your CriticalCSS output.
                     filename: "<%= dirs.css %>/styles.css", // Using path.resolve( path.join( ... ) ) is a good idea here
@@ -152,7 +152,7 @@ module.exports = function (grunt) {
 		            '<%= dirs.jsBuild %>/plugins.js': '<%= dirs.js %>/plugins.js',
 		            '<%= dirs.jsBuild %>/main.js': '<%= dirs.js %>/main.js',
                     '<%= dirs.jsBuild %>/loadCSS.js': '<%= dirs.js %>/loadCSS.js',
-                    '<%= dirs.jsBuild %>/jsInline.js': '<%= dirs.js %>/jsInline.js',
+                    '<%= dirs.jsBuild %>/jsInlineHead.js': '<%= dirs.js %>/jsInlineHead.js',
                     '<%= dirs.jsBuild %>/enhancements.js': '<%= dirs.js %>/enhancements.js'
 		        }
 		    }
@@ -276,7 +276,7 @@ module.exports = function (grunt) {
 			    'Gruntfile.js',
 			    '<%= dirs.js %>/main.js',
 			    '<%= dirs.js %>/plugins.js',
-                '<%= dirs.js %>/jsInline.js',
+                '<%= dirs.js %>/jsInlineHead.js',
                 '<%= dirs.js %>/loadCSS.js',
                 '<%= dirs.js %>/enhancements.js'
 			]
@@ -397,7 +397,7 @@ module.exports = function (grunt) {
                 files: [
                     'Gruntfile.js',
                     'static/**/loadCSS.js',
-                    'static/**/jsInline.js',
+                    'static/**/jsInlineHead.js',
                     'static/**/main.js',
                     'static/**/plugins.js',
                     'static/**/enhancements.js'

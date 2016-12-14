@@ -61,20 +61,42 @@
                 }
             })();
 
-            // Web Font Loader
+            // Web Font Loader and loading techniques
             // -------------------------------------------------
             // =>> See https://github.com/typekit/webfontloader
+            // =>> See https://www.filamentgroup.com/lab/font-events.html
+            // =>> See https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/
 
-            // Asynchronous font loading method...
-            // ====================================
-            // NOTE: The rest of the page might render before the Web Font Loader is loaded and executed, which can cause a Flash of Unstyled Text (FOUT).
+            /*
+             * Check to see if fonts already stored in session storage
+             * If so then add 'wf-active' class
+             */
+            (function() {
+              if (sessionStorage.fonts) {
+                //console.log("Fonts installed.");
+                document.documentElement.classList.add('wf-active');
+              } else {
+                //console.log("No fonts installed.");
+              }
+            })();
             
             WebFontConfig = {
-              google: { families: [ 'Open+Sans:300,300i,400,400i,700,700i' ] }
+              // // other options and settings
+              active: function() {
+                sessionStorage.fonts = true;
+              },
+              // Google fonts...
+              google: {
+                families: [
+                  'Open+Sans:300,300i,400,400i,700,700i'
+                ]
+              },
+              timeout: 2000 // In case the fonts can't be called then timeout. Don't want the call to go on and on
             };
+
             (function(d) {
               var wf = d.createElement('script'), s = d.scripts[0];
-              wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+              wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
               s.parentNode.insertBefore(wf, s);
             })(document);
             

@@ -19,7 +19,7 @@
                 <h2>Figure component</h2>
                 <figure>
                 	<img src="/static/img/posts/drums-220x220.jpg" alt="Someone playing an electric guitar">
-                	<figcaption>Drummer, Crazy Drummer Festival. Original by <a href="/">Ronni Bassdrum</a></figcaption>
+                	<figcaption>Drummer, Crazy Drummer Festival. Original by <a href="#">Ronni Bassdrum</a></figcaption>
                 </figure>
 
                 <hr>

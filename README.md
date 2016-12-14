@@ -11,6 +11,7 @@ You're welcome to use it.
 * A pattern type library of components such as typography, lists, links, buttons, form fields, images, video, grid etc.
 * [WCAG](https://www.w3.org/WAI/intro/wcag.php) Accessibility considerations added in eg. decent semantics, can use TAB, SHIFT+TAB & ENTER keys to navigate site, can zoom in without compromising the websites layout, can increase browser's default font setting without compromising the websites layout, ARIA roles & attributes and progressive enhancement techniques.
 * Some [Progessive enhancement](https://www.filamentgroup.com/lab/enhancing-optimistically.html) measures in place to hopefully optimise the user's experience - regardless of the device they're on - thanks to *(Scott Jehl, Filament Group)*
+* [Web fonts load progressively](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/)
 * [Critical CSS generation](https://github.com/filamentgroup/grunt-criticalcss) and [non-critical CSS loading](https://adactio.com/journal/8504) - thanks to *(Scott Jehl & Jeremy Keith)*
 * Various SCSS partials in a structure that works for me. It includes things like [Normalise.css](http://necolas.github.io/normalize.css/) as well as useful CSS helpers, mixins and default print CSS.
 * ```em``` based media queries cause of [inconsistencies in browser](https://zellwk.com/blog/media-query-units/).
@@ -28,7 +29,6 @@ You're welcome to use it.
 
 Here are some of the things I'm currently exploring and will add to this repository in due course.
 
-* [Load Web Fonts progressively](https://www.bramstein.com/writing/web-font-loading-patterns.html).
 * [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
 * [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) with resolution switching.
 * [Flexbox components](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) (eg. equal height & ordering examples).

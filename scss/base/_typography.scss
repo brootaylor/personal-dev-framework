@@ -13,7 +13,8 @@ $font-size-base: 16px;
 $font-color-base: lighten($black, 10%);
 
 // Font families
-$font-family-primary: "Open Sans", sans-serif, Arial, "Helvetica Neue", Helvetica; // 300,300i,400,400i,700,700i (Google Fonts used)
+$font-family-primary: sans-serif, Arial, "Helvetica Neue", Helvetica;
+$font-family-primary-custom: "Open Sans", sans-serif, Arial, "Helvetica Neue", Helvetica; // 300,300i,400,400i,700,700i (Google Fonts used)
 $font-family-secondary: Georgia, Times, "Times New Roman", serif;
 
 // Font styles
@@ -41,6 +42,14 @@ html {
     font-style: $font-style-normal;
     font-size: $font-size-base;
     line-height: 1.4;
+
+    /*
+     * This is the 'hook' for custom fonts if these have been loaded
+     * https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/
+     */
+    &.wf-active {
+        font-family: $font-family-primary-custom;
+    }
 }
 
 /*
