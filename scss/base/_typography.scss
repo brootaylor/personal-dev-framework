@@ -34,7 +34,7 @@ $font-weight-bold: 700; // Bold
 // http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
 
 html {
-    color: light($black, 10%);
+    color: lighten($black, 10%);
     background-color: $white;
     font-family: $font-family-primary;
     font-weight: $font-weight-light;

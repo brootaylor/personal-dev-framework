@@ -16,7 +16,7 @@
                 </article>
 
                 <!-- Paragraph with some <a>, <strong>, <em> and <abbr> elements in it -->
-                <p>Enim turpis enim vel! Parturient mus lectus <a href="">this is a link</a> parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. <strong>this text is bold</strong> eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit <em>this text is emphasised</em>, quis dapibus risus et! Porta, mus etiam, lorem nascetur <abbr title="HyperText Markup Language">HTML</abbr> nec urna penatibus placerat. Adipiscing aenean es.</p>
+                <p>Enim turpis enim vel! Parturient mus lectus <a href="#">this is a link</a> parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. <strong>this text is bold</strong> eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer lundium ac mauris integer risus, a non elit <em>this text is emphasised</em>, quis dapibus risus et! Porta, mus etiam, lorem nascetur <abbr title="HyperText Markup Language">HTML</abbr> nec urna penatibus placerat. Adipiscing aenean es.</p>
 
                 <p>Eu, dignissim sit in amet tortor, quis habitasse augue lacus purus 28<sup>th</sup> November ultricies porttitor H<sub>2</sub>O porttitor augue cras ultrices nec, vel amet! Magna sociis. Et, dis, massa integer, porta! Porta, nec placerat.</p>
 
@@ -53,7 +53,7 @@
                                 <span class="post__date">Tuesday, 19<sup>th</sup>January, 2016</span>
                             </time>
                             <!-- Author -->
-                            <span class="post__author">by <a href="" title="Articles by Ronni Bassdrum" rel="author">Ronni Bassdrum</a></span>
+                            <span class="post__author">by <a href="#" title="Articles by Ronni Bassdrum" rel="author">Ronni Bassdrum</a></span>
                         </small>
                     </header><!-- /header -->
 
@@ -68,7 +68,7 @@
                         </footer>
                     </blockquote>
 
-                    <p>Enim turpis enim vel! Parturient mus lectus <a href="">parturient nec sagittis</a> parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer <a href="" rel="external">lundium ac mauris integer</a> risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat. Adipiscing aenean es.</p>
+                    <p>Enim turpis enim vel! Parturient mus lectus <a href="#">parturient nec sagittis</a> parturient! Enim in auctor in. In platea urna, turpis in. Porttitor dictumst. Massa elementum habitasse eros cursus, nunc, natoque porta mus pellentesque, proin tortor, integer <a href="#" rel="external">lundium ac mauris integer</a> risus, a non elit nunc lundium, quis dapibus risus et! Porta, mus etiam, lorem nascetur nec urna penatibus placerat. Adipiscing aenean es.</p>
 
                     <!-- Article / post related content -->
                     <aside role="complementary" class="post__related">
@@ -79,7 +79,7 @@
 
                     <!-- Article / post footer content -->
                     <footer class="post__footer">
-                        <p>These are some signoff comments about the article and a bit more about <a href="" rel="author">Ronni Bassdrum</a>.
+                        <p>These are some signoff comments about the article and a bit more about <a href="#" rel="author">Ronni Bassdrum</a>.
                     </footer>
                 </article>
 
@@ -105,8 +105,8 @@
                     contains twitter messages from this blog's author -->
                     <h1>Page-related content [B]</h1>
                     <ul>
-                        <li><a href="">@zildjianuk</a> These Zildjian cymbals are just the biz!</li>
-                        <li>RT <a href="">@zildjianuk</a> I agree <a href="">@RonniBassDrum</a>. Why not buy another one.</li>
+                        <li><a href="#">@zildjianuk</a> These Zildjian cymbals are just the biz!</li>
+                        <li>RT <a href="#">@zildjianuk</a> I agree <a href="#">@RonniBassDrum</a>. Why not buy another one.</li>
                     </ul>
                 </aside>
 
@@ -116,7 +116,7 @@
                     <header class="post-sum__header">
                         <!-- Article title as a link. Typically link through to full article / news post -->
                         <h1 class="post-sum__title">
-                            <a href="">An article header title link</a>
+                            <a href="#">An article header title link</a>
                         </h1>
                         <h2 class="post-sum__title-sub">Sub heading</h2>
                         <!-- Post meta data -->
@@ -139,12 +139,12 @@
 
                     <!-- Some other links. Demonstrating text links next to each other -->
                     <p>
-                        <a href="" class="link__secondary">Check this out</a> | <a href="" class="link__secondary">Something else to view</a>
+                        <a href="#" class="link__secondary">Check this out</a> | <a href="#" class="link__secondary">Something else to view</a>
                     </p>
 
                     <!-- Primary link to this article / post -->
                     <p>
-                        <a href="" class="link__standalone">Read this article</a>
+                        <a href="#" class="link__standalone">Read this article</a>
                     </p>
                 </article>
 

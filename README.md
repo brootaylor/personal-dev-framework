@@ -28,7 +28,6 @@ You're welcome to use it.
 
 Here are some of the things I'm currently exploring and will add to this repository in due course.
 
-* Print CSS styles.
 * [Load Web Fonts progressively](https://www.bramstein.com/writing/web-font-loading-patterns.html).
 * [Fluid typography](https://codepen.io/brootaylor/pen/KgkWvA) option to typography partial.
 * [Responsive images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images) with resolution switching.
