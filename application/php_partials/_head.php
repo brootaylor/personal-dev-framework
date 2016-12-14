@@ -36,7 +36,7 @@
 
         <?php
             // Add the JS inline and minified output version for the build
-            echo "<script>\n" . $jsInline_JS . "\n\t\t</script>\n";
+            echo "<script>\n" . $jsInlineHead_JS . "\n\t\t</script>\n";
         ?>
 
         <?php
