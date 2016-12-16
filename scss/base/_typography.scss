@@ -195,13 +195,22 @@ h6 {
 // Paragraphs
 ///////////////////////////
 
-p {
-    margin: pxToEm(0 0 15px 0, $font-size-base);
+main {
+    p {
+        margin: pxToEm(0 0 15px 0, $font-size-base);
 
+            @include break-point-min($bp-m) {
+                @include fontSize($font-size-base + 2);
+                transition: font-size 0.2s linear;
+            }
+    }
+
+    ul {
         @include break-point-min($bp-m) {
-            @include fontSize(18px);
+            @include fontSize($font-size-base + 2);
             transition: font-size 0.2s linear;
         }
+    }
 }
 
 // Block quote

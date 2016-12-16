@@ -17,8 +17,8 @@
 	$loadCSS_JS = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/static/js/loadCSS.js");
 	$jsInlineHead_JS = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/static/js/jsInlineHead.js");
 
-	$cookie_cssupdate = "cssupdate";
-	$cssupdate_value = "14122016"; // Manually change this every time new version of CSS created
+	$cookie_fullcss = "fullcss";
+	$fullcss_value = "16339900"; // Use https://www.random.org/
 	/////////////////////////////////////////////////////////////////////////////////////////////
 
 ?>

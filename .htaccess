@@ -436,6 +436,9 @@ RewriteRule ^accessibility$ /accessibility.php [L]
 RewriteRule ^cookies\.php$ /cookies [R=301,L]
 RewriteRule ^cookies$ /cookies.php [L]
 
+RewriteRule ^privacy\.php$ /privacy [R=301,L]
+RewriteRule ^privacy$ /privacy.php [L]
+
 
 # ######################################################################
 # # SECURITY                                                           #

@@ -3,8 +3,15 @@
         (function(w){
             "use strict";
 
+            // Cookie value
             var originPart = window.location.origin,
-                cssupdate_value = "14122016";
+                fullcss_value = "16339900"; // Use https://www.random.org/
+
+            // Cookie date and expiry calculation
+            var date, expires;
+                date = new Date();
+                date.setTime(date.getTime()+(1*24*60*60*1000)*30); // = 1 month
+                expires = "; expires="+date.toGMTString();
 
             /* exported loadCSS */
             var loadCSS = function( href, before, media ){
@@ -76,11 +83,11 @@
             };
             // commonjs
             if( typeof exports !== "undefined" ){
-                exports.loadCSS = loadCSS(originPart + "/static/css/styles." + cssupdate_value + ".css");
-                document.cookie = 'cssupdate=' + cssupdate_value + ';expires="Wed, 28 Feb 2020 06:05:15 GMT";path=/';
+                exports.loadCSS = loadCSS(originPart + "/static/css/styles." + fullcss_value + ".css");
+                document.cookie = 'fullcss=' + fullcss_value + expires + '; path=/';
             }
             else {
-                w.loadCSS = loadCSS(originPart + "/static/css/styles." + cssupdate_value + ".css");
-                document.cookie = 'cssupdate=' + cssupdate_value + ';expires="Wed, 28 Feb 2020 06:05:15 GMT";path=/';
+                w.loadCSS = loadCSS(originPart + "/static/css/styles." + fullcss_value + ".css");
+                document.cookie = 'fullcss=' + fullcss_value + expires + '; path=/';
             }
         }( typeof global !== "undefined" ? global : this ));

@@ -19,15 +19,20 @@
 
                 <h1><?php echo $page_title; ?></h1>
 
-                <h2>Standards compliance</h2>
-                <p>Tincidunt cras lectus arcu habitasse aliquam? Scelerisque in, et montes, lorem porttitor tincidunt parturient, ut etiam. Phasellus enim elementum, adipiscing adipiscing! Lundium tortor non et natoque integer massa lundium platea? Etiam platea, elementum, ultrices enim dis purus natoque dolor et? Quis cursus ac mus a elementum etiam urna. Mus adipiscing.</p>
+                <hr>
 
-                <h2>Links</h2>
-                <p>Tincidunt cras lectus arcu habitasse aliquam? Scelerisque in, et montes, lorem porttitor tincidunt parturient, ut etiam. Phasellus enim elementum, adipiscing adipiscing! Lundium tortor non et natoque integer massa lundium platea? Etiam platea, elementum, ultrices enim dis purus natoque dolor et? Quis cursus ac mus a elementum etiam urna. Mus adipiscing.</p>
+                <p>We've tried our very best to make [<a href="#">WEBSITE NAME</a>] as accessible and usable as possible for every user. No matter what type of user they may be.</p>
 
-                <h2>Visual design</h2>
-                <p>This site uses cascading style sheets for visual layout. If your browser or browsing device does not support stylesheets at all, the content of each page is still readable.</p>
-                <p>The layout is liquid, simply filling its window. It happily accommodates resizing text and, as relative units have been used, text can even be re-sized in Internet Explorer for Windows.</p>
+                <p>Things like:</p>
+
+                <ul>
+                    <li>Blind screen-reader users</li>
+                    <li>Colour-blind users</li>
+                    <li>Screen magnification users</li>
+                    <li>Keyboard-only users</li>
+                </ul>
+
+                <p><a href="#">Contact us</a> if you have trouble using [<a href="#">WEBSITE NAME</a>] - this will help us to make improvements.</p>
                 
             </article>
             

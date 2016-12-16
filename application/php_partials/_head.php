@@ -1,6 +1,6 @@
 <?php
     // Set the cookie... 
-    setcookie($cookie_cssupdate, $cssupdate_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+    setcookie($cookie_fullcss, $fullcss_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 ?>
 <!doctype html>
 <html lang="en-gb" dir="ltr">
@@ -41,15 +41,15 @@
 
         <?php
             // If cookie exists/matches then load the normal external stylesheet...
-            if(isset($_COOKIE[$cookie_cssupdate]) && $_COOKIE[$cookie_cssupdate] == $cssupdate_value) {
-                echo '<link rel="stylesheet" href="//' . $_SERVER['SERVER_NAME'] . '/static/css/styles.' . $cssupdate_value . '.css">' . "\n";
+            if(isset($_COOKIE[$cookie_fullcss]) && $_COOKIE[$cookie_fullcss] == $fullcss_value) {
+                echo '<link rel="stylesheet" href="//' . $_SERVER['SERVER_NAME'] . '/static/css/styles.' . $fullcss_value . '.css">' . "\n";
             } else {
                 // If it's not set/matches then get the critical CSS and inline it...
                 echo "<style>\n\t" . $css_critical . "\n\t</style>\n";
                 // Then load the non-critical CSS asynchronously...
                 echo "\n\t<script>\t" . $loadCSS_JS . "\n\t</script>\n";
                 // Create a fallback CSS call incase JavaScript isn't enabled...
-                echo "\n\t<noscript>" . '<link rel="stylesheet" href="//' . $_SERVER['SERVER_NAME'] . '/static/css/styles.' . $cssupdate_value . '.css">' . "</noscript>\n";
+                echo "\n\t<noscript>" . '<link rel="stylesheet" href="//' . $_SERVER['SERVER_NAME'] . '/static/css/styles.' . $fullcss_value . '.css">' . "</noscript>\n";
             }
         ?>
 

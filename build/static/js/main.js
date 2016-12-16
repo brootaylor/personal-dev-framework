@@ -1,2 +1,2 @@
-/*! Personal framework JS - v0.1.0 - 2016-12-16 12:30:48 */
+/*! Personal framework JS - v0.1.0 - 2016-12-16 21:44:38 */
 !function(a){"use strict";!function(){var a=document.querySelector("#menuButton"),b=document.querySelector("#nav ul");a&&a.addEventListener("click",function(c){a.classList.toggle("is-active"),"open"===b.className?b.className="":b.className="open",c.preventDefault()},!1)}();(function(){a('#componentNav a[href^="#"]').on("click",function(b){b.preventDefault();var c=a(a(this).attr("href"));c.length&&a("html, body").animate({scrollTop:c.offset().top-50},1e3)})})()}(jQuery);
