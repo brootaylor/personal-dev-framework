@@ -194,9 +194,10 @@ module.exports = function (grunt) {
               {expand: true, src: ['static/css/**'], dest: 'build/', filter: 'isFile'},
               // JS libraries
               {expand: true, src: ['static/js/vendor/**', '!static/js/vendor/jquery-3.1.1.js'], dest: 'build/', filter: 'isFile'},
-              // PHP partials, templates & application directory .htaccess (permissions) file
+              // PHP partials, templates, error pages & application directory .htaccess (permissions) file
               {expand: true, src: ['application/**'], dest: 'build/', filter: 'isFile'},
               {expand: true, src: ['application/.htaccess'], dest: 'build/', filter: 'isFile'},
+              {expand: true, src: ['errors/**'], dest: 'build/', filter: 'isFile'},
               // Root files
               {expand: true, src: ['*', '!Gruntfile.js', '!package.json', '!README.md'], dest: 'build/', filter: 'isFile'},
               {expand: true, src: ['.htaccess'], dest: 'build/', filter: 'isFile'},
