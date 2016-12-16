@@ -95,8 +95,10 @@
             };
 
             (function(d) {
-              var wf = d.createElement('script'), s = d.scripts[0];
-              wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+              var wf = d.createElement('script'),
+                  s = d.scripts[0];
+              wf.async = 'true';
+              wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
               s.parentNode.insertBefore(wf, s);
             })(document);
             

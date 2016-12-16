@@ -5,7 +5,7 @@
     $page_title_context = "The title's context eg. | Bruce Taylor's Personal Website";
     $page_description = "500 Internal Server Error";
     $page_canonical = false;
-    $page_noindex = false;
+    $page_noindex = true;
 
     ob_start();
 ?>
