@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Tables (Global).
+   ========================================================================== */
+
+th,
+td {
+	vertical-align: text-top;
+	text-align: left;
+	padding: pxToEm(15px, $font-size-base);
+}
+
+/* Cookies pages tabular data */
+.table-cookies {
+	th {
+		background-color: $color-tertiary;
+
+		&:first-of-type,
+		&:last-of-type {
+			width: 20%
+		}
+	}
+
+	td {
+		border-bottom: 1px solid $color-tertiary;
+	}
+
+	code {
+		color: $color-secondary;
+	}
+}
+
+/////////////////////////////////////

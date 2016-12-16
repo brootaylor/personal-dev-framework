@@ -19,19 +19,26 @@
 
                 <h1><?php echo $page_title; ?></h1>
 
-                <p>This website uses various electronic cookies for anonymous analytics purposes as well as to aid better technical performance decisions.</p>
+                <hr>
 
                 <h2>What is a cookie?</h2>
-                <p>Tincidunt cras lectus arcu habitasse aliquam? Scelerisque in, et montes, lorem porttitor tincidunt parturient, ut etiam. Phasellus enim elementum, adipiscing adipiscing! Lundium tortor non et natoque integer massa lundium platea? Etiam platea, elementum, ultrices enim dis purus natoque dolor et? Quis cursus ac mus a elementum etiam urna. Mus adipiscing.</p>
 
-                <h2>Opting Out</h2>
-                <p>If you’d prefer to opt out of cookies on this website please click the button below.</p>
-                <p>By clicking this button a single cookie named <code>ck-optout</code> will be added and all other cookies removed. This cookie is required to remember your preference.</p>
+                <p>A cookie is a small piece of text sent to your browser by a website you visit. It helps the website to remember information about your visit, like your preferred language and other settings. That can make your next visit easier and the site more useful to you. Cookies play an important role. Without them, using the web would be a much more frustrating experience.</p>
 
-                <button>Opt out of cookies</button>
+                <h2>How cookies are used on this website</h2>
+
+                <p>This website uses various electronic cookies to aid better technical performance decisions as well as to better the users experience while visiting the website.</p>
+
+                <p>This website also uses tracking software to anonymously monitor its visitors to better understand how they use it. This software is provided by Google Analytics which uses cookies to track visitor usage. The software will save a cookie to your computers hard drive in order to track and monitor your engagement and usage of the website but will not store, save or collect personal information. For further information, you can read <a href="https://www.google.com/policies/technologies/cookies/" rel="external">how Google uses cookies</a>.</p>
+
+                <p>You can decide what cookies are allowed and delete cookies at any time by adjusting settings on your web browser. Please be aware that restricting cookies may have an impact upon the functionality of our website.</p>
+
+                <hr>
 
                 <h2>Cookies used on this website</h2>
-                <table>
+
+                <table class="table-cookies" summary="List of cookies used on this website">
+                    <caption class="visuallyhidden">List of cookies used on this website</caption>
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -42,13 +49,37 @@
                     <tbody>
                         <tr>
                             <td>
-                                <code>cssupdate</code>
+                                <code>fullcss</code>
                             </td>
-                            <td>This cookie is used to help the website determine whether you're a first time visitor. If you are, it ensures the optimum code is delivered to the browser to ensure as speedy an experience as possible.</td>
-                            <td>30 days from set/update</td>
+                            <td>This cookie is used to help the website determine whether you're a first time visitor. If you are, it ensures the optimum code is delivered to the browser to ensure as speedy an experience as possible. This isn't a tracking cookie.</td>
+                            <td>1 month</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>_ga</code>
+                            </td>
+                            <td>Google Analytics cookie. Helps us count how many people visit this website by tracking if you’ve visited before.</td>
+                            <td>2 years</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <code>_gat</code>
+                            </td>
+                            <td>Google Analytics cookie. Used to manage the rate at which page view requests are made.</td>
+                            <td>10 minutes</td>
                         </tr>
                     </tbody>
                 </table>
+
+                <h3>Opt out of Google Analytics tracking</h3>
+
+                <p>You can <a href="https://tools.google.com/dlpage/gaoptout" rel="external">opt out of Google Analytics tracking by downloading their browser add-on</a>.</p>
+
+                <hr>
+
+                <h2>Third party site disclaimer</h2>
+
+                <p>Please note that external sites linked to from our website may also use cookies. You need to check with these external sites what information is being collected using cookies.</p>
                 
             </article>
             
