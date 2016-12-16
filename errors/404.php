@@ -5,7 +5,7 @@
     $page_title_context = "The title's context eg. | Bruce Taylor's Personal Website";
     $page_description = "Page Not Found";
     $page_canonical = false;
-    $page_noindex = false;
+    $page_noindex = true;
 
     ob_start();
 ?>
