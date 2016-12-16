@@ -22,7 +22,7 @@ You're welcome to use it.
 * Apache server caching, compression, and other configuration defaults for Grade-A performance - thanks to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate).
 * A basic PHP based application framework.
 * Custom error messages/pages configuration (404, 401, 403, 500).
-* Simple, zero-configuration command-line [http server](#http-server).
+* Simple, zero-configuration command-line [http server](need-a-simple-local-server).
 * Build directory output examples.
 * It's built using a [Mobile First](http://www.lukew.com/resources/mobile_first.asp) approach which can then be progressively enhanced as screen space and device features allow. I think it's always worth remembering that [websites do not need to look the same in every browser](http://dowebsitesneedtolookexactlythesameineverybrowser.com/) - so I haven't attempted to make legacy browsers (eg. IE 8 and less) behave like more modern browsers.
 
