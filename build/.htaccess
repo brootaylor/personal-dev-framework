@@ -85,14 +85,27 @@
 # Customize what Apache returns to the client in case of an error.
 # https://httpd.apache.org/docs/current/mod/core.html#errordocument
 
-ErrorDocument 404 /404.php
+# ====================================================================================================
+# Page not found. An error message displayed by a browser indicating that an Internet address cannot be found.
+# ====================================================================================================
+ErrorDocument 404 /errors/404.php
+
+# ====================================================================================================
+# Forbidden access page ==> The 401 Unauthorized error is an HTTP status code that means the page you were trying to access can not be loaded until you first log on with a valid user ID and password. If you have just logged on and received the 401 Unauthorized error, it means that the credentials you entered were invalid for some reason.
+# ====================================================================================================
+ErrorDocument 401 /errors/401.php
+
+# ====================================================================================================
+# Forbidden access page. The 403 Forbidden error is an HTTP status code that means that accessing the page or resource you were trying to reach is absolutely forbidden for some reason. In other words: "Go away and don't come back here."
+# ====================================================================================================
+ErrorDocument 403 /errors/403.php
 
 # ====================================================================================================
 # The 500 Internal Server Error is a very general HTTP status code that means something has gone wrong on the web site's server but the server could not be more specific on what the exact problem is.
 
 # Most of the time, "gone wrong" means an issue with the page or site's programming, nothing you have anything to do with.
 # ====================================================================================================
-ErrorDocument 500 /500.php
+ErrorDocument 500 /errors/500.php
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
